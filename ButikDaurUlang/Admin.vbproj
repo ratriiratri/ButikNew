@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E39F4F2-C815-4234-A246-29CA8E02DC99}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ButikDaurUlang.My.MyApplication</StartupObject>
+    <RootNamespace>ButikDaurUlang</RootNamespace>
+    <AssemblyName>ButikDaurUlang</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ButikDaurUlang.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ButikDaurUlang.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\ControlBiaya.vb" />
+    <Compile Include="Control\ControlJasa.vb" />
+    <Compile Include="Control\ControlPendapatan.vb" />
+    <Compile Include="Control\ControlProduk.vb" />
+    <Compile Include="Control\ControlUser.vb" />
+    <Compile Include="Entity\EntityBiaya.vb" />
+    <Compile Include="Entity\EntityJasa.vb" />
+    <Compile Include="Entity\EntityPendapatan.vb" />
+    <Compile Include="Entity\EntityProduk.vb" />
+    <Compile Include="Entity\EntityUser.vb" />
+    <Compile Include="Forms\Admin\AdminUtama.Designer.vb">
+      <DependentUpon>AdminUtama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\AdminUtama.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\DashboardAdmin.Designer.vb">
+      <DependentUpon>DashboardAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\DashboardAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\DataBiayaAdmin.Designer.vb">
+      <DependentUpon>DataBiayaAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\DataBiayaAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\DataJasaAdmin.Designer.vb">
+      <DependentUpon>DataJasaAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\DataJasaAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\DataProdukAdmin.Designer.vb">
+      <DependentUpon>DataProdukAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\DataProdukAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\DataUserAdmin.Designer.vb">
+      <DependentUpon>DataUserAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\DataUserAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatBiayaAdmin.Designer.vb">
+      <DependentUpon>LihatBiayaAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatBiayaAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatJasaAdmin.Designer.vb">
+      <DependentUpon>LihatJasaAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatJasaAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatPendapatanAdmin.Designer.vb">
+      <DependentUpon>LihatPendapatanAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatPendapatanAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatPengeluaranAdmin.Designer.vb">
+      <DependentUpon>LihatPengeluaranAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatPengeluaranAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatProdukAdmin.Designer.vb">
+      <DependentUpon>LihatProdukAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatProdukAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatUserAdmin.Designer.vb">
+      <DependentUpon>LihatUserAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatUserAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\TambahBiayaAdmin.Designer.vb">
+      <DependentUpon>TambahBiayaAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\TambahBiayaAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\TambahJasaAdmin.Designer.vb">
+      <DependentUpon>TambahJasaAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\TambahJasaAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\TambahPendapatanAdmin.Designer.vb">
+      <DependentUpon>TambahPendapatanAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\TambahPendapatanAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\TambahPengeluaranAdmin.Designer.vb">
+      <DependentUpon>TambahPengeluaranAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\TambahPengeluaranAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\AmbilPerajangUser.Designer.vb">
+      <DependentUpon>AmbilPerajangUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\AmbilPerajangUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\AmbilResellerUser.Designer.vb">
+      <DependentUpon>AmbilResellerUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\AmbilResellerUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\DaftarNitipJualUser.Designer.vb">
+      <DependentUpon>DaftarNitipJualUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\DaftarNitipJualUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\DaftarPerajangUser.Designer.vb">
+      <DependentUpon>DaftarPerajangUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\DaftarPerajangUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\DaftarResellerUser.Designer.vb">
+      <DependentUpon>DaftarResellerUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\DaftarResellerUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\DashboardUser.Designer.vb">
+      <DependentUpon>DashboardUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\DashboardUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\Lihat TransaksiUser.Designer.vb">
+      <DependentUpon>Lihat TransaksiUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\Lihat TransaksiUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\LihatBiayaUser.Designer.vb">
+      <DependentUpon>LihatBiayaUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\LihatBiayaUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\LihatNitipJualUser.Designer.vb">
+      <DependentUpon>LihatNitipJualUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\LihatNitipJualUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\LihatPengeluaranUser.Designer.vb">
+      <DependentUpon>LihatPengeluaranUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\LihatPengeluaranUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\LihatPerajangUser.Designer.vb">
+      <DependentUpon>LihatPerajangUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\LihatPerajangUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\LihatResellerUser.Designer.vb">
+      <DependentUpon>LihatResellerUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\LihatResellerUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\TambahBiayaUser.Designer.vb">
+      <DependentUpon>TambahBiayaUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\TambahBiayaUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\TambahNitipJualUser.Designer.vb">
+      <DependentUpon>TambahNitipJualUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\TambahNitipJualUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\TambahPengeluaranUser.Designer.vb">
+      <DependentUpon>TambahPengeluaranUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\TambahPengeluaranUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\TambahTransaksiUser.Designer.vb">
+      <DependentUpon>TambahTransaksiUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\TambahTransaksiUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\TerimaPerajangUser.Designer.vb">
+      <DependentUpon>TerimaPerajangUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\TerimaPerajangUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\TerimaResellerUser.Designer.vb">
+      <DependentUpon>TerimaResellerUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\TerimaResellerUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User\UserUtama.Designer.vb">
+      <DependentUpon>UserUtama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User\UserUtama.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\ModKoneksiDB.vb" />
+    <Compile Include="Global\ModObjectFungsi.vb" />
+    <Compile Include="Interface\InterfaceProses.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Admin\AdminUtama.resx">
+      <DependentUpon>AdminUtama.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\DashboardAdmin.resx">
+      <DependentUpon>DashboardAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\DataBiayaAdmin.resx">
+      <DependentUpon>DataBiayaAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\DataJasaAdmin.resx">
+      <DependentUpon>DataJasaAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\DataProdukAdmin.resx">
+      <DependentUpon>DataProdukAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\DataUserAdmin.resx">
+      <DependentUpon>DataUserAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\LihatBiayaAdmin.resx">
+      <DependentUpon>LihatBiayaAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\LihatJasaAdmin.resx">
+      <DependentUpon>LihatJasaAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\LihatPendapatanAdmin.resx">
+      <DependentUpon>LihatPendapatanAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\LihatPengeluaranAdmin.resx">
+      <DependentUpon>LihatPengeluaranAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\LihatProdukAdmin.resx">
+      <DependentUpon>LihatProdukAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\LihatUserAdmin.resx">
+      <DependentUpon>LihatUserAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\TambahBiayaAdmin.resx">
+      <DependentUpon>TambahBiayaAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\TambahJasaAdmin.resx">
+      <DependentUpon>TambahJasaAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\TambahPendapatanAdmin.resx">
+      <DependentUpon>TambahPendapatanAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\TambahPengeluaranAdmin.resx">
+      <DependentUpon>TambahPengeluaranAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\AmbilPerajangUser.resx">
+      <DependentUpon>AmbilPerajangUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\AmbilResellerUser.resx">
+      <DependentUpon>AmbilResellerUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\DaftarNitipJualUser.resx">
+      <DependentUpon>DaftarNitipJualUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\DaftarPerajangUser.resx">
+      <DependentUpon>DaftarPerajangUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\DaftarResellerUser.resx">
+      <DependentUpon>DaftarResellerUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\DashboardUser.resx">
+      <DependentUpon>DashboardUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\Lihat TransaksiUser.resx">
+      <DependentUpon>Lihat TransaksiUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\LihatBiayaUser.resx">
+      <DependentUpon>LihatBiayaUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\LihatNitipJualUser.resx">
+      <DependentUpon>LihatNitipJualUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\LihatPengeluaranUser.resx">
+      <DependentUpon>LihatPengeluaranUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\LihatPerajangUser.resx">
+      <DependentUpon>LihatPerajangUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\LihatResellerUser.resx">
+      <DependentUpon>LihatResellerUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\TambahBiayaUser.resx">
+      <DependentUpon>TambahBiayaUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\TambahNitipJualUser.resx">
+      <DependentUpon>TambahNitipJualUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\TambahPengeluaranUser.resx">
+      <DependentUpon>TambahPengeluaranUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\TambahTransaksiUser.resx">
+      <DependentUpon>TambahTransaksiUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\TerimaPerajangUser.resx">
+      <DependentUpon>TerimaPerajangUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\TerimaResellerUser.resx">
+      <DependentUpon>TerimaResellerUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User\UserUtama.resx">
+      <DependentUpon>UserUtama.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Logo Butik Daur Ulang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2020-01-10 at 12.00.41 PM.jpeg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>

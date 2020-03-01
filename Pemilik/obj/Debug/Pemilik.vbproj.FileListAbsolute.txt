@@ -1,0 +1,12 @@
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\bin\Debug\Pemilik.exe.config
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\bin\Debug\Pemilik.exe
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\bin\Debug\Pemilik.pdb
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\bin\Debug\Pemilik.xml
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\obj\Debug\Pemilik.vbprojAssemblyReference.cache
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\obj\Debug\Pemilik.Form1.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\obj\Debug\Pemilik.Resources.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\obj\Debug\Pemilik.vbproj.GenerateResource.cache
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\obj\Debug\Pemilik.vbproj.CoreCompileInputs.cache
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\obj\Debug\Pemilik.exe
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\obj\Debug\Pemilik.xml
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\Pemilik\obj\Debug\Pemilik.pdb

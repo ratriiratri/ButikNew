@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Admin", "ButikDaurUlang\Admin.vbproj", "{0E39F4F2-C815-4234-A246-29CA8E02DC99}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "User", "User\User.vbproj", "{ED2700E7-CF97-4A28-BF64-B5D58453D478}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Pemilik", "Pemilik\Pemilik.vbproj", "{2275219E-4179-418B-A9A1-344163523ED2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ProgramSPK", "C:\Users\DERN 05\Downloads\SPKFREELANCE\SPKfreelanceagent\ProgramSPK\ProgramSPK\ProgramSPK.vbproj", "{5F98E036-E7DF-4483-81C7-01D2E8ABC533}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Momio App", "..\..\..\Tugas Kuliah\5\TP SIA\Momio App\Momio App\Momio App.vbproj", "{739ECE3A-3665-4E7A-9FF0-EEF4FF2A69B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E39F4F2-C815-4234-A246-29CA8E02DC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E39F4F2-C815-4234-A246-29CA8E02DC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E39F4F2-C815-4234-A246-29CA8E02DC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E39F4F2-C815-4234-A246-29CA8E02DC99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED2700E7-CF97-4A28-BF64-B5D58453D478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED2700E7-CF97-4A28-BF64-B5D58453D478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED2700E7-CF97-4A28-BF64-B5D58453D478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED2700E7-CF97-4A28-BF64-B5D58453D478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2275219E-4179-418B-A9A1-344163523ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2275219E-4179-418B-A9A1-344163523ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2275219E-4179-418B-A9A1-344163523ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2275219E-4179-418B-A9A1-344163523ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F98E036-E7DF-4483-81C7-01D2E8ABC533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F98E036-E7DF-4483-81C7-01D2E8ABC533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F98E036-E7DF-4483-81C7-01D2E8ABC533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F98E036-E7DF-4483-81C7-01D2E8ABC533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739ECE3A-3665-4E7A-9FF0-EEF4FF2A69B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739ECE3A-3665-4E7A-9FF0-EEF4FF2A69B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739ECE3A-3665-4E7A-9FF0-EEF4FF2A69B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739ECE3A-3665-4E7A-9FF0-EEF4FF2A69B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4B16B34-A6A1-480B-BBCA-1900970FC088}
+	EndGlobalSection
+EndGlobal
