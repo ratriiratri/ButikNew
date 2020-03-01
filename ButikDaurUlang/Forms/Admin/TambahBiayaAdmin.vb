@@ -1,10 +1,23 @@
-﻿Public Class TambahBiayaAdmin
+﻿Imports System.Data.OleDb
+
+Public Class TambahBiayaAdmin
 
     Private Sub Bersih() 'clear isi 
         txtId.Text = ""
         txtNama.Text = ""
         txtDisc.Text = ""
         txtJumlah.Text = ""
+    End Sub
+
+    Sub HitungTotal()
+        Dim total As Integer
+        total = 0
+
+        For i = 0 To DGDetailBiaya.Rows.Item.Count - 1
+            total = total + DGDetailBiaya.Item(baris).Cells(4).Text
+        Next
+
+        lblNominal.Text = total
     End Sub
 
     Private Sub TambahBiayaAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
