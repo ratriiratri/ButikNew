@@ -117,7 +117,7 @@
         Dim statusReferensi As Boolean
 
         statusReferensi = KontrolUser.CekDataDipakai(txtId.Text)
-        If statusReferensi = True Then
+        If statusReferensi = False Then
             MsgBox("Data masih dipakai! Tidak bisa dihapus.", MsgBoxStyle.Exclamation, "Peringatan")
             Exit Sub
         End If

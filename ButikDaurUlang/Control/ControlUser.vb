@@ -28,7 +28,7 @@ Public Class ControlUser : Implements InterfaceProses
     Public Function DeleteData(kunci As String) As OleDbCommand Implements InterfaceProses.DeleteData
         CMD = New OleDbCommand("delete from Userr where idUser ='" & kunci & "'", OpenConnection)
         CMD.CommandType = CommandType.Text
-        'CMD.ExecuteNonQuery()
+        CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", CloseConnection)
         Return CMD
     End Function
