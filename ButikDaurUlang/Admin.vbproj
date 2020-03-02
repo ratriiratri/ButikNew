@@ -78,9 +78,13 @@
     <Compile Include="Control\ControlPendapatan.vb" />
     <Compile Include="Control\ControlProduk.vb" />
     <Compile Include="Control\ControlUser.vb" />
+    <Compile Include="Entity\EntityDetailBiaya.vb" />
     <Compile Include="Entity\EntityBiaya.vb" />
+    <Compile Include="Entity\EntityDetailJasa.vb" />
+    <Compile Include="Entity\EntityDetailProduk.vb" />
     <Compile Include="Entity\EntityJasa.vb" />
     <Compile Include="Entity\EntityPendapatan.vb" />
+    <Compile Include="Entity\EntityPengeluaran.vb" />
     <Compile Include="Entity\EntityProduk.vb" />
     <Compile Include="Entity\EntityUser.vb" />
     <Compile Include="Forms\Admin\AdminUtama.Designer.vb">

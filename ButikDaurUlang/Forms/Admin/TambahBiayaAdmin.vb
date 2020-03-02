@@ -1,6 +1,4 @@
-﻿Imports System.Data.OleDb
-
-Public Class TambahBiayaAdmin
+﻿Public Class TambahBiayaAdmin
 
     Private Sub Bersih() 'clear isi 
         txtId.Text = ""
@@ -13,8 +11,8 @@ Public Class TambahBiayaAdmin
         Dim total As Integer
         total = 0
 
-        For i = 0 To DGDetailBiaya.Rows.Item.Count - 1
-            total = total + DGDetailBiaya.Item(baris).Cells(4).Text
+        For i = 0 To DGDetailBiaya.Rows.Count - 1
+            total = total + Val(DGDetailBiaya.Rows(i).Cells(4).Value)
         Next
 
         lblNominal.Text = total
@@ -46,13 +44,13 @@ Public Class TambahBiayaAdmin
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'deklarasi array string
-        Dim strItem(4) As String
+        Dim strItem(5) As String
 
         strItem(0) = txtId.Text
         strItem(1) = txtNama.Text
         strItem(2) = txtJumlah.Text
         strItem(3) = txtDisc.Text
-        strItem(4) = txtJumlah.Text - (txtJumlah.Text * txtDisc.Text)
+        strItem(4) = Val(txtJumlah.Text) - (Val(txtJumlah.Text) * Val(txtDisc.Text))
 
         'tambahkan item add (DGDetailBiaya) dengan isi array
         DGDetailBiaya.Item.Add(New ListViewItem(strItem))
@@ -61,13 +59,24 @@ Public Class TambahBiayaAdmin
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If MsgBox("Apakah anda yakin ingin menghapus data ini?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Konfirmasi") = MsgBoxResult.Yes Then
-            DGDetailBiaya.SelectedItems(0).Remove()
-        End If
+        Dim baris As Integer = DGDetailBiaya.CurrentCell.RowIndex
+
+        DGDetailBiaya.Rows(baris).Cells(0).Value = ""
     End Sub
 
     Private Sub btnCariBarang_Click(sender As Object, e As EventArgs) Handles btnCariBarang.Click
         LihatBiayaAdmin.Show()
         Me.Close()
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim listDetail As New List(Of EntityBiaya)()
+
+        If DGDetailBiaya.Item.Count = 0 Then
+            MsgBox("Masukan Biaya terlebih dulu")
+            Exit Sub
+        End If
+
+
     End Sub
 End Class

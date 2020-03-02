@@ -24,6 +24,12 @@ Partial Class TambahBiayaAdmin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label15 = New System.Windows.Forms.Label()
         Me.lblTanggal = New System.Windows.Forms.Label()
         Me.lblPengeluaran = New System.Windows.Forms.Label()
@@ -65,12 +71,6 @@ Partial Class TambahBiayaAdmin
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel5.SuspendLayout()
         CType(Me.DGDetailBiaya, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -110,6 +110,41 @@ Partial Class TambahBiayaAdmin
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1154, 512)
         Me.Panel5.TabIndex = 60
+        '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
+        Me.ListView1.Location = New System.Drawing.Point(79, 208)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(1000, 97)
+        Me.ListView1.TabIndex = 92
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "ID"
+        Me.ColumnHeader1.Width = 107
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Nama"
+        Me.ColumnHeader2.Width = 365
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Jumlah"
+        Me.ColumnHeader3.Width = 196
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Disc"
+        Me.ColumnHeader4.Width = 105
+        '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Sub Total"
+        Me.ColumnHeader5.Width = 223
         '
         'Label15
         '
@@ -499,41 +534,6 @@ Partial Class TambahBiayaAdmin
         '
         'Timer1
         '
-        '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
-        Me.ListView1.Location = New System.Drawing.Point(79, 208)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1000, 97)
-        Me.ListView1.TabIndex = 92
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "ID"
-        Me.ColumnHeader1.Width = 107
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Nama"
-        Me.ColumnHeader2.Width = 365
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "Jumlah"
-        Me.ColumnHeader3.Width = 196
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Disc"
-        Me.ColumnHeader4.Width = 105
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Sub Total"
-        Me.ColumnHeader5.Width = 223
         '
         'TambahBiayaAdmin
         '
