@@ -9,3 +9,4 @@ E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.vbproj.CoreCompil
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.exe
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.xml
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.pdb
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.userUtama.resources

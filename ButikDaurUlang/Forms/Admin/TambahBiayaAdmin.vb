@@ -9,10 +9,11 @@
 
     Sub HitungTotal()
         Dim total As Integer
+
         total = 0
 
-        For i = 0 To DGDetailBiaya.Rows.Count - 1
-            total = total + Val(DGDetailBiaya.Rows(i).Cells(4).Value)
+        For i = 0 To LVDetailBiaya.Items.Count - 1
+            total = total + Val(LVDetailBiaya.Items(i).SubItems(4).Text)
         Next
 
         lblNominal.Text = total
@@ -44,7 +45,7 @@
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'deklarasi array string
-        Dim strItem(5) As String
+        Dim strItem(4) As String
 
         strItem(0) = txtId.Text
         strItem(1) = txtNama.Text
@@ -52,16 +53,14 @@
         strItem(3) = txtDisc.Text
         strItem(4) = Val(txtJumlah.Text) - (Val(txtJumlah.Text) * Val(txtDisc.Text))
 
-        'tambahkan item add (DGDetailBiaya) dengan isi array
-        DGDetailBiaya.Item.Add(New ListViewItem(strItem))
+        'tambahkan item add (ListViewDetailBiaya) dengan isi array
+        LVDetailBiaya.Items.Add(New ListViewItem(strItem))
 
         Call Bersih()
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        Dim baris As Integer = DGDetailBiaya.CurrentCell.RowIndex
-
-        DGDetailBiaya.Rows(baris).Cells(0).Value = ""
+        LVDetailBiaya.SelectedItems(0).Remove()
     End Sub
 
     Private Sub btnCariBarang_Click(sender As Object, e As EventArgs) Handles btnCariBarang.Click
@@ -70,12 +69,13 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim listDetail As New List(Of EntityBiaya)()
+        Dim listDetail As New List(Of EntityDetailBiaya)
 
-        If DGDetailBiaya.Item.Count = 0 Then
+        If LVDetailBiaya.Items.Count = 0 Then
             MsgBox("Masukan Biaya terlebih dulu")
             Exit Sub
         End If
+
 
 
     End Sub

@@ -72,11 +72,64 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Forms\DataBiaya.Designer.vb">
+      <DependentUpon>DataBiaya.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataBiaya.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\DataProduk.Designer.vb">
+      <DependentUpon>DataProduk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataProduk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiBiaya.Designer.vb">
+      <DependentUpon>LihatTransaksiBiaya.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiBiaya.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatPendapatan.Designer.vb">
+      <DependentUpon>LihatPendapatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatPendapatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatPengeluaran.Designer.vb">
+      <DependentUpon>LihatPengeluaran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatPengeluaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiProduk.Designer.vb">
+      <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiProduk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TambahPengeluaran.Designer.vb">
+      <DependentUpon>TambahPengeluaran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TambahPengeluaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TambahTransaksiProduk.Designer.vb">
+      <DependentUpon>TambahTransaksiProduk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TambahTransaksiProduk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TambahTransaksiBiaya.Designer.vb">
+      <DependentUpon>TambahTransaksiBiaya.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TambahTransaksiBiaya.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserUtama.Designer.vb">
+      <DependentUpon>UserUtama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserUtama.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -96,6 +149,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\DataBiaya.resx">
+      <DependentUpon>DataBiaya.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DataProduk.resx">
+      <DependentUpon>DataProduk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatPendapatan.resx">
+      <DependentUpon>LihatPendapatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatPengeluaran.resx">
+      <DependentUpon>LihatPengeluaran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\userUtama.resx">
+      <DependentUpon>UserUtama.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -114,6 +182,13 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Control\" />
+    <Folder Include="Entity\" />
+    <Folder Include="Global\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

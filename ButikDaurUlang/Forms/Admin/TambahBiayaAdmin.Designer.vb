@@ -24,7 +24,7 @@ Partial Class TambahBiayaAdmin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.LVDetailBiaya = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -52,12 +52,6 @@ Partial Class TambahBiayaAdmin
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DGDetailBiaya = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -72,7 +66,6 @@ Partial Class TambahBiayaAdmin
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel5.SuspendLayout()
-        CType(Me.DGDetailBiaya, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -80,7 +73,7 @@ Partial Class TambahBiayaAdmin
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Panel5.Controls.Add(Me.ListView1)
+        Me.Panel5.Controls.Add(Me.LVDetailBiaya)
         Me.Panel5.Controls.Add(Me.Label15)
         Me.Panel5.Controls.Add(Me.lblTanggal)
         Me.Panel5.Controls.Add(Me.lblPengeluaran)
@@ -103,7 +96,6 @@ Partial Class TambahBiayaAdmin
         Me.Panel5.Controls.Add(Me.txtId)
         Me.Panel5.Controls.Add(Me.Label3)
         Me.Panel5.Controls.Add(Me.Label2)
-        Me.Panel5.Controls.Add(Me.DGDetailBiaya)
         Me.Panel5.Controls.Add(Me.btnAdd)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(19, 103)
@@ -111,15 +103,15 @@ Partial Class TambahBiayaAdmin
         Me.Panel5.Size = New System.Drawing.Size(1154, 512)
         Me.Panel5.TabIndex = 60
         '
-        'ListView1
+        'LVDetailBiaya
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
-        Me.ListView1.Location = New System.Drawing.Point(79, 208)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(1000, 97)
-        Me.ListView1.TabIndex = 92
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.LVDetailBiaya.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
+        Me.LVDetailBiaya.Location = New System.Drawing.Point(79, 135)
+        Me.LVDetailBiaya.Name = "LVDetailBiaya"
+        Me.LVDetailBiaya.Size = New System.Drawing.Size(1000, 262)
+        Me.LVDetailBiaya.TabIndex = 92
+        Me.LVDetailBiaya.UseCompatibleStateImageBehavior = False
+        Me.LVDetailBiaya.View = System.Windows.Forms.View.Details
         '
         'ColumnHeader1
         '
@@ -258,11 +250,12 @@ Partial Class TambahBiayaAdmin
         '
         Me.lblNominal.AutoSize = True
         Me.lblNominal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNominal.Location = New System.Drawing.Point(1006, 411)
+        Me.lblNominal.Location = New System.Drawing.Point(994, 408)
         Me.lblNominal.Name = "lblNominal"
-        Me.lblNominal.Size = New System.Drawing.Size(80, 25)
+        Me.lblNominal.Size = New System.Drawing.Size(23, 25)
         Me.lblNominal.TabIndex = 78
-        Me.lblNominal.Text = "nominal"
+        Me.lblNominal.Text = "0"
+        Me.lblNominal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label9
         '
@@ -361,45 +354,6 @@ Partial Class TambahBiayaAdmin
         Me.Label2.Size = New System.Drawing.Size(55, 17)
         Me.Label2.TabIndex = 63
         Me.Label2.Text = "ID User"
-        '
-        'DGDetailBiaya
-        '
-        Me.DGDetailBiaya.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGDetailBiaya.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        Me.DGDetailBiaya.Location = New System.Drawing.Point(79, 135)
-        Me.DGDetailBiaya.Name = "DGDetailBiaya"
-        Me.DGDetailBiaya.Size = New System.Drawing.Size(1000, 262)
-        Me.DGDetailBiaya.TabIndex = 60
-        '
-        'id
-        '
-        Me.id.HeaderText = "ID Biaya"
-        Me.id.Name = "id"
-        Me.id.ReadOnly = True
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Nama Biaya"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Total Biaya"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Disc"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Sub Total"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
         '
         'btnAdd
         '
@@ -551,7 +505,6 @@ Partial Class TambahBiayaAdmin
         Me.Text = "TambahBiaya"
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        CType(Me.DGDetailBiaya, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -562,7 +515,6 @@ Partial Class TambahBiayaAdmin
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents DGDetailBiaya As DataGridView
     Friend WithEvents btnAdd As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
@@ -596,12 +548,7 @@ Partial Class TambahBiayaAdmin
     Friend WithEvents lblPengeluaran As Label
     Friend WithEvents lblUser As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents ListView1 As ListView
+    Friend WithEvents LVDetailBiaya As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader

@@ -35,9 +35,9 @@ Partial Class AdminUtama
         Me.lblAdmin = New System.Windows.Forms.Label()
         Me.picDuarUlang = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnMin = New System.Windows.Forms.Button()
+        Me.btnMax = New System.Windows.Forms.Button()
+        Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel3.SuspendLayout()
         CType(Me.picGirl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,11 +63,10 @@ Partial Class AdminUtama
         '
         'btnPengeluaran
         '
-        Me.btnPengeluaran.FlatAppearance.BorderSize = 0
         Me.btnPengeluaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPengeluaran.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPengeluaran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPengeluaran.Location = New System.Drawing.Point(0, 346)
+        Me.btnPengeluaran.Location = New System.Drawing.Point(0, 318)
         Me.btnPengeluaran.Name = "btnPengeluaran"
         Me.btnPengeluaran.Size = New System.Drawing.Size(169, 52)
         Me.btnPengeluaran.TabIndex = 7
@@ -78,7 +77,6 @@ Partial Class AdminUtama
         'btnUser
         '
         Me.btnUser.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnUser.FlatAppearance.BorderSize = 0
         Me.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUser.Location = New System.Drawing.Point(0, 63)
@@ -91,11 +89,10 @@ Partial Class AdminUtama
         '
         'btnBiaya
         '
-        Me.btnBiaya.FlatAppearance.BorderSize = 0
         Me.btnBiaya.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBiaya.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBiaya.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBiaya.Location = New System.Drawing.Point(0, 230)
+        Me.btnBiaya.Location = New System.Drawing.Point(0, 216)
         Me.btnBiaya.Name = "btnBiaya"
         Me.btnBiaya.Size = New System.Drawing.Size(169, 52)
         Me.btnBiaya.TabIndex = 4
@@ -105,11 +102,10 @@ Partial Class AdminUtama
         '
         'btnPendapatan
         '
-        Me.btnPendapatan.FlatAppearance.BorderSize = 0
         Me.btnPendapatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPendapatan.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPendapatan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPendapatan.Location = New System.Drawing.Point(0, 288)
+        Me.btnPendapatan.Location = New System.Drawing.Point(0, 267)
         Me.btnPendapatan.Name = "btnPendapatan"
         Me.btnPendapatan.Size = New System.Drawing.Size(169, 52)
         Me.btnPendapatan.TabIndex = 6
@@ -119,7 +115,6 @@ Partial Class AdminUtama
         '
         'btnProduk
         '
-        Me.btnProduk.FlatAppearance.BorderSize = 0
         Me.btnProduk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProduk.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProduk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -152,10 +147,10 @@ Partial Class AdminUtama
         Me.Panel3.Controls.Add(Me.btnLogOut)
         Me.Panel3.Controls.Add(Me.btnPengeluaran)
         Me.Panel3.Controls.Add(Me.btnUser)
+        Me.Panel3.Controls.Add(Me.btnJasa)
         Me.Panel3.Controls.Add(Me.btnBiaya)
         Me.Panel3.Controls.Add(Me.btnPendapatan)
         Me.Panel3.Controls.Add(Me.btnProduk)
-        Me.Panel3.Controls.Add(Me.btnJasa)
         Me.Panel3.Controls.Add(Me.btnDashboard)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 112)
@@ -165,11 +160,10 @@ Partial Class AdminUtama
         '
         'btnJasa
         '
-        Me.btnJasa.FlatAppearance.BorderSize = 0
         Me.btnJasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnJasa.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnJasa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnJasa.Location = New System.Drawing.Point(3, 172)
+        Me.btnJasa.Location = New System.Drawing.Point(0, 165)
         Me.btnJasa.Name = "btnJasa"
         Me.btnJasa.Size = New System.Drawing.Size(169, 52)
         Me.btnJasa.TabIndex = 5
@@ -225,39 +219,39 @@ Partial Class AdminUtama
         Me.Panel2.Size = New System.Drawing.Size(784, 89)
         Me.Panel2.TabIndex = 4
         '
-        'Button3
+        'btnMin
         '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.Location = New System.Drawing.Point(684, 0)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(26, 26)
-        Me.Button3.TabIndex = 2
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnMin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMin.Location = New System.Drawing.Point(684, 0)
+        Me.btnMin.Name = "btnMin"
+        Me.btnMin.Size = New System.Drawing.Size(26, 26)
+        Me.btnMin.TabIndex = 2
+        Me.btnMin.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnMax
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(714, 0)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(26, 26)
-        Me.Button2.TabIndex = 1
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnMax.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMax.Location = New System.Drawing.Point(714, 0)
+        Me.btnMax.Name = "btnMax"
+        Me.btnMax.Size = New System.Drawing.Size(26, 26)
+        Me.btnMax.TabIndex = 1
+        Me.btnMax.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnClose
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(746, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(26, 26)
-        Me.Button1.TabIndex = 0
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnClose.Location = New System.Drawing.Point(746, 0)
+        Me.btnClose.Name = "btnClose"
+        Me.btnClose.Size = New System.Drawing.Size(26, 26)
+        Me.btnClose.TabIndex = 0
+        Me.btnClose.UseVisualStyleBackColor = True
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Button3)
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.btnMin)
+        Me.Panel1.Controls.Add(Me.btnMax)
+        Me.Panel1.Controls.Add(Me.btnClose)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -301,8 +295,8 @@ Partial Class AdminUtama
     Friend WithEvents lblAdmin As Label
     Friend WithEvents picDuarUlang As PictureBox
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnMin As Button
+    Friend WithEvents btnMax As Button
+    Friend WithEvents btnClose As Button
     Friend WithEvents Panel1 As Panel
 End Class

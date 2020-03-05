@@ -1,5 +1,5 @@
 ﻿Public Class AdminUtama
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnMax.Click
         If Me.WindowState = WindowState.Normal Then
             Me.WindowState = WindowState.Maximized
         Else
@@ -7,11 +7,11 @@
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnMin.Click
         Me.WindowState = WindowState.Minimized
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
 
