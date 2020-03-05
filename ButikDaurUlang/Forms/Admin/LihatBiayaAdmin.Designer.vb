@@ -34,15 +34,14 @@ Partial Class LihatBiayaAdmin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.DGBiaya = New System.Windows.Forms.DataGridView()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.LVBiaya = New System.Windows.Forms.ListView()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGBiaya, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSearch
@@ -182,15 +181,6 @@ Partial Class LihatBiayaAdmin
         Me.btnRefresh.Text = "Refresh"
         Me.btnRefresh.UseVisualStyleBackColor = True
         '
-        'DGBiaya
-        '
-        Me.DGBiaya.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGBiaya.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DGBiaya.Location = New System.Drawing.Point(19, 193)
-        Me.DGBiaya.Name = "DGBiaya"
-        Me.DGBiaya.Size = New System.Drawing.Size(1154, 408)
-        Me.DGBiaya.TabIndex = 72
-        '
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
@@ -223,13 +213,21 @@ Partial Class LihatBiayaAdmin
         Me.Panel3.Size = New System.Drawing.Size(19, 576)
         Me.Panel3.TabIndex = 68
         '
+        'LVBiaya
+        '
+        Me.LVBiaya.Location = New System.Drawing.Point(19, 193)
+        Me.LVBiaya.Name = "LVBiaya"
+        Me.LVBiaya.Size = New System.Drawing.Size(1154, 408)
+        Me.LVBiaya.TabIndex = 74
+        Me.LVBiaya.UseCompatibleStateImageBehavior = False
+        '
         'LihatBiayaAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1192, 650)
+        Me.Controls.Add(Me.LVBiaya)
         Me.Controls.Add(Me.btnRefresh)
-        Me.Controls.Add(Me.DGBiaya)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
@@ -245,7 +243,6 @@ Partial Class LihatBiayaAdmin
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGBiaya, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -256,7 +253,6 @@ Partial Class LihatBiayaAdmin
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnRefresh As Button
-    Friend WithEvents DGBiaya As DataGridView
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
@@ -266,4 +262,5 @@ Partial Class LihatBiayaAdmin
     Friend WithEvents Label13 As Label
     Friend WithEvents lblLihat As Label
     Friend WithEvents lblTambah As Label
+    Friend WithEvents LVBiaya As ListView
 End Class

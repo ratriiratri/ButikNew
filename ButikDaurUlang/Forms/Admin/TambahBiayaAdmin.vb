@@ -69,14 +69,12 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim listDetail As New List(Of EntityDetailBiaya)
+        Dim listDetail As New List(Of EntityDetailBiaya)()
 
         If LVDetailBiaya.Items.Count = 0 Then
             MsgBox("Masukan Biaya terlebih dulu")
             Exit Sub
         End If
-
-
 
     End Sub
 End Class

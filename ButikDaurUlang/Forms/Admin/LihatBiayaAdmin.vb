@@ -1,48 +1,34 @@
 ﻿Public Class LihatBiayaAdmin
 
-    Dim baris As Integer
-    Dim copyId As String
-    Dim copyNama As String
-
-    Private Sub RefreshGrid() 'tampil isi tabel pada DGUser
+    Private Sub RefreshGrid()
         DTGrid = KontrolBiaya.TampilData.ToTable
-        DGBiaya.DataSource = DTGrid
-
-        If DTGrid.Rows.Count > 0 Then
-            DGBiaya.Rows(DTGrid.Rows.Count - 1).Selected = True
-            DGBiaya.CurrentCell = DGBiaya.Item(1, DTGrid.Rows.Count - 1)
-            Call IsiBox(DTGrid.Rows.Count - 1)
-        End If
-    End Sub
-
-    Private Sub IsiBox(br As Integer)
-        If br < DTGrid.Rows.Count Then
-            With DGBiaya.Rows(br)
-                copyId = .Cells(0).Value.ToString
-                copyNama = .Cells(1).Value.ToString
-            End With
-        End If
-    End Sub
-
-    Private Sub TampilCari(kunci As String)
-
-        DTGrid = KontrolBiaya.CariData(kunci).ToTable
+        LVBiaya.DataSource = DTGrid
 
         If DTGrid.Rows.Count > 0 Then
             baris = DTGrid.Rows.Count - 1
-            DGBiaya.DataSource = DTGrid
-            DGBiaya.Rows(DTGrid.Rows.Count - 1).Selected = True
-            DGBiaya.CurrentCell = DGBiaya.Item(1, baris)
+            LVBiaya.Rows(DTGrid.Rows.Count - 1).Selected = True
+            LVBiaya.CurrentCell = LVBiaya.Item(1, baris)
+            'AturButton(True)
             IsiBox(baris)
-        Else
-            MsgBox("Data tidak ditemukan")
-            RefreshGrid()
+        End If
+
+    End Sub
+
+
+    Private Sub IsiBox(br As Integer)
+        If br < DTGrid.Rows.Count Then
+            With DGPudding.Rows(br)
+
+                CopyId = .Cells(0).Value.ToString
+                CopyNama = .Cells(1).Value.ToString
+                CopyHarga = .Cells(4).Value.ToString
+            End With
+
         End If
     End Sub
 
     Private Sub LihatBiayaAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = AdminUtama
-        RefreshGrid()
     End Sub
 
     Private Sub lblTambah_Click(sender As Object, e As EventArgs) Handles lblTambah.Click
@@ -58,17 +44,28 @@
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        If txtSearch.Text = "" Then
-            Call RefreshGrid()
+        DTGrid = KontrolBiaya.CariData(txtSearch.Text).ToTable
+        LVBiaya.Items.Clear()
+
+        Dim strItem(1) As String
+
+        If DTGrid.Rows.Count > 0 Then
+            For i = 0 To DTGrid.Rows.Count - 1
+                strItem(0) = DTGrid.Rows(i).Item(0).ToString
+                strItem(1) = DTGrid.Rows(i).Item(1).ToString
+            Next
+            LVBiaya.Items.Add(New ListViewItem(strItem))
         Else
-            Call TampilCari(txtSearch.Text)
-            txtSearch.Focus()
+            MsgBox("Data Tidak Ditemukan!")
         End If
     End Sub
 
-    Private Sub DGBiaya_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGBiaya.CellContentClick
-        baris = e.RowIndex
-        DGBiaya.Rows(baris).Selected = True
-        IsiBox(baris)
+    Private Sub LVBiaya_DoubleClick(sender As Object, e As EventArgs) Handles LVBiaya.DoubleClick
+        With TambahBiayaAdmin
+            .txtId.Text = LVBiaya.SelectedItems(0).SubItems(0).Text
+            .txtNama.Text = LVBiaya.SelectedItems(0).SubItems(1).Text
+            Me.Close()
+            .txtNama.Focus()
+        End With
     End Sub
 End Class

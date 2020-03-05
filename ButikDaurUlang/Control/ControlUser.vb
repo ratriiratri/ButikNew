@@ -97,4 +97,16 @@ Public Class ControlUser : Implements InterfaceProses
             Throw New Exception(ex.Message)
         End Try
     End Function
+
+    Public Function loginAdmin(kode As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Userr where usernameUser='" & kode & "'", OpenConnection)
+            DTS = New DataSet
+            DTA.Fill(DTS, "cariUser")
+            Dim grid As New DataView(DTS.Tables("cariUser"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
 End Class
