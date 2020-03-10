@@ -13,4 +13,11 @@
 
     Public EntitasPendapatan As New EntityPendapatan
     Public KontrolPendapatan As New ControlPendapatan
+
+    Public EntitasPengeluaran As New EntityPengeluaran
+    'Public KontrolPengeluaran As New ControlPengeluaran
+
+    Public EntitasDetailBiaya As New EntityDetailBiaya
+    Public EntitasDetailJasa As New EntityDetailjasa
+    Public EntitasDetailProduk As New EntityDetailProduk
 End Module

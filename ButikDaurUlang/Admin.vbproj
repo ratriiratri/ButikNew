@@ -76,6 +76,7 @@
     <Compile Include="Control\ControlBiaya.vb" />
     <Compile Include="Control\ControlJasa.vb" />
     <Compile Include="Control\ControlPendapatan.vb" />
+    <Compile Include="Control\ControlPengeluaran.vb" />
     <Compile Include="Control\ControlProduk.vb" />
     <Compile Include="Control\ControlUser.vb" />
     <Compile Include="Entity\EntityDetailBiaya.vb" />

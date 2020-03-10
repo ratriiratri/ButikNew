@@ -13,7 +13,7 @@
         total = 0
 
         For i = 0 To LVDetailBiaya.Items.Count - 1
-            total = total + Val(LVDetailBiaya.Items(i).SubItems(4).Text)
+            total = total + (LVDetailBiaya.Items(i).SubItems(4).Text)
         Next
 
         lblNominal.Text = total
@@ -51,11 +51,12 @@
         strItem(1) = txtNama.Text
         strItem(2) = txtJumlah.Text
         strItem(3) = txtDisc.Text
-        strItem(4) = Val(txtJumlah.Text) - (Val(txtJumlah.Text) * Val(txtDisc.Text))
+        strItem(4) = txtJumlah.Text - (txtJumlah.Text * txtDisc.Text)
 
         'tambahkan item add (ListViewDetailBiaya) dengan isi array
         LVDetailBiaya.Items.Add(New ListViewItem(strItem))
 
+        Call HitungTotal()
         Call Bersih()
     End Sub
 
@@ -75,6 +76,26 @@
             MsgBox("Masukan Biaya terlebih dulu")
             Exit Sub
         End If
+
+        With EntitasPengeluaran
+            .jmlPengeluaran = lblNominal.Text
+            .ketPengeluaran = ""
+            .tglPengeluaran = Format(Now, "yyyy/MM/dd")
+        End With
+
+        For i = 0 To LVDetailBiaya.Items.Count - 1
+            With LVDetailBiaya.Items(i)
+                EntitasBiaya.idBiaya = .SubItems(0).Text
+                EntitasDetailBiaya.idBiaya = EntitasBiaya
+                EntitasDetailBiaya.jumlahBiaya = .SubItems(2).Text
+                EntitasDetailBiaya.discBiaya = .SubItems(3).Text
+            End With
+            listDetail.Add(EntitasDetailBiaya)
+        Next
+
+    End Sub
+
+    Private Sub lblPengeluaran_TextChanged(sender As Object, e As EventArgs) Handles lblPengeluaran.TextChanged
 
     End Sub
 End Class

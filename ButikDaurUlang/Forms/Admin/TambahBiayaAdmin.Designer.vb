@@ -106,6 +106,8 @@ Partial Class TambahBiayaAdmin
         'LVDetailBiaya
         '
         Me.LVDetailBiaya.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
+        Me.LVDetailBiaya.FullRowSelect = True
+        Me.LVDetailBiaya.GridLines = True
         Me.LVDetailBiaya.Location = New System.Drawing.Point(79, 135)
         Me.LVDetailBiaya.Name = "LVDetailBiaya"
         Me.LVDetailBiaya.Size = New System.Drawing.Size(1000, 262)

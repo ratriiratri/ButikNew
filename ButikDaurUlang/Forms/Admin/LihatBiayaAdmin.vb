@@ -1,34 +1,9 @@
 ﻿Public Class LihatBiayaAdmin
 
-    Private Sub RefreshGrid()
-        DTGrid = KontrolBiaya.TampilData.ToTable
-        LVBiaya.DataSource = DTGrid
-
-        If DTGrid.Rows.Count > 0 Then
-            baris = DTGrid.Rows.Count - 1
-            LVBiaya.Rows(DTGrid.Rows.Count - 1).Selected = True
-            LVBiaya.CurrentCell = LVBiaya.Item(1, baris)
-            'AturButton(True)
-            IsiBox(baris)
-        End If
-
-    End Sub
-
-
-    Private Sub IsiBox(br As Integer)
-        If br < DTGrid.Rows.Count Then
-            With DGPudding.Rows(br)
-
-                CopyId = .Cells(0).Value.ToString
-                CopyNama = .Cells(1).Value.ToString
-                CopyHarga = .Cells(4).Value.ToString
-            End With
-
-        End If
-    End Sub
-
     Private Sub LihatBiayaAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = AdminUtama
+
+        DTGrid = KontrolBiaya.TampilData.ToTable
     End Sub
 
     Private Sub lblTambah_Click(sender As Object, e As EventArgs) Handles lblTambah.Click
