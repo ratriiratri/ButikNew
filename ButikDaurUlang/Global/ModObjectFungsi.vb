@@ -15,9 +15,12 @@
     Public KontrolPendapatan As New ControlPendapatan
 
     Public EntitasPengeluaran As New EntityPengeluaran
-    'Public KontrolPengeluaran As New ControlPengeluaran
+    Public KontrolPengeluaran As New ControlPengeluaran
 
     Public EntitasDetailBiaya As New EntityDetailBiaya
     Public EntitasDetailJasa As New EntityDetailjasa
     Public EntitasDetailProduk As New EntityDetailProduk
+
+    Public kodeLogin As String
+    Public namaAdmin As String
 End Module

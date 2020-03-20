@@ -3,15 +3,10 @@ Imports ButikDaurUlang
 
 Public Class ControlPengeluaran : Implements InterfaceProses
 
+    Dim Sql As String
+
     Public Function InsertData(Ob As Object) As OleDbCommand Implements InterfaceProses.InsertData
-        Dim data As New EntityPengeluaran
-        data = Ob
-        CMD = New OleDbCommand("insert into Pengeluaran values('" & data.idPengeluaran & "','" & data.jmlPengeluaran & "','" & data.ketPengeluaran _
-                               & data.tglPengeluaran & "','" & data.idUser & "'", OpenConnection)
-        CMD.CommandType = CommandType.Text
-        CMD.ExecuteNonQuery()
-        CMD = New OleDbCommand("", CloseConnection)
-        Return CMD
+        Throw New NotImplementedException()
     End Function
 
     Public Function UpdateData(Ob As Object) As OleDbCommand Implements InterfaceProses.UpdateData
@@ -79,6 +74,35 @@ Public Class ControlPengeluaran : Implements InterfaceProses
             Throw New Exception(ex.Message)
             Return cek
         End Try
+    End Function
+
+    Public Function SimpanData(ByVal _pengeluaran As EntityPengeluaran, ByVal _listBiaya As List(Of EntityDetailBiaya)) As String
+        Dim idb As String
+        idb = ""
+        CloseConnection()
+
+        With _pengeluaran
+            Sql = "insert into Pengeluaran values ('" & .idPengeluaran & "','" & .jmlPengeluaran & "','" & .ketPengeluaran & "','" & .tglPengeluaran & "','" & .idUser & "')"
+            CMD = New OleDbCommand(Sql, OpenConnection)
+            CMD.CommandType = CommandType.Text
+            CMD.ExecuteNonQuery()
+            CMD = New OleDbCommand("", CloseConnection)
+        End With
+
+        CloseConnection()
+
+        For i = 0 To _listBiaya.Count - 1
+            With _listBiaya(i)
+                Sql = "insert into DetailBiaya values ('" & .idBiaya & "','" & .idPengeluaran & "','" & .jumlahBiaya & "')"
+                CMD = New OleDbCommand(Sql, OpenConnection)
+                CMD.CommandType = CommandType.Text
+                CMD.ExecuteNonQuery()
+                CMD = New OleDbCommand("", CloseConnection)
+            End With
+        Next
+
+        Return idb
+
     End Function
 
     Function FCKdPengeluaran() As String

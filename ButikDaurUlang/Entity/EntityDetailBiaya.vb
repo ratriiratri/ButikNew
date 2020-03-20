@@ -1,33 +1,23 @@
 ﻿Public Class EntityDetailBiaya
-    Private biaya As EntityBiaya
-    Private pengeluaran As EntityPengeluaran
-    Private disc As Double
+    Private biaya As String
+    Private pengeluaran As String
     Private jumlah As Integer
 
-    Public Property idBiaya() As EntityBiaya
+    Public Property idBiaya() As String
         Get
             Return biaya
         End Get
-        Set(value As EntityBiaya)
+        Set(value As String)
             biaya = value
         End Set
     End Property
 
-    Public Property idPengeluaran() As EntityPengeluaran
+    Public Property idPengeluaran() As String
         Get
             Return pengeluaran
         End Get
-        Set(value As EntityPengeluaran)
+        Set(value As String)
             pengeluaran = value
-        End Set
-    End Property
-
-    Public Property discBiaya() As Double
-        Get
-            Return disc
-        End Get
-        Set(value As Double)
-            disc = value
         End Set
     End Property
 

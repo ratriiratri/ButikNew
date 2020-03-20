@@ -100,7 +100,7 @@ Public Class ControlUser : Implements InterfaceProses
 
     Public Function loginAdmin(kode As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Userr where usernameUser='" & kode & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select * from Userr where statusUser = '1' and usernameUser='" & kode & "'", OpenConnection)
             DTS = New DataSet
             DTA.Fill(DTS, "cariUser")
             Dim grid As New DataView(DTS.Tables("cariUser"))

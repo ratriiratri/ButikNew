@@ -80,6 +80,24 @@ Public Class ControlBiaya : Implements InterfaceProses
         End Try
     End Function
 
+    Function TampilBiaya() As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Biaya", OpenConnection)
+
+            Try
+                DTS = New DataSet()
+                DTS.Tables("tblBiaya").Clear()
+            Catch ex As Exception
+            End Try
+
+            DTA.Fill(DTS, "tblBiaya")
+            Dim grid As New DataView(DTS.Tables("tblBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
     Function FCKdBiaya() As String
         Dim baru As String
         Dim akhir As Integer

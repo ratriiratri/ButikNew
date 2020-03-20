@@ -160,16 +160,16 @@
     <Compile Include="Forms\Admin\LihatUserAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin\TambahBiayaAdmin.Designer.vb">
       <DependentUpon>TambahBiayaAdmin.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\TambahBiayaAdmin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\TambahJasaAdmin.Designer.vb">
-      <DependentUpon>TambahJasaAdmin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\TambahJasaAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin\TambahPendapatanAdmin.Designer.vb">
@@ -240,11 +240,11 @@
     <EmbeddedResource Include="Forms\Admin\LihatUserAdmin.resx">
       <DependentUpon>LihatUserAdmin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\TambahBiayaAdmin.resx">
       <DependentUpon>TambahBiayaAdmin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\TambahJasaAdmin.resx">
-      <DependentUpon>TambahJasaAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\TambahPendapatanAdmin.resx">
       <DependentUpon>TambahPendapatanAdmin.vb</DependentUpon>

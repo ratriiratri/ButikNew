@@ -24,4 +24,4 @@ E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\bin\Debug\ButikDaurUla
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\bin\Debug\ButikDaurUlang.exe
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\bin\Debug\ButikDaurUlang.pdb
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\bin\Debug\ButikDaurUlang.xml
-E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\Admin.vbprojAssemblyReference.cache
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.Login.resources

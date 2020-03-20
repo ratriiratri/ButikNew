@@ -2,7 +2,6 @@ E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\bin\Debug\User.exe.config
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\bin\Debug\User.exe
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\bin\Debug\User.pdb
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\bin\Debug\User.xml
-E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.vbprojAssemblyReference.cache
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.Resources.resources
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.vbproj.GenerateResource.cache
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.vbproj.CoreCompileInputs.cache
@@ -10,3 +9,9 @@ E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.exe
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.xml
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.pdb
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.userUtama.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.DataBiaya.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.DataProduk.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.LihatPendapatan.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.LihatPengeluaran.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.LihatTransaksiProduk.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.TambahPengeluaran.resources

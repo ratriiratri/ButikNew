@@ -72,6 +72,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\EntityBiaya.vb" />
+    <Compile Include="Entity\EntityJasa.vb" />
+    <Compile Include="Entity\EntityProduk.vb" />
+    <Compile Include="Entity\EntityUser.vb" />
     <Compile Include="Forms\DataBiaya.Designer.vb">
       <DependentUpon>DataBiaya.vb</DependentUpon>
     </Compile>
@@ -185,7 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Control\" />
-    <Folder Include="Entity\" />
     <Folder Include="Global\" />
     <Folder Include="Interface\" />
     <Folder Include="Resources\" />

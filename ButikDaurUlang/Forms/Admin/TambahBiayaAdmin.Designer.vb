@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class TambahBiayaAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,23 +20,19 @@ Partial Class TambahBiayaAdmin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.cbBiaya = New System.Windows.Forms.ComboBox()
         Me.LVDetailBiaya = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.lblTanggal = New System.Windows.Forms.Label()
         Me.lblPengeluaran = New System.Windows.Forms.Label()
         Me.lblUser = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtJumlah = New System.Windows.Forms.TextBox()
-        Me.btnCariBarang = New System.Windows.Forms.Button()
         Me.btnNew = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -45,9 +41,7 @@ Partial Class TambahBiayaAdmin
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txtDisc = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtNama = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -73,14 +67,12 @@ Partial Class TambahBiayaAdmin
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.Controls.Add(Me.cbBiaya)
         Me.Panel5.Controls.Add(Me.LVDetailBiaya)
-        Me.Panel5.Controls.Add(Me.Label15)
         Me.Panel5.Controls.Add(Me.lblTanggal)
         Me.Panel5.Controls.Add(Me.lblPengeluaran)
         Me.Panel5.Controls.Add(Me.lblUser)
-        Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Controls.Add(Me.txtJumlah)
-        Me.Panel5.Controls.Add(Me.btnCariBarang)
         Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.btnDelete)
         Me.Panel5.Controls.Add(Me.btnSave)
@@ -89,9 +81,7 @@ Partial Class TambahBiayaAdmin
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label6)
-        Me.Panel5.Controls.Add(Me.txtDisc)
         Me.Panel5.Controls.Add(Me.Label5)
-        Me.Panel5.Controls.Add(Me.txtNama)
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Controls.Add(Me.txtId)
         Me.Panel5.Controls.Add(Me.Label3)
@@ -103,9 +93,20 @@ Partial Class TambahBiayaAdmin
         Me.Panel5.Size = New System.Drawing.Size(1154, 512)
         Me.Panel5.TabIndex = 60
         '
+        'cbBiaya
+        '
+        Me.cbBiaya.Enabled = False
+        Me.cbBiaya.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbBiaya.FormattingEnabled = True
+        Me.cbBiaya.Location = New System.Drawing.Point(201, 95)
+        Me.cbBiaya.Name = "cbBiaya"
+        Me.cbBiaya.Size = New System.Drawing.Size(550, 24)
+        Me.cbBiaya.TabIndex = 93
+        '
         'LVDetailBiaya
         '
-        Me.LVDetailBiaya.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4, Me.ColumnHeader5})
+        Me.LVDetailBiaya.AutoArrange = False
+        Me.LVDetailBiaya.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
         Me.LVDetailBiaya.FullRowSelect = True
         Me.LVDetailBiaya.GridLines = True
         Me.LVDetailBiaya.Location = New System.Drawing.Point(79, 135)
@@ -118,43 +119,23 @@ Partial Class TambahBiayaAdmin
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "ID"
-        Me.ColumnHeader1.Width = 107
+        Me.ColumnHeader1.Width = 122
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Nama"
-        Me.ColumnHeader2.Width = 365
+        Me.ColumnHeader2.Width = 560
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Jumlah"
-        Me.ColumnHeader3.Width = 196
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "Disc"
-        Me.ColumnHeader4.Width = 105
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Sub Total"
-        Me.ColumnHeader5.Width = 223
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(748, 99)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(20, 17)
-        Me.Label15.TabIndex = 91
-        Me.Label15.Text = "%"
+        Me.ColumnHeader3.Width = 314
         '
         'lblTanggal
         '
         Me.lblTanggal.AutoSize = True
         Me.lblTanggal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTanggal.Location = New System.Drawing.Point(1044, 23)
+        Me.lblTanggal.Location = New System.Drawing.Point(943, 23)
         Me.lblTanggal.Name = "lblTanggal"
         Me.lblTanggal.Size = New System.Drawing.Size(74, 17)
         Me.lblTanggal.TabIndex = 90
@@ -180,33 +161,15 @@ Partial Class TambahBiayaAdmin
         Me.lblUser.TabIndex = 88
         Me.lblUser.Text = "lblUser"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(692, 76)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(51, 17)
-        Me.Label7.TabIndex = 87
-        Me.Label7.Text = "Diskon"
-        '
         'txtJumlah
         '
+        Me.txtJumlah.Enabled = False
         Me.txtJumlah.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtJumlah.Location = New System.Drawing.Point(784, 96)
+        Me.txtJumlah.Location = New System.Drawing.Point(760, 96)
         Me.txtJumlah.Name = "txtJumlah"
-        Me.txtJumlah.Size = New System.Drawing.Size(223, 23)
+        Me.txtJumlah.ReadOnly = True
+        Me.txtJumlah.Size = New System.Drawing.Size(260, 23)
         Me.txtJumlah.TabIndex = 85
-        '
-        'btnCariBarang
-        '
-        Me.btnCariBarang.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCariBarang.Location = New System.Drawing.Point(185, 96)
-        Me.btnCariBarang.Name = "btnCariBarang"
-        Me.btnCariBarang.Size = New System.Drawing.Size(37, 23)
-        Me.btnCariBarang.TabIndex = 84
-        Me.btnCariBarang.Text = "..."
-        Me.btnCariBarang.UseVisualStyleBackColor = True
         '
         'btnNew
         '
@@ -221,11 +184,11 @@ Partial Class TambahBiayaAdmin
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(993, 464)
+        Me.btnDelete.Location = New System.Drawing.Point(994, 464)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 31)
         Me.btnDelete.TabIndex = 81
-        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.Text = "Del"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnSave
@@ -252,7 +215,7 @@ Partial Class TambahBiayaAdmin
         '
         Me.lblNominal.AutoSize = True
         Me.lblNominal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNominal.Location = New System.Drawing.Point(994, 408)
+        Me.lblNominal.Location = New System.Drawing.Point(994, 416)
         Me.lblNominal.Name = "lblNominal"
         Me.lblNominal.Size = New System.Drawing.Size(23, 25)
         Me.lblNominal.TabIndex = 78
@@ -263,7 +226,7 @@ Partial Class TambahBiayaAdmin
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(963, 415)
+        Me.Label9.Location = New System.Drawing.Point(963, 420)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(33, 17)
         Me.Label9.TabIndex = 77
@@ -273,7 +236,7 @@ Partial Class TambahBiayaAdmin
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(903, 415)
+        Me.Label8.Location = New System.Drawing.Point(903, 420)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(59, 17)
         Me.Label8.TabIndex = 76
@@ -283,39 +246,21 @@ Partial Class TambahBiayaAdmin
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(781, 76)
+        Me.Label6.Location = New System.Drawing.Point(757, 75)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(53, 17)
         Me.Label6.TabIndex = 71
         Me.Label6.Text = "Jumlah"
         '
-        'txtDisc
-        '
-        Me.txtDisc.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDisc.Location = New System.Drawing.Point(695, 96)
-        Me.txtDisc.Name = "txtDisc"
-        Me.txtDisc.Size = New System.Drawing.Size(47, 23)
-        Me.txtDisc.TabIndex = 70
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(244, 76)
+        Me.Label5.Location = New System.Drawing.Point(198, 75)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 17)
         Me.Label5.TabIndex = 69
         Me.Label5.Text = "Nama Biaya"
-        '
-        'txtNama
-        '
-        Me.txtNama.Enabled = False
-        Me.txtNama.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNama.Location = New System.Drawing.Point(247, 96)
-        Me.txtNama.Name = "txtNama"
-        Me.txtNama.ReadOnly = True
-        Me.txtNama.Size = New System.Drawing.Size(425, 23)
-        Me.txtNama.TabIndex = 68
         '
         'Label4
         '
@@ -334,7 +279,7 @@ Partial Class TambahBiayaAdmin
         Me.txtId.Location = New System.Drawing.Point(79, 96)
         Me.txtId.Name = "txtId"
         Me.txtId.ReadOnly = True
-        Me.txtId.Size = New System.Drawing.Size(100, 23)
+        Me.txtId.Size = New System.Drawing.Size(116, 23)
         Me.txtId.TabIndex = 66
         '
         'Label3
@@ -359,10 +304,11 @@ Partial Class TambahBiayaAdmin
         '
         'btnAdd
         '
+        Me.btnAdd.Enabled = False
         Me.btnAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.Location = New System.Drawing.Point(1013, 92)
+        Me.btnAdd.Location = New System.Drawing.Point(1025, 92)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(66, 31)
+        Me.btnAdd.Size = New System.Drawing.Size(54, 31)
         Me.btnAdd.TabIndex = 58
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -527,9 +473,7 @@ Partial Class TambahBiayaAdmin
     Friend WithEvents Label4 As Label
     Friend WithEvents txtId As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents txtDisc As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtNama As TextBox
     Friend WithEvents lblNominal As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
@@ -542,10 +486,7 @@ Partial Class TambahBiayaAdmin
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnSave As Button
     Friend WithEvents btnEdit As Button
-    Friend WithEvents btnCariBarang As Button
-    Friend WithEvents Label7 As Label
     Friend WithEvents txtJumlah As TextBox
-    Friend WithEvents Label15 As Label
     Friend WithEvents lblTanggal As Label
     Friend WithEvents lblPengeluaran As Label
     Friend WithEvents lblUser As Label
@@ -554,6 +495,5 @@ Partial Class TambahBiayaAdmin
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
     Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
-    Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents cbBiaya As ComboBox
 End Class
