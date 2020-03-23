@@ -26,7 +26,7 @@
         total = 0
 
         For i = 0 To LVDetailBiaya.Items.Count - 1
-            total = total + (LVDetailBiaya.Items(i).SubItems(3).Text)
+            total = total + (LVDetailBiaya.Items(i).SubItems(4).Text)
         Next
 
         lblNominal.Text = total
@@ -67,12 +67,13 @@
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'deklarasi array string
-        Dim strItem(3) As String
+        Dim strItem(4) As String
 
         strItem(0) = txtId.Text
         strItem(1) = cbBiaya.Text
         strItem(2) = txtQty.Text
-        strItem(3) = txtJumlah.Text * txtQty.Text
+        strItem(3) = txtJumlah.Text
+        strItem(4) = txtJumlah.Text * txtQty.Text
 
         'tambahkan item add (ListViewDetailBiaya) dengan isi array
         LVDetailBiaya.Items.Add(New ListViewItem(strItem))
@@ -100,18 +101,21 @@
             Exit Sub
         End If
 
+        With EntitasPengeluaran
+            .idPengeluaran = lblPengeluaran.Text
+            .jmlPengeluaran = lblNominal.Text
+            .ketPengeluaran = ""
+            .tglPengeluaran = Format(Now, "yyyy/MM/dd")
+            .idUser = lblUser.Text
+        End With
+
         For i = 0 To LVDetailBiaya.Items.Count - 1
             EntitasDetailBiaya = New EntityDetailBiaya
             With LVDetailBiaya.Items(i)
                 EntitasDetailBiaya.idBiaya = .SubItems(0).Text
                 EntitasDetailBiaya.idPengeluaran = lblPengeluaran.Text
                 EntitasDetailBiaya.jumlahBiaya = .SubItems(2).Text
-
-                EntitasPengeluaran.idPengeluaran = lblPengeluaran.Text
-                EntitasPengeluaran.jmlPengeluaran = .SubItems(3).Text
-                EntitasPengeluaran.ketPengeluaran = .SubItems(1).Text
-                EntitasPengeluaran.tglPengeluaran = Format(Now, "yyyy/MM/dd")
-                EntitasPengeluaran.idUser = lblUser.Text
+                EntitasDetailBiaya.hargaBiaya = .SubItems(3).Text
             End With
             listDetail.Add(EntitasDetailBiaya)
         Next (i)
@@ -142,6 +146,7 @@
 
         LVDetailBiaya.Items.Clear()
 
+        txtQty.Focus()
         cbBiaya.Enabled = True
         txtQty.Enabled = True
         txtQty.ReadOnly = False

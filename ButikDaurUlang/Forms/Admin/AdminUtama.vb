@@ -25,10 +25,7 @@
         LihatJasaAdmin.Close()
         DataBiayaAdmin.Close()
         TambahBiayaAdmin.Close()
-        LihatBiayaAdmin.Close()
-        TambahPendapatanAdmin.Close()
         LihatPendapatanAdmin.Close()
-        TambahPengeluaranAdmin.Close()
         LihatPengeluaranAdmin.Close()
     End Sub
 
@@ -42,10 +39,7 @@
         LihatJasaAdmin.Close()
         DataBiayaAdmin.Close()
         TambahBiayaAdmin.Close()
-        LihatBiayaAdmin.Close()
-        TambahPendapatanAdmin.Close()
         LihatPendapatanAdmin.Close()
-        TambahPengeluaranAdmin.Close()
         LihatPengeluaranAdmin.Close()
     End Sub
 
@@ -59,10 +53,7 @@
         LihatJasaAdmin.Close()
         DataBiayaAdmin.Close()
         TambahBiayaAdmin.Close()
-        LihatBiayaAdmin.Close()
-        TambahPendapatanAdmin.Close()
         LihatPendapatanAdmin.Close()
-        TambahPengeluaranAdmin.Close()
         LihatPengeluaranAdmin.Close()
     End Sub
 
@@ -76,10 +67,7 @@
         LihatJasaAdmin.Close()
         DataBiayaAdmin.Show()
         TambahBiayaAdmin.Close()
-        LihatBiayaAdmin.Close()
-        TambahPendapatanAdmin.Close()
         LihatPendapatanAdmin.Close()
-        TambahPengeluaranAdmin.Close()
         LihatPengeluaranAdmin.Close()
     End Sub
 
@@ -93,10 +81,7 @@
         LihatJasaAdmin.Close()
         DataBiayaAdmin.Close()
         TambahBiayaAdmin.Close()
-        LihatBiayaAdmin.Close()
-        TambahPendapatanAdmin.Close()
         LihatPendapatanAdmin.Close()
-        TambahPengeluaranAdmin.Close()
         LihatPengeluaranAdmin.Close()
     End Sub
 
@@ -110,10 +95,7 @@
         LihatJasaAdmin.Close()
         DataBiayaAdmin.Close()
         TambahBiayaAdmin.Close()
-        LihatBiayaAdmin.Close()
-        TambahPendapatanAdmin.Show()
         LihatPendapatanAdmin.Close()
-        TambahPengeluaranAdmin.Close()
         LihatPengeluaranAdmin.Close()
     End Sub
 
@@ -127,10 +109,7 @@
         LihatJasaAdmin.Close()
         DataBiayaAdmin.Close()
         TambahBiayaAdmin.Close()
-        LihatBiayaAdmin.Close()
-        TambahPendapatanAdmin.Close()
         LihatPendapatanAdmin.Close()
-        TambahPengeluaranAdmin.Show()
         LihatPengeluaranAdmin.Close()
     End Sub
 

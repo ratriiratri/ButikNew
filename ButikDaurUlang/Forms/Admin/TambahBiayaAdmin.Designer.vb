@@ -62,6 +62,7 @@ Partial Class TambahBiayaAdmin
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,7 +132,7 @@ Partial Class TambahBiayaAdmin
         'LVDetailBiaya
         '
         Me.LVDetailBiaya.AutoArrange = False
-        Me.LVDetailBiaya.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader4, Me.ColumnHeader3})
+        Me.LVDetailBiaya.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader4, Me.ColumnHeader3, Me.ColumnHeader5})
         Me.LVDetailBiaya.FullRowSelect = True
         Me.LVDetailBiaya.GridLines = True
         Me.LVDetailBiaya.Location = New System.Drawing.Point(79, 135)
@@ -159,7 +160,7 @@ Partial Class TambahBiayaAdmin
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Jumlah"
-        Me.ColumnHeader3.Width = 320
+        Me.ColumnHeader3.Width = 232
         '
         'lblTanggal
         '
@@ -467,6 +468,11 @@ Partial Class TambahBiayaAdmin
         'Timer1
         '
         '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Sub Total"
+        Me.ColumnHeader5.Width = 232
+        '
         'TambahBiayaAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -529,4 +535,5 @@ Partial Class TambahBiayaAdmin
     Friend WithEvents Label7 As Label
     Friend WithEvents txtQty As TextBox
     Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader5 As ColumnHeader
 End Class

@@ -2,6 +2,7 @@
     Private biaya As String
     Private pengeluaran As String
     Private jumlah As Integer
+    Private harga As Integer
 
     Public Property idBiaya() As String
         Get
@@ -27,6 +28,15 @@
         End Get
         Set(value As Integer)
             jumlah = value
+        End Set
+    End Property
+
+    Public Property hargaBiaya() As Integer
+        Get
+            Return harga
+        End Get
+        Set(value As Integer)
+            harga = value
         End Set
     End Property
 End Class
