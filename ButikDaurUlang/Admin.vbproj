@@ -172,18 +172,6 @@
     <Compile Include="Forms\Admin\TambahBiayaAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\TambahPendapatanAdmin.Designer.vb">
-      <DependentUpon>TambahPendapatanAdmin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\TambahPendapatanAdmin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\TambahPengeluaranAdmin.Designer.vb">
-      <DependentUpon>TambahPengeluaranAdmin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\TambahPengeluaranAdmin.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Global\ModKoneksiDB.vb" />
     <Compile Include="Global\ModObjectFungsi.vb" />
     <Compile Include="Interface\InterfaceProses.vb" />
@@ -245,12 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\TambahBiayaAdmin.resx">
       <DependentUpon>TambahBiayaAdmin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\TambahPendapatanAdmin.resx">
-      <DependentUpon>TambahPendapatanAdmin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\TambahPengeluaranAdmin.resx">
-      <DependentUpon>TambahPengeluaranAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

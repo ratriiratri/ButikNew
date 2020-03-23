@@ -39,9 +39,11 @@ Partial Class LihatBiayaAdmin
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.LVBiaya = New System.Windows.Forms.ListView()
+        Me.DGBiaya = New System.Windows.Forms.DataGridView()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGBiaya, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSearch
@@ -221,11 +223,21 @@ Partial Class LihatBiayaAdmin
         Me.LVBiaya.TabIndex = 74
         Me.LVBiaya.UseCompatibleStateImageBehavior = False
         '
+        'DGBiaya
+        '
+        Me.DGBiaya.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGBiaya.Location = New System.Drawing.Point(19, 193)
+        Me.DGBiaya.Name = "DGBiaya"
+        Me.DGBiaya.ReadOnly = True
+        Me.DGBiaya.Size = New System.Drawing.Size(1154, 408)
+        Me.DGBiaya.TabIndex = 75
+        '
         'LihatBiayaAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1192, 650)
+        Me.Controls.Add(Me.DGBiaya)
         Me.Controls.Add(Me.LVBiaya)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.Panel6)
@@ -243,6 +255,7 @@ Partial Class LihatBiayaAdmin
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGBiaya, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -263,4 +276,5 @@ Partial Class LihatBiayaAdmin
     Friend WithEvents lblLihat As Label
     Friend WithEvents lblTambah As Label
     Friend WithEvents LVBiaya As ListView
+    Friend WithEvents DGBiaya As DataGridView
 End Class

@@ -5,13 +5,15 @@
 
     Private Sub lblTambah_Click(sender As Object, e As EventArgs) Handles lblTambah.Click
         Me.Close()
-        TambahJasaAdmin.Show()
         DataJasaAdmin.Close()
     End Sub
 
     Private Sub lblData_Click(sender As Object, e As EventArgs) Handles lblData.Click
         Me.Close()
-        TambahJasaAdmin.Close()
         DataJasaAdmin.Show()
+    End Sub
+
+    Private Sub DGJasa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGJasa.CellContentClick
+
     End Sub
 End Class

@@ -82,7 +82,8 @@ Public Class ControlBiaya : Implements InterfaceProses
 
     Function TampilBiaya() As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Biaya", OpenConnection)
+            DTA = New OleDbDataAdapter("select db.idBiaya, pl.ketPengeluaran, db.idPengeluaran, db.jumlahBiaya, pl.tglPengeluaran 
+from Pengeluaran pl join DetailBiaya db on pl.idPengeluaran = db.idPengeluaran", OpenConnection)
 
             Try
                 DTS = New DataSet()

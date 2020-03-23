@@ -11,7 +11,6 @@ E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUla
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatProdukAdmin.resources
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatUserAdmin.resources
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.TambahBiayaAdmin.resources
-E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.TambahJasaAdmin.resources
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.TambahPendapatanAdmin.resources
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.TambahPengeluaranAdmin.resources
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.Resources.resources
@@ -25,3 +24,4 @@ E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\bin\Debug\ButikDaurUla
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\bin\Debug\ButikDaurUlang.pdb
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\bin\Debug\ButikDaurUlang.xml
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUlang.Login.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\Admin.vbprojAssemblyReference.cache

@@ -6,8 +6,7 @@ Public Class ControlPendapatan : Implements InterfaceProses
     Public Function InsertData(Ob As Object) As OleDbCommand Implements InterfaceProses.InsertData
         Dim data As New EntityPendapatan
         data = Ob
-        CMD = New OleDbCommand("insert into Pendapatan values('" & data.idPendapatan & "','" & data.jmlPendapatan & "','" & data.ketPendapatan _
-                               & data.tglPendapatan & "','" & data.idUser & "'", OpenConnection)
+        CMD = New OleDbCommand("insert into Pendapatan values('" & data.idPendapatan & "','" & data.jmlPendapatan & "','" & data.ketPendapatan & "','" & data.tglPendapatan & "','" & data.idUser & "')", OpenConnection)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", CloseConnection)
@@ -17,6 +16,7 @@ Public Class ControlPendapatan : Implements InterfaceProses
     Public Function UpdateData(Ob As Object) As OleDbCommand Implements InterfaceProses.UpdateData
         Dim data As New EntityPendapatan
         data = Ob
+        'hanya bisa update punya sendiri, bukan punya orang lain.
         CMD = New OleDbCommand("update Pendapatan set jmlPendapatan='" & data.jmlPendapatan _
                                & "',ketPendapatan='" & data.ketPendapatan _
                                & "' where idPendapatan='" & data.idPendapatan & "'", OpenConnection)
@@ -60,6 +60,24 @@ Public Class ControlPendapatan : Implements InterfaceProses
             DTA.Fill(DTS, "cariPendapatan")
 
             Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function TampilDataPendapatanAdmin(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Pendapatan where idUser='" & kunci & "'", OpenConnection)
+
+            Try
+                DTS = New DataSet()
+                DTS.Tables("tblPendapatan").Clear()
+            Catch ex As Exception
+            End Try
+
+            DTA.Fill(DTS, "tblPendapatan")
+            Dim grid As New DataView(DTS.Tables("tblPendapatan"))
             Return grid
         Catch ex As Exception
             Throw New Exception(ex.Message)

@@ -53,13 +53,11 @@
 
     Private Sub lblTambah_Click(sender As Object, e As EventArgs) Handles lblTambah.Click
         Me.Close()
-        TambahJasaAdmin.Show()
         LihatJasaAdmin.Close()
     End Sub
 
     Private Sub lblLihat_Click(sender As Object, e As EventArgs) Handles lblLihat.Click
         Me.Close()
-        TambahJasaAdmin.Close()
         LihatJasaAdmin.Show()
     End Sub
 

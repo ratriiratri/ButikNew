@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class DataBiayaAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class DataBiayaAdmin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.btnNew = New System.Windows.Forms.Button()
@@ -46,7 +46,6 @@ Partial Class DataBiayaAdmin
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel7.SuspendLayout()
         CType(Me.DGBiaya, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -56,7 +55,6 @@ Partial Class DataBiayaAdmin
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.Button1)
         Me.Panel7.Controls.Add(Me.btnNew)
         Me.Panel7.Controls.Add(Me.btnRefresh)
         Me.Panel7.Controls.Add(Me.btnDelete)
@@ -308,16 +306,6 @@ Partial Class DataBiayaAdmin
         Me.Panel6.Size = New System.Drawing.Size(1154, 21)
         Me.Panel6.TabIndex = 61
         '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(534, 151)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(86, 31)
-        Me.Button1.TabIndex = 36
-        Me.Button1.Text = "New"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'DataBiayaAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -369,5 +357,4 @@ Partial Class DataBiayaAdmin
     Friend WithEvents btnRefresh As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnEdit As Button
-    Friend WithEvents Button1 As Button
 End Class

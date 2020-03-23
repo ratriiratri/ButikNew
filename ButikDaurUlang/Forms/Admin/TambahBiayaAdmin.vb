@@ -16,6 +16,7 @@
 
     Private Sub Bersih() 'clear isi 
         txtId.Text = ""
+        txtQty.Text = ""
         txtJumlah.Text = ""
     End Sub
 
@@ -25,7 +26,7 @@
         total = 0
 
         For i = 0 To LVDetailBiaya.Items.Count - 1
-            total = total + (LVDetailBiaya.Items(i).SubItems(2).Text)
+            total = total + (LVDetailBiaya.Items(i).SubItems(3).Text)
         Next
 
         lblNominal.Text = total
@@ -36,8 +37,10 @@
 
         Call Bersih()
 
+        btnAdd.Enabled = False
+        btnEdit.Enabled = False
+
         lblUser.Text = kodeLogin
-        lblPengeluaran.Text = KontrolPengeluaran.FCKdPengeluaran
 
         lblTanggal.Text = Format(Now, "yyyy/MM/dd hh:mm")
     End Sub
@@ -64,11 +67,12 @@
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'deklarasi array string
-        Dim strItem(2) As String
+        Dim strItem(3) As String
 
         strItem(0) = txtId.Text
         strItem(1) = cbBiaya.Text
-        strItem(2) = txtJumlah.Text
+        strItem(2) = txtQty.Text
+        strItem(3) = txtJumlah.Text * txtQty.Text
 
         'tambahkan item add (ListViewDetailBiaya) dengan isi array
         LVDetailBiaya.Items.Add(New ListViewItem(strItem))
@@ -80,17 +84,7 @@
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         LVDetailBiaya.SelectedItems(0).Remove()
-
-        'pengurangannya masih salah 
-
-        Dim total As Integer
-
-        total = 0
-        For i = 0 To LVDetailBiaya.Items.Count - 1
-            total = (LVDetailBiaya.Items(i).SubItems(2).Text) - total
-        Next
-
-        lblNominal.Text = total
+        Call HitungTotal()
     End Sub
 
     Private Sub btnCariBarang_Click(sender As Object, e As EventArgs)
@@ -106,33 +100,59 @@
             Exit Sub
         End If
 
-        With EntitasPengeluaran
-            .idPengeluaran = lblPengeluaran.Text
-            .jmlPengeluaran = lblNominal.Text
-            .ketPengeluaran = ""
-            .tglPengeluaran = Format(Now, "yyyy/MM/dd")
-            .idUser = lblUser.Text
-        End With
-
         For i = 0 To LVDetailBiaya.Items.Count - 1
+            EntitasDetailBiaya = New EntityDetailBiaya
             With LVDetailBiaya.Items(i)
-                EntitasBiaya.idBiaya = .SubItems(0).Text
+                EntitasDetailBiaya.idBiaya = .SubItems(0).Text
                 EntitasDetailBiaya.idPengeluaran = lblPengeluaran.Text
                 EntitasDetailBiaya.jumlahBiaya = .SubItems(2).Text
+
+                EntitasPengeluaran.idPengeluaran = lblPengeluaran.Text
+                EntitasPengeluaran.jmlPengeluaran = .SubItems(3).Text
+                EntitasPengeluaran.ketPengeluaran = .SubItems(1).Text
+                EntitasPengeluaran.tglPengeluaran = Format(Now, "yyyy/MM/dd")
+                EntitasPengeluaran.idUser = lblUser.Text
             End With
             listDetail.Add(EntitasDetailBiaya)
-        Next
+        Next (i)
         KontrolPengeluaran.SimpanData(EntitasPengeluaran, listDetail)
         MsgBox("Data Berhasil Disimpan")
+
+        Call Bersih()
+
+        LVDetailBiaya.Items.Clear()
+
+        cbBiaya.Enabled = False
+        txtQty.Enabled = False
+        txtQty.ReadOnly = True
+        txtJumlah.Enabled = False
+        txtJumlah.ReadOnly = True
+
+        lblPengeluaran.Text = ""
+
+        btnNew.Enabled = True
+        btnEdit.Enabled = False
+        btnAdd.Enabled = False
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
+        Call Bersih()
         Call isiCbBiaya()
 
+
+        LVDetailBiaya.Items.Clear()
+
         cbBiaya.Enabled = True
+        txtQty.Enabled = True
+        txtQty.ReadOnly = False
         txtJumlah.Enabled = True
         txtJumlah.ReadOnly = False
+
         btnAdd.Enabled = True
+        btnNew.Enabled = False
+        btnEdit.Enabled = True
+
+        lblPengeluaran.Text = KontrolPengeluaran.FCKdPengeluaran
     End Sub
 
     Private Sub cbBiaya_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBiaya.SelectedIndexChanged
@@ -142,7 +162,15 @@
         DTR.Read()
         If DTR.HasRows Then
             txtId.Text = DTR.Item("idBiaya")
-            txtJumlah.Focus()
+            txtQty.Focus()
         End If
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        'belum
+    End Sub
+
+    Private Sub lblPengeluaran_Click(sender As Object, e As EventArgs) Handles lblPengeluaran.Click
+
     End Sub
 End Class

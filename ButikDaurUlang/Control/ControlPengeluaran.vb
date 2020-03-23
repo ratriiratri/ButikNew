@@ -6,7 +6,13 @@ Public Class ControlPengeluaran : Implements InterfaceProses
     Dim Sql As String
 
     Public Function InsertData(Ob As Object) As OleDbCommand Implements InterfaceProses.InsertData
-        Throw New NotImplementedException()
+        Dim data As New EntityPengeluaran
+        data = Ob
+        CMD = New OleDbCommand("insert into Pengeluaran values('" & data.idPengeluaran & "','" & data.jmlPengeluaran & "','" & data.ketPengeluaran & "','" & data.tglPengeluaran & "','" & data.idUser & "')", OpenConnection)
+        CMD.CommandType = CommandType.Text
+        CMD.ExecuteNonQuery()
+        CMD = New OleDbCommand("", CloseConnection)
+        Return CMD
     End Function
 
     Public Function UpdateData(Ob As Object) As OleDbCommand Implements InterfaceProses.UpdateData
@@ -73,6 +79,24 @@ Public Class ControlPengeluaran : Implements InterfaceProses
         Catch ex As Exception
             Throw New Exception(ex.Message)
             Return cek
+        End Try
+    End Function
+
+    Public Function TampilDataPengeluaranAdmin(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Pengeluaran where idUser='" & kunci & "'", OpenConnection)
+
+            Try
+                DTS = New DataSet()
+                DTS.Tables("tblPengeluaran").Clear()
+            Catch ex As Exception
+            End Try
+
+            DTA.Fill(DTS, "tblPengeluaran")
+            Dim grid As New DataView(DTS.Tables("tblPengeluaran"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
         End Try
     End Function
 

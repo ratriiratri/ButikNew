@@ -24,10 +24,13 @@ Partial Class TambahBiayaAdmin
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtQty = New System.Windows.Forms.TextBox()
         Me.cbBiaya = New System.Windows.Forms.ComboBox()
         Me.LVDetailBiaya = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblTanggal = New System.Windows.Forms.Label()
         Me.lblPengeluaran = New System.Windows.Forms.Label()
@@ -67,6 +70,8 @@ Partial Class TambahBiayaAdmin
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.Controls.Add(Me.Label7)
+        Me.Panel5.Controls.Add(Me.txtQty)
         Me.Panel5.Controls.Add(Me.cbBiaya)
         Me.Panel5.Controls.Add(Me.LVDetailBiaya)
         Me.Panel5.Controls.Add(Me.lblTanggal)
@@ -93,20 +98,40 @@ Partial Class TambahBiayaAdmin
         Me.Panel5.Size = New System.Drawing.Size(1154, 512)
         Me.Panel5.TabIndex = 60
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(680, 75)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(30, 17)
+        Me.Label7.TabIndex = 95
+        Me.Label7.Text = "Qty"
+        '
+        'txtQty
+        '
+        Me.txtQty.Enabled = False
+        Me.txtQty.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQty.Location = New System.Drawing.Point(683, 96)
+        Me.txtQty.Name = "txtQty"
+        Me.txtQty.ReadOnly = True
+        Me.txtQty.Size = New System.Drawing.Size(71, 23)
+        Me.txtQty.TabIndex = 94
+        '
         'cbBiaya
         '
         Me.cbBiaya.Enabled = False
         Me.cbBiaya.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbBiaya.FormattingEnabled = True
-        Me.cbBiaya.Location = New System.Drawing.Point(201, 95)
+        Me.cbBiaya.Location = New System.Drawing.Point(182, 95)
         Me.cbBiaya.Name = "cbBiaya"
-        Me.cbBiaya.Size = New System.Drawing.Size(550, 24)
+        Me.cbBiaya.Size = New System.Drawing.Size(495, 24)
         Me.cbBiaya.TabIndex = 93
         '
         'LVDetailBiaya
         '
         Me.LVDetailBiaya.AutoArrange = False
-        Me.LVDetailBiaya.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.LVDetailBiaya.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader4, Me.ColumnHeader3})
         Me.LVDetailBiaya.FullRowSelect = True
         Me.LVDetailBiaya.GridLines = True
         Me.LVDetailBiaya.Location = New System.Drawing.Point(79, 135)
@@ -119,17 +144,22 @@ Partial Class TambahBiayaAdmin
         'ColumnHeader1
         '
         Me.ColumnHeader1.Text = "ID"
-        Me.ColumnHeader1.Width = 122
+        Me.ColumnHeader1.Width = 97
         '
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "Nama"
-        Me.ColumnHeader2.Width = 560
+        Me.ColumnHeader2.Width = 502
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Qty"
+        Me.ColumnHeader4.Width = 76
         '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Jumlah"
-        Me.ColumnHeader3.Width = 314
+        Me.ColumnHeader3.Width = 320
         '
         'lblTanggal
         '
@@ -147,9 +177,9 @@ Partial Class TambahBiayaAdmin
         Me.lblPengeluaran.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPengeluaran.Location = New System.Drawing.Point(425, 23)
         Me.lblPengeluaran.Name = "lblPengeluaran"
-        Me.lblPengeluaran.Size = New System.Drawing.Size(50, 17)
+        Me.lblPengeluaran.Size = New System.Drawing.Size(60, 17)
         Me.lblPengeluaran.TabIndex = 89
-        Me.lblPengeluaran.Text = "lblPngl"
+        Me.lblPengeluaran.Text = "             "
         '
         'lblUser
         '
@@ -256,7 +286,7 @@ Partial Class TambahBiayaAdmin
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(198, 75)
+        Me.Label5.Location = New System.Drawing.Point(184, 75)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 17)
         Me.Label5.TabIndex = 69
@@ -279,7 +309,7 @@ Partial Class TambahBiayaAdmin
         Me.txtId.Location = New System.Drawing.Point(79, 96)
         Me.txtId.Name = "txtId"
         Me.txtId.ReadOnly = True
-        Me.txtId.Size = New System.Drawing.Size(116, 23)
+        Me.txtId.Size = New System.Drawing.Size(97, 23)
         Me.txtId.TabIndex = 66
         '
         'Label3
@@ -494,6 +524,9 @@ Partial Class TambahBiayaAdmin
     Friend WithEvents LVDetailBiaya As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
     Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents cbBiaya As ComboBox
+    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtQty As TextBox
+    Friend WithEvents ColumnHeader3 As ColumnHeader
 End Class

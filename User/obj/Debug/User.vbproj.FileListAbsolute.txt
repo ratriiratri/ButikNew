@@ -15,3 +15,4 @@ E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.LihatPendapatan.r
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.LihatPengeluaran.resources
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.LihatTransaksiProduk.resources
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.TambahPengeluaran.resources
+E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\User\obj\Debug\User.vbprojAssemblyReference.cache

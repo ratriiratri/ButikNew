@@ -34,7 +34,7 @@ Partial Class LihatJasaAdmin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.DGBahan = New System.Windows.Forms.DataGridView()
+        Me.DGJasa = New System.Windows.Forms.DataGridView()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -42,7 +42,7 @@ Partial Class LihatJasaAdmin
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGBahan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGJasa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSearch
@@ -182,14 +182,14 @@ Partial Class LihatJasaAdmin
         Me.btnRefresh.Text = "Refresh"
         Me.btnRefresh.UseVisualStyleBackColor = True
         '
-        'DGBahan
+        'DGJasa
         '
-        Me.DGBahan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGBahan.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DGBahan.Location = New System.Drawing.Point(19, 193)
-        Me.DGBahan.Name = "DGBahan"
-        Me.DGBahan.Size = New System.Drawing.Size(1154, 408)
-        Me.DGBahan.TabIndex = 72
+        Me.DGJasa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGJasa.Dock = System.Windows.Forms.DockStyle.Top
+        Me.DGJasa.Location = New System.Drawing.Point(19, 193)
+        Me.DGJasa.Name = "DGJasa"
+        Me.DGJasa.Size = New System.Drawing.Size(1154, 408)
+        Me.DGJasa.TabIndex = 72
         '
         'Panel6
         '
@@ -229,7 +229,7 @@ Partial Class LihatJasaAdmin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1192, 650)
         Me.Controls.Add(Me.btnRefresh)
-        Me.Controls.Add(Me.DGBahan)
+        Me.Controls.Add(Me.DGJasa)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
@@ -245,7 +245,7 @@ Partial Class LihatJasaAdmin
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGBahan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGJasa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -256,7 +256,7 @@ Partial Class LihatJasaAdmin
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnRefresh As Button
-    Friend WithEvents DGBahan As DataGridView
+    Friend WithEvents DGJasa As DataGridView
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel2 As Panel
