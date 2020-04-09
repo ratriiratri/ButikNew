@@ -22,5 +22,8 @@
     Public EntitasDetailProduk As New EntityDetailProduk
 
     Public kodeLogin As String
-    Public namaAdmin As String
+    Public nama As String
+    Public hp As String
+    Public username As String
+    Public password As String
 End Module

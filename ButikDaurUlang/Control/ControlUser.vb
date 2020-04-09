@@ -17,7 +17,7 @@ Public Class ControlUser : Implements InterfaceProses
         Dim data As New EntityUser
         data = Ob
         CMD = New OleDbCommand("update Userr set namaUser='" & data.namaUser _
-                               & "',hpUser='" & data.hpUser _
+                               & "', hpUser='" & data.hpUser _
                                & "' where idUser='" & data.idUser & "'", OpenConnection)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
@@ -35,7 +35,7 @@ Public Class ControlUser : Implements InterfaceProses
 
     Public Function TampilData() As DataView Implements InterfaceProses.TampilData
         Try
-            DTA = New OleDbDataAdapter("select * from Userr where statusUser = '2'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, usernameUser, passwordUser from Userr where statusUser = '2'", OpenConnection)
 
             Try
                 DTS = New DataSet()
@@ -79,6 +79,20 @@ Public Class ControlUser : Implements InterfaceProses
             Throw New Exception(ex.Message)
             Return cek
         End Try
+    End Function
+
+    Public Function UpdateDataUser(Ob As Object) As OleDbCommand
+        Dim data As New EntityUser
+        data = Ob
+        CMD = New OleDbCommand("update Userr set namaUser='" & data.namaUser _
+                               & "', hpUser='" & data.hpUser _
+                               & "', usernameUser='" & data.usernameUser _
+                               & "', passwordUser='" & data.passwordUser _
+                               & "' where idUser='" & data.idUser & "'", OpenConnection)
+        CMD.CommandType = CommandType.Text
+        CMD.ExecuteNonQuery()
+        CMD = New OleDbCommand("", CloseConnection)
+        Return CMD
     End Function
 
     Function FCKdUser() As String

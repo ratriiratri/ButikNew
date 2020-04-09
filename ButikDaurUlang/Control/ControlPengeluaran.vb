@@ -1,58 +1,11 @@
 ﻿Imports System.Data.OleDb
 Imports ButikDaurUlang
 
-Public Class ControlPengeluaran : Implements InterfaceProses
+Public Class ControlPengeluaran
 
     Dim Sql As String
 
-    Public Function InsertData(Ob As Object) As OleDbCommand Implements InterfaceProses.InsertData
-        Dim data As New EntityPengeluaran
-        data = Ob
-        CMD = New OleDbCommand("insert into Pengeluaran values('" & data.idPengeluaran & "','" & data.jmlPengeluaran & "','" & data.ketPengeluaran & "','" & data.tglPengeluaran & "','" & data.idUser & "')", OpenConnection)
-        CMD.CommandType = CommandType.Text
-        CMD.ExecuteNonQuery()
-        CMD = New OleDbCommand("", CloseConnection)
-        Return CMD
-    End Function
-
-    Public Function UpdateData(Ob As Object) As OleDbCommand Implements InterfaceProses.UpdateData
-        Dim data As New EntityPengeluaran
-        data = Ob
-        CMD = New OleDbCommand("update Pengeluaran set jmlPengeluaran='" & data.jmlPengeluaran _
-                               & "',ketPengeluaran='" & data.ketPengeluaran _
-                               & "' where idPengeluaran='" & data.idPengeluaran & "'", OpenConnection)
-        CMD.CommandType = CommandType.Text
-        CMD.ExecuteNonQuery()
-        CMD = New OleDbCommand("", CloseConnection)
-        Return CMD
-    End Function
-
-    Public Function DeleteData(kunci As String) As OleDbCommand Implements InterfaceProses.DeleteData
-        CMD = New OleDbCommand("delete from Pengeluaran where idPengeluaran='" & kunci & "'", OpenConnection)
-        CMD.CommandType = CommandType.Text
-        CMD.ExecuteNonQuery()
-        CMD = New OleDbCommand("", CloseConnection)
-    End Function
-
-    Public Function TampilData() As DataView Implements InterfaceProses.TampilData
-        Try
-            DTA = New OleDbDataAdapter("select * from Pengeluaran", OpenConnection)
-
-            Try
-                DTS = New DataSet()
-                DTS.Tables("tblPengeluaran").Clear()
-            Catch ex As Exception
-            End Try
-
-            DTA.Fill(DTS, "tblPengeluaran")
-            Dim grid As New DataView(DTS.Tables("tblPengeluaran"))
-            Return grid
-        Catch ex As Exception
-            Throw New Exception(ex.Message)
-        End Try
-    End Function
-
-    Public Function CariData(kunci As String) As DataView Implements InterfaceProses.CariData
+    Public Function CariData(kunci As String) As DataView
         Try
             DTA = New OleDbDataAdapter("select * from Pengeluaran where idPengeluaran" _
                                        & "like '%" & kunci & "%'", OpenConnection)
@@ -66,25 +19,9 @@ Public Class ControlPengeluaran : Implements InterfaceProses
         End Try
     End Function
 
-    Function CekDataDipakai(kunci As String) As Boolean
-        Dim cek As Boolean
-        cek = False
+    Public Function TampilPengeluaran() As DataView
         Try
-            DTA = New OleDbDataAdapter("select count(idPengeluaran) from Pengeluaran " _
-                                   & "where idPengeluaran='" & kunci & "'", OpenConnection)
-            DTS = New DataSet()
-            DTA.Fill(DTS, "cekData")
-            If DTS.Tables("cekData").Rows(0)(0).ToString > 0 Then cek = True
-
-        Catch ex As Exception
-            Throw New Exception(ex.Message)
-            Return cek
-        End Try
-    End Function
-
-    Public Function TampilDataPengeluaranAdmin(kunci As String) As DataView
-        Try
-            DTA = New OleDbDataAdapter("select * from Pengeluaran where idUser='" & kunci & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select * from Pengeluaran", OpenConnection)
 
             Try
                 DTS = New DataSet()
@@ -117,7 +54,7 @@ Public Class ControlPengeluaran : Implements InterfaceProses
 
         For i = 0 To _listBiaya.Count - 1
             With _listBiaya(i)
-                Sql = "insert into DetailBiaya values ('" & .idBiaya & "','" & .idPengeluaran & "','" & .jumlahBiaya & "')"
+                Sql = "insert into DetailBiaya values ('" & .idBiaya & "','" & .idPengeluaran & "','" & .jumlahBiaya & "','" & .hargaBiaya & "')"
                 CMD = New OleDbCommand(Sql, OpenConnection)
                 CMD.CommandType = CommandType.Text
                 CMD.ExecuteNonQuery()

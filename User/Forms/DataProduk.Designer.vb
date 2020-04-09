@@ -24,13 +24,13 @@ Partial Class DataProduk
     Private Sub InitializeComponent()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblLihat = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGProduk = New System.Windows.Forms.DataGridView()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -38,7 +38,7 @@ Partial Class DataProduk
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGProduk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSearch
@@ -54,7 +54,7 @@ Partial Class DataProduk
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Panel5.Controls.Add(Me.TextBox1)
+        Me.Panel5.Controls.Add(Me.txtSearch)
         Me.Panel5.Controls.Add(Me.btnSearch)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(19, 103)
@@ -62,13 +62,13 @@ Partial Class DataProduk
         Me.Panel5.Size = New System.Drawing.Size(1154, 69)
         Me.Panel5.TabIndex = 70
         '
-        'TextBox1
+        'txtSearch
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(38, 20)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(972, 23)
-        Me.TextBox1.TabIndex = 56
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(38, 20)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(972, 23)
+        Me.txtSearch.TabIndex = 56
         '
         'Panel1
         '
@@ -126,14 +126,17 @@ Partial Class DataProduk
         Me.btnRefresh.Text = "Refresh"
         Me.btnRefresh.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DGProduk
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DataGridView1.Location = New System.Drawing.Point(19, 193)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1154, 364)
-        Me.DataGridView1.TabIndex = 72
+        Me.DGProduk.AllowUserToOrderColumns = True
+        Me.DGProduk.AllowUserToResizeColumns = False
+        Me.DGProduk.AllowUserToResizeRows = False
+        Me.DGProduk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGProduk.Dock = System.Windows.Forms.DockStyle.Top
+        Me.DGProduk.Location = New System.Drawing.Point(19, 193)
+        Me.DGProduk.Name = "DGProduk"
+        Me.DGProduk.Size = New System.Drawing.Size(1154, 364)
+        Me.DGProduk.TabIndex = 72
         '
         'Panel6
         '
@@ -173,7 +176,7 @@ Partial Class DataProduk
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1192, 650)
         Me.Controls.Add(Me.btnRefresh)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DGProduk)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
@@ -188,19 +191,19 @@ Partial Class DataProduk
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGProduk, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents btnSearch As Button
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSearch As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents btnRefresh As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGProduk As DataGridView
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel3 As Panel

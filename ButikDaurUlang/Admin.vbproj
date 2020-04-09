@@ -94,70 +94,58 @@
     <Compile Include="Forms\Admin\AdminUtama.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\DashboardAdmin.Designer.vb">
-      <DependentUpon>DashboardAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\Dashboard.Designer.vb">
+      <DependentUpon>Dashboard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\DashboardAdmin.vb">
+    <Compile Include="Forms\Admin\Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\DataBiayaAdmin.Designer.vb">
-      <DependentUpon>DataBiayaAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\DataBiaya.Designer.vb">
+      <DependentUpon>DataBiaya.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\DataBiayaAdmin.vb">
+    <Compile Include="Forms\Admin\DataBiaya.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\DataJasaAdmin.Designer.vb">
-      <DependentUpon>DataJasaAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\DataJasa.Designer.vb">
+      <DependentUpon>DataJasa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\DataJasaAdmin.vb">
+    <Compile Include="Forms\Admin\DataJasa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\DataProdukAdmin.Designer.vb">
-      <DependentUpon>DataProdukAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\DataProduk.Designer.vb">
+      <DependentUpon>DataProduk.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\DataProdukAdmin.vb">
+    <Compile Include="Forms\Admin\DataProduk.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\DataUserAdmin.Designer.vb">
-      <DependentUpon>DataUserAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\DataUser.Designer.vb">
+      <DependentUpon>DataUser.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\DataUserAdmin.vb">
+    <Compile Include="Forms\Admin\DataUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\LihatBiayaAdmin.Designer.vb">
-      <DependentUpon>LihatBiayaAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\LihatJasa.Designer.vb">
+      <DependentUpon>LihatJasa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\LihatBiayaAdmin.vb">
+    <Compile Include="Forms\Admin\LihatJasa.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\LihatJasaAdmin.Designer.vb">
-      <DependentUpon>LihatJasaAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\LihatPengeluaran.Designer.vb">
+      <DependentUpon>LihatPengeluaran.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\LihatJasaAdmin.vb">
+    <Compile Include="Forms\Admin\LihatPengeluaran.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\LihatPendapatanAdmin.Designer.vb">
-      <DependentUpon>LihatPendapatanAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\LihatPendapatan.Designer.vb">
+      <DependentUpon>LihatPendapatan.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\LihatPendapatanAdmin.vb">
+    <Compile Include="Forms\Admin\LihatPendapatan.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\LihatPengeluaranAdmin.Designer.vb">
-      <DependentUpon>LihatPengeluaranAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\LihatProduk.Designer.vb">
+      <DependentUpon>LihatProduk.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\LihatPengeluaranAdmin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\LihatProdukAdmin.Designer.vb">
-      <DependentUpon>LihatProdukAdmin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\LihatProdukAdmin.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Admin\LihatUserAdmin.Designer.vb">
-      <DependentUpon>LihatUserAdmin.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\Admin\LihatUserAdmin.vb">
+    <Compile Include="Forms\Admin\LihatProduk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin\Login.Designer.vb">
@@ -166,10 +154,10 @@
     <Compile Include="Forms\Admin\Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\TambahBiayaAdmin.Designer.vb">
-      <DependentUpon>TambahBiayaAdmin.vb</DependentUpon>
+    <Compile Include="Forms\Admin\TambahPengeluaran.Designer.vb">
+      <DependentUpon>TambahPengeluaran.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\TambahBiayaAdmin.vb">
+    <Compile Include="Forms\Admin\TambahPengeluaran.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Global\ModKoneksiDB.vb" />
@@ -195,44 +183,38 @@
     <EmbeddedResource Include="Forms\Admin\AdminUtama.resx">
       <DependentUpon>AdminUtama.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\DashboardAdmin.resx">
-      <DependentUpon>DashboardAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\Dashboard.resx">
+      <DependentUpon>Dashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\DataBiayaAdmin.resx">
-      <DependentUpon>DataBiayaAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\DataBiaya.resx">
+      <DependentUpon>DataBiaya.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\DataJasaAdmin.resx">
-      <DependentUpon>DataJasaAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\DataJasa.resx">
+      <DependentUpon>DataJasa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\DataProdukAdmin.resx">
-      <DependentUpon>DataProdukAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\DataProduk.resx">
+      <DependentUpon>DataProduk.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\DataUserAdmin.resx">
-      <DependentUpon>DataUserAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\DataUser.resx">
+      <DependentUpon>DataUser.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\LihatBiayaAdmin.resx">
-      <DependentUpon>LihatBiayaAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\LihatJasa.resx">
+      <DependentUpon>LihatJasa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\LihatJasaAdmin.resx">
-      <DependentUpon>LihatJasaAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\LihatPengeluaran.resx">
+      <DependentUpon>LihatPengeluaran.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\LihatPendapatanAdmin.resx">
-      <DependentUpon>LihatPendapatanAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\LihatPendapatan.resx">
+      <DependentUpon>LihatPendapatan.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\LihatPengeluaranAdmin.resx">
-      <DependentUpon>LihatPengeluaranAdmin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\LihatProdukAdmin.resx">
-      <DependentUpon>LihatProdukAdmin.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\LihatUserAdmin.resx">
-      <DependentUpon>LihatUserAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\LihatProduk.resx">
+      <DependentUpon>LihatProduk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\TambahBiayaAdmin.resx">
-      <DependentUpon>TambahBiayaAdmin.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\TambahPengeluaran.resx">
+      <DependentUpon>TambahPengeluaran.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
