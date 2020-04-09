@@ -31,12 +31,10 @@ Partial Class UserUtama
         Me.lblUser = New System.Windows.Forms.Label()
         Me.picDuarUlang = New System.Windows.Forms.PictureBox()
         Me.btnLogOut = New System.Windows.Forms.Button()
-        Me.btnPengeluaran = New System.Windows.Forms.Button()
         Me.btnProduk = New System.Windows.Forms.Button()
-        Me.btnTransaksi = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnBiaya = New System.Windows.Forms.Button()
+        Me.btnJasa = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.picGirl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,44 +143,18 @@ Partial Class UserUtama
         Me.btnLogOut.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnLogOut.UseVisualStyleBackColor = True
         '
-        'btnPengeluaran
-        '
-        Me.btnPengeluaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPengeluaran.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPengeluaran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPengeluaran.Location = New System.Drawing.Point(0, 216)
-        Me.btnPengeluaran.Name = "btnPengeluaran"
-        Me.btnPengeluaran.Size = New System.Drawing.Size(169, 52)
-        Me.btnPengeluaran.TabIndex = 7
-        Me.btnPengeluaran.Text = "Pengeluaran"
-        Me.btnPengeluaran.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPengeluaran.UseVisualStyleBackColor = True
-        '
         'btnProduk
         '
-        Me.btnProduk.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnProduk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProduk.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProduk.Location = New System.Drawing.Point(0, 114)
+        Me.btnProduk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnProduk.Location = New System.Drawing.Point(0, 63)
         Me.btnProduk.Name = "btnProduk"
         Me.btnProduk.Size = New System.Drawing.Size(169, 52)
-        Me.btnProduk.TabIndex = 1
-        Me.btnProduk.Text = "Produk"
+        Me.btnProduk.TabIndex = 2
+        Me.btnProduk.Text = "Transaksi Produk"
         Me.btnProduk.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnProduk.UseVisualStyleBackColor = True
-        '
-        'btnTransaksi
-        '
-        Me.btnTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTransaksi.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTransaksi.Location = New System.Drawing.Point(0, 63)
-        Me.btnTransaksi.Name = "btnTransaksi"
-        Me.btnTransaksi.Size = New System.Drawing.Size(169, 52)
-        Me.btnTransaksi.TabIndex = 2
-        Me.btnTransaksi.Text = "Transaksi"
-        Me.btnTransaksi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnTransaksi.UseVisualStyleBackColor = True
         '
         'btnDashboard
         '
@@ -201,11 +173,9 @@ Partial Class UserUtama
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.btnBiaya)
+        Me.Panel3.Controls.Add(Me.btnJasa)
         Me.Panel3.Controls.Add(Me.btnLogOut)
-        Me.Panel3.Controls.Add(Me.btnPengeluaran)
         Me.Panel3.Controls.Add(Me.btnProduk)
-        Me.Panel3.Controls.Add(Me.btnTransaksi)
         Me.Panel3.Controls.Add(Me.btnDashboard)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 112)
@@ -213,18 +183,18 @@ Partial Class UserUtama
         Me.Panel3.Size = New System.Drawing.Size(169, 483)
         Me.Panel3.TabIndex = 8
         '
-        'btnBiaya
+        'btnJasa
         '
-        Me.btnBiaya.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBiaya.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBiaya.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBiaya.Location = New System.Drawing.Point(0, 165)
-        Me.btnBiaya.Name = "btnBiaya"
-        Me.btnBiaya.Size = New System.Drawing.Size(169, 52)
-        Me.btnBiaya.TabIndex = 9
-        Me.btnBiaya.Text = "Biaya"
-        Me.btnBiaya.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBiaya.UseVisualStyleBackColor = True
+        Me.btnJasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnJasa.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnJasa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnJasa.Location = New System.Drawing.Point(0, 114)
+        Me.btnJasa.Name = "btnJasa"
+        Me.btnJasa.Size = New System.Drawing.Size(169, 52)
+        Me.btnJasa.TabIndex = 9
+        Me.btnJasa.Text = "Transaksi Jasa"
+        Me.btnJasa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnJasa.UseVisualStyleBackColor = True
         '
         'UserUtama
         '
@@ -259,10 +229,8 @@ Partial Class UserUtama
     Friend WithEvents lblUser As Label
     Friend WithEvents picDuarUlang As PictureBox
     Friend WithEvents btnLogOut As Button
-    Friend WithEvents btnPengeluaran As Button
     Friend WithEvents btnProduk As Button
-    Friend WithEvents btnTransaksi As Button
     Friend WithEvents btnDashboard As Button
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents btnBiaya As Button
+    Friend WithEvents btnJasa As Button
 End Class

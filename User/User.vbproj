@@ -72,14 +72,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\ControlJasa.vb" />
+    <Compile Include="Control\ControlPendapatan.vb" />
+    <Compile Include="Control\ControlProduk.vb" />
+    <Compile Include="Control\ControlUser.vb" />
     <Compile Include="Entity\EntityBiaya.vb" />
+    <Compile Include="Entity\EntityDetailBiaya.vb" />
+    <Compile Include="Entity\EntityDetailJasa.vb" />
+    <Compile Include="Entity\EntityDetailProduk.vb" />
     <Compile Include="Entity\EntityJasa.vb" />
+    <Compile Include="Entity\EntityPendapatan.vb" />
     <Compile Include="Entity\EntityProduk.vb" />
     <Compile Include="Entity\EntityUser.vb" />
-    <Compile Include="Forms\DataBiaya.Designer.vb">
-      <DependentUpon>DataBiaya.vb</DependentUpon>
+    <Compile Include="Forms\Dashboard.Designer.vb">
+      <DependentUpon>Dashboard.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataBiaya.vb">
+    <Compile Include="Forms\Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DataProduk.Designer.vb">
@@ -88,28 +96,22 @@
     <Compile Include="Forms\DataProduk.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LihatPendapatan.Designer.vb">
-      <DependentUpon>LihatPendapatan.vb</DependentUpon>
+    <Compile Include="Forms\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LihatPendapatan.vb">
+    <Compile Include="Forms\Login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LihatPengeluaran.Designer.vb">
-      <DependentUpon>LihatPengeluaran.vb</DependentUpon>
+    <Compile Include="Forms\LVProduk.Designer.vb">
+      <DependentUpon>LVProduk.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LihatPengeluaran.vb">
+    <Compile Include="Forms\LVProduk.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LihatTransaksiProduk.Designer.vb">
-      <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>
+    <Compile Include="Forms\TambahTransaksiJasa.Designer.vb">
+      <DependentUpon>TambahTransaksiJasa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LihatTransaksiProduk.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TambahPengeluaran.Designer.vb">
-      <DependentUpon>TambahPengeluaran.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TambahPengeluaran.vb">
+    <Compile Include="Forms\TambahTransaksiJasa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TambahTransaksiProduk.Designer.vb">
@@ -118,18 +120,14 @@
     <Compile Include="Forms\TambahTransaksiProduk.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\TambahTransaksiBiaya.Designer.vb">
-      <DependentUpon>TambahTransaksiBiaya.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TambahTransaksiBiaya.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Forms\UserUtama.Designer.vb">
       <DependentUpon>UserUtama.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserUtama.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Global\ModKoneksiDB.vb" />
+    <Compile Include="Global\ModObjectFungsi.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -147,23 +145,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\DataBiaya.resx">
-      <DependentUpon>DataBiaya.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Dashboard.resx">
+      <DependentUpon>Dashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DataProduk.resx">
       <DependentUpon>DataProduk.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LihatPendapatan.resx">
-      <DependentUpon>LihatPendapatan.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LihatPengeluaran.resx">
-      <DependentUpon>LihatPengeluaran.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\LVProduk.resx">
+      <DependentUpon>LVProduk.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LihatTransaksiProduk.resx">
-      <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\TambahTransaksiJasa.resx">
+      <DependentUpon>TambahTransaksiJasa.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TambahPengeluaran.resx">
-      <DependentUpon>TambahPengeluaran.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\TambahTransaksiProduk.resx">
+      <DependentUpon>TambahTransaksiProduk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\userUtama.resx">
       <DependentUpon>UserUtama.vb</DependentUpon>
@@ -188,9 +186,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Control\" />
-    <Folder Include="Global\" />
-    <Folder Include="Interface\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

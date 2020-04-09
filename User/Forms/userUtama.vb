@@ -14,4 +14,8 @@
     Private Sub btnMin_Click(sender As Object, e As EventArgs) Handles btnMin.Click
         Me.WindowState = WindowState.Minimized
     End Sub
+
+    Private Sub btnTransaksi_Click(sender As Object, e As EventArgs) Handles btnProduk.Click
+        TambahTransaksiProduk.Show()
+    End Sub
 End Class
