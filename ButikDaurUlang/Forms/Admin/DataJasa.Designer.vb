@@ -23,11 +23,11 @@ Partial Class DataJasa
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.btnNew = New System.Windows.Forms.Button()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.DGJasa = New System.Windows.Forms.DataGridView()
+        Me.btnNew = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -37,6 +37,8 @@ Partial Class DataJasa
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblLihat = New System.Windows.Forms.Label()
         Me.lblData = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -44,8 +46,6 @@ Partial Class DataJasa
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.lblLihat = New System.Windows.Forms.Label()
         Me.Panel7.SuspendLayout()
         CType(Me.DGJasa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -55,7 +55,6 @@ Partial Class DataJasa
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.btnNew)
         Me.Panel7.Controls.Add(Me.btnRefresh)
         Me.Panel7.Controls.Add(Me.btnDelete)
         Me.Panel7.Controls.Add(Me.btnEdit)
@@ -65,16 +64,6 @@ Partial Class DataJasa
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1154, 313)
         Me.Panel7.TabIndex = 62
-        '
-        'btnNew
-        '
-        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(505, 267)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(86, 31)
-        Me.btnNew.TabIndex = 35
-        Me.btnNew.Text = "New"
-        Me.btnNew.UseVisualStyleBackColor = True
         '
         'btnRefresh
         '
@@ -120,9 +109,20 @@ Partial Class DataJasa
         Me.DGJasa.Size = New System.Drawing.Size(581, 219)
         Me.DGJasa.TabIndex = 0
         '
+        'btnNew
+        '
+        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNew.Location = New System.Drawing.Point(570, 123)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Size = New System.Drawing.Size(86, 31)
+        Me.btnNew.TabIndex = 35
+        Me.btnNew.Text = "New"
+        Me.btnNew.UseVisualStyleBackColor = True
+        '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.btnSave)
         Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.txtHarga)
@@ -216,6 +216,29 @@ Partial Class DataJasa
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 56
         '
+        'Label13
+        '
+        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label13.Location = New System.Drawing.Point(1125, 55)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(12, 13)
+        Me.Label13.TabIndex = 16
+        Me.Label13.Text = "/"
+        '
+        'lblLihat
+        '
+        Me.lblLihat.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblLihat.AutoSize = True
+        Me.lblLihat.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lblLihat.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblLihat.Location = New System.Drawing.Point(1143, 55)
+        Me.lblLihat.Name = "lblLihat"
+        Me.lblLihat.Size = New System.Drawing.Size(30, 13)
+        Me.lblLihat.TabIndex = 15
+        Me.lblLihat.Text = "Lihat"
+        '
         'lblData
         '
         Me.lblData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -281,29 +304,6 @@ Partial Class DataJasa
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(19, 576)
         Me.Panel2.TabIndex = 57
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Location = New System.Drawing.Point(1125, 55)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(12, 13)
-        Me.Label13.TabIndex = 16
-        Me.Label13.Text = "/"
-        '
-        'lblLihat
-        '
-        Me.lblLihat.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblLihat.AutoSize = True
-        Me.lblLihat.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblLihat.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblLihat.Location = New System.Drawing.Point(1143, 55)
-        Me.lblLihat.Name = "lblLihat"
-        Me.lblLihat.Size = New System.Drawing.Size(30, 13)
-        Me.lblLihat.TabIndex = 15
-        Me.lblLihat.Text = "Lihat"
         '
         'DataJasa
         '

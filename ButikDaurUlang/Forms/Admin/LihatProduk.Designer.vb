@@ -158,10 +158,11 @@ Partial Class LihatProduk
         Me.DGProduk.AllowUserToOrderColumns = True
         Me.DGProduk.AllowUserToResizeColumns = False
         Me.DGProduk.AllowUserToResizeRows = False
-        Me.DGProduk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGProduk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGProduk.Dock = System.Windows.Forms.DockStyle.Top
         Me.DGProduk.Location = New System.Drawing.Point(19, 193)
         Me.DGProduk.Name = "DGProduk"
+        Me.DGProduk.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DGProduk.Size = New System.Drawing.Size(1154, 364)
         Me.DGProduk.TabIndex = 64
         '

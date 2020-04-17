@@ -103,6 +103,7 @@ insert into Userr values ('US0001','admin','0857','admin1','1234','1')
 insert into Userr values ('US0002','user','0856','user1','5678','2')
 insert into Userr values ('US0003','admin2','0893','admin22222','9101','1')
 insert into Userr values ('US0004','user2','0812','user111111','1112','2')
+insert into Userr values ('US0006', 'pemilik','0000','pemilik','pemilik','3')
 insert into Produk values ('PR0001','Ganci', 5000, 20)
 insert into Produk values ('PR0002','bunga', 10000, 20)
 insert into Jasa values ('JS0001','Aksesoris dari Plastik Kemasan (Produk)',350000)
@@ -148,4 +149,18 @@ from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa
 			 join Userr us on us.idUser = pd.idUser 
 
 
-select * from Userr 
+select db.idBiaya, pl.ketPengeluaran, db.idPengeluaran, db.jumlahBiaya, pl.tglPengeluaran 
+from Pengeluaran pl join DetailBiaya db on pl.idPengeluaran = db.idPengeluaran
+where pl.ketPengeluaran like '%B%' or db.idBiaya like '%B%'
+
+
+select p.idProduk, p.namaProduk, dp.jumlahProduk, p.hargaProduk, dp.discProduk, dp.idPendapatan, pd.tglPendapatan, us.idUser
+from Produk p join DetailProduk dp on p.idProduk = dp.idProduk
+			  join Pendapatan pd on pd.idPendapatan = dp.idPendapatan
+			  join Userr us on us.idUser = pd.idUser 
+where dp.jumlahProduk like 2 or p.hargaProduk like 2
+
+
+select * from pendapatan where idPendapatan like 
+
+select p.

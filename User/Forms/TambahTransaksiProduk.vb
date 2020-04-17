@@ -6,6 +6,7 @@
         txtHarga.Text = ""
         txtQty.Text = ""
         txtDisc.Text = ""
+        lblNominal.Text = 0
     End Sub
 
     Sub HitungTotal()

@@ -27,6 +27,8 @@ Partial Class LihatJasa
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lblData = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblLihat = New System.Windows.Forms.Label()
@@ -35,8 +37,6 @@ Partial Class LihatJasa
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.lblData = New System.Windows.Forms.Label()
         CType(Me.DGDetailJasa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -99,6 +99,30 @@ Partial Class LihatJasa
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 74
+        '
+        'Label13
+        '
+        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label13.Location = New System.Drawing.Point(1125, 55)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(12, 13)
+        Me.Label13.TabIndex = 19
+        Me.Label13.Text = "/"
+        '
+        'lblData
+        '
+        Me.lblData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblData.AutoSize = True
+        Me.lblData.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lblData.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblData.Location = New System.Drawing.Point(1085, 55)
+        Me.lblData.Name = "lblData"
+        Me.lblData.Size = New System.Drawing.Size(30, 13)
+        Me.lblData.TabIndex = 17
+        Me.lblData.Text = "Data"
         '
         'Label1
         '
@@ -175,30 +199,6 @@ Partial Class LihatJasa
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(19, 576)
         Me.Panel2.TabIndex = 75
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Location = New System.Drawing.Point(1125, 55)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(12, 13)
-        Me.Label13.TabIndex = 19
-        Me.Label13.Text = "/"
-        '
-        'lblData
-        '
-        Me.lblData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblData.AutoSize = True
-        Me.lblData.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblData.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblData.Location = New System.Drawing.Point(1085, 55)
-        Me.lblData.Name = "lblData"
-        Me.lblData.Size = New System.Drawing.Size(30, 13)
-        Me.lblData.TabIndex = 17
-        Me.lblData.Text = "Data"
         '
         'LihatJasa
         '

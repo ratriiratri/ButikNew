@@ -12,7 +12,10 @@
                 .statusUser = DTGrid.Rows(0)(5).ToString
 
                 kodeLogin = EntitasUser.idUser
-                namaAdmin = EntitasUser.namaUser
+                nama = EntitasUser.namaUser
+                hp = EntitasUser.hpUser
+                username = EntitasUser.usernameUser
+                password = EntitasUser.passwordUser
             End With
 
             If txtUsername.Text = EntitasUser.usernameUser And txtPassword.Text = EntitasUser.passwordUser Then
@@ -28,5 +31,9 @@
             txtPassword.Text = ""
             txtPassword.Focus()
         End If
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

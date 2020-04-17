@@ -56,6 +56,7 @@
     Private Sub DataProdukAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = AdminUtama
 
+        modeProses = 0
         Call RefreshGrid()
         Call Bersih()
         Call AturDGProduk()
@@ -68,10 +69,15 @@
     End Sub
 
     Private Sub DGProduk_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGProduk.CellContentClick, DGProduk.CellClick
-        DTGrid = KontrolProduk.TampilData.ToTable
-        baris = e.RowIndex
-        DGProduk.Rows(baris).Selected = True
-        IsiBox(baris)
+        If modeProses = 0 Or modeProses = 2 Then
+            DTGrid = KontrolProduk.TampilData.ToTable
+            baris = e.RowIndex
+            DGProduk.Rows(baris).Selected = True
+            IsiBox(baris)
+        ElseIf modeProses = 1 Then
+            DTGrid = KontrolProduk.TampilData.ToTable
+            DGProduk.Rows(baris).Selected = False
+        End If
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -82,19 +88,32 @@
             .stockProduk = txtStock.Text
         End With
 
-        If modeProses = 1 Then
-            KontrolProduk.InsertData(EntitasProduk)
-        ElseIf modeProses = 2 Then
-            KontrolProduk.UpdateData(EntitasProduk)
+        If txtNama.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtNama.Focus()
+        ElseIf txtHarga.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtHarga.Focus()
+        ElseIf txtStock.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtStock.Focus()
+        Else
+            If modeProses = 1 Then
+                KontrolProduk.InsertData(EntitasProduk)
+            ElseIf modeProses = 2 Then
+                KontrolProduk.UpdateData(EntitasProduk)
+            End If
+            MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+            Call RefreshGrid()
+            Call Bersih()
+            AturTxtBox(False)
+
+            btnNew.Enabled = True
+            btnEdit.Enabled = True
+            btnDelete.Enabled = True
+
+            modeProses = 0
         End If
-
-        MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
-
-        Call RefreshGrid()
-        Call Bersih()
-        AturTxtBox(False)
-
-        btnNew.Enabled = True
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
@@ -103,8 +122,8 @@
         modeProses = 1
 
         btnNew.Enabled = False
-        btnEdit.Enabled = True
-        btnDelete.Enabled = True
+        btnEdit.Enabled = False
+        btnDelete.Enabled = False
 
         txtId.Text = KontrolProduk.FCKdProduk
     End Sub
@@ -113,6 +132,7 @@
         AturTxtBox(True)
 
         btnNew.Enabled = False
+        btnDelete.Enabled = False
 
         txtNama.Focus()
         modeProses = 2
@@ -140,7 +160,24 @@
         LihatProduk.Show()
     End Sub
 
-    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Call RefreshGrid()
+        Call AturTxtBox(False)
+        Call Bersih()
 
+        btnNew.Enabled = True
+        btnEdit.Enabled = True
+        btnDelete.Enabled = True
+        btnSave.Enabled = False
+
+        modeProses = 0
+    End Sub
+
+    Private Sub txtHarga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHarga.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
+    End Sub
+
+    Private Sub txtStock_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStock.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
     End Sub
 End Class

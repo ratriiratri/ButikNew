@@ -5,8 +5,9 @@ Public Class ControlPendapatan
 
     Public Function CariData(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Pendapatan where idPendapatan" _
-                                       & "like '%" & kunci & "%'", OpenConnection)
+            DTA = New OleDbDataAdapter("select * from Pendapatan where idPendapatan like '%" & kunci & "%' " _
+                                        & "or jmlPendapatan like '" & kunci & "' or ketPendapatan like '%" & kunci & "%' " _
+                                        & "or tglPendapatan like '" & kunci & "' or idUser like '%" & kunci & "%' ", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPendapatan")
 

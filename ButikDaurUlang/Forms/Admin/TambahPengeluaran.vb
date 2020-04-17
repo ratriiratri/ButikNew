@@ -18,6 +18,7 @@
         txtId.Text = ""
         txtQty.Text = ""
         txtJumlah.Text = ""
+        lblNominal.Text = 0
     End Sub
 
     Sub HitungTotal()

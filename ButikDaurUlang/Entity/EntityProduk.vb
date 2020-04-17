@@ -1,8 +1,8 @@
 ﻿Public Class EntityProduk
     Private id As String
     Private nama As String
-    Private harga As Integer
-    Private stock As Integer
+    Private harga As String
+    Private stock As String
 
     Public Property idProduk() As String
         Get
@@ -22,20 +22,20 @@
         End Set
     End Property
 
-    Public Property hargaProduk As Integer
+    Public Property hargaProduk As String
         Get
             Return harga
         End Get
-        Set(value As Integer)
+        Set(value As String)
             harga = value
         End Set
     End Property
 
-    Public Property stockProduk As Integer
+    Public Property stockProduk As String
         Get
             Return stock
         End Get
-        Set(value As Integer)
+        Set(value As String)
             stock = value
         End Set
     End Property

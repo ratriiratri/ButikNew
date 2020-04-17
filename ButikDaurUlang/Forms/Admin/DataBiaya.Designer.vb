@@ -23,11 +23,11 @@ Partial Class DataBiaya
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.btnNew = New System.Windows.Forms.Button()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.DGBiaya = New System.Windows.Forms.DataGridView()
+        Me.btnNew = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -35,7 +35,6 @@ Partial Class DataBiaya
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -51,7 +50,6 @@ Partial Class DataBiaya
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.btnNew)
         Me.Panel7.Controls.Add(Me.btnRefresh)
         Me.Panel7.Controls.Add(Me.btnDelete)
         Me.Panel7.Controls.Add(Me.btnEdit)
@@ -61,16 +59,6 @@ Partial Class DataBiaya
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1154, 333)
         Me.Panel7.TabIndex = 62
-        '
-        'btnNew
-        '
-        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(527, 266)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(86, 31)
-        Me.btnNew.TabIndex = 35
-        Me.btnNew.Text = "New"
-        Me.btnNew.UseVisualStyleBackColor = True
         '
         'btnRefresh
         '
@@ -112,9 +100,20 @@ Partial Class DataBiaya
         Me.DGBiaya.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGBiaya.Location = New System.Drawing.Point(308, 23)
         Me.DGBiaya.Name = "DGBiaya"
+        Me.DGBiaya.ReadOnly = True
         Me.DGBiaya.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DGBiaya.Size = New System.Drawing.Size(581, 219)
         Me.DGBiaya.TabIndex = 0
+        '
+        'btnNew
+        '
+        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNew.Location = New System.Drawing.Point(570, 98)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Size = New System.Drawing.Size(86, 31)
+        Me.btnNew.TabIndex = 35
+        Me.btnNew.Text = "New"
+        Me.btnNew.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -129,6 +128,7 @@ Partial Class DataBiaya
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.btnSave)
         Me.Panel5.Controls.Add(Me.txtNama)
         Me.Panel5.Controls.Add(Me.txtId)
@@ -181,7 +181,6 @@ Partial Class DataBiaya
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -189,19 +188,6 @@ Partial Class DataBiaya
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 56
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(1139, 55)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(34, 13)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Data"
         '
         'Label1
         '
@@ -298,7 +284,6 @@ Partial Class DataBiaya
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label5 As Label
     Friend WithEvents btnNew As Button
     Friend WithEvents btnRefresh As Button
     Friend WithEvents btnDelete As Button

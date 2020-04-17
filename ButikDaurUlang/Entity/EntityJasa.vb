@@ -1,7 +1,7 @@
 ﻿Public Class EntityJasa
     Private id As String
     Private nama As String
-    Private harga As Integer
+    Private harga As String
 
     Public Property idJasa() As String
         Get
@@ -21,11 +21,11 @@
         End Set
     End Property
 
-    Public Property hargaJasa() As Integer
+    Public Property hargaJasa() As String
         Get
             Return harga
         End Get
-        Set(value As Integer)
+        Set(value As String)
             harga = value
         End Set
     End Property

@@ -60,6 +60,8 @@
             btnEdit.Enabled = False
             btnDelete.Enabled = False
         End If
+
+        modeProses = 0
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -69,18 +71,29 @@
             .hargaJasa = txtHarga.Text
         End With
 
-        If modeProses = 1 Then
-            KontrolJasa.InsertData(EntitasJasa)
-        ElseIf modeProses = 2 Then
-            KontrolJasa.UpdateData(EntitasJasa)
+        If txtNama.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtNama.Focus()
+        ElseIf txtHarga.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtHarga.Focus()
+        Else
+            If modeProses = 1 Then
+                KontrolJasa.InsertData(EntitasJasa)
+            ElseIf modeProses = 2 Then
+                KontrolJasa.UpdateData(EntitasJasa)
+            End If
+
+            MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+
+            btnNew.Enabled = True
+
+            Call RefreshGrid()
+            Call Bersih()
+            AturTxtBox(False)
+
+            modeProses = 0
         End If
-
-        MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
-
-        btnNew.Enabled = True
-        Call RefreshGrid()
-        Call Bersih()
-        AturTxtBox(False)
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
@@ -89,8 +102,8 @@
         modeProses = 1
 
         btnNew.Enabled = False
-        btnEdit.Enabled = True
-        btnDelete.Enabled = True
+        btnEdit.Enabled = False
+        btnDelete.Enabled = False
 
         txtId.Text = KontrolJasa.FCKdJasa
     End Sub
@@ -99,6 +112,7 @@
         AturTxtBox(True)
 
         btnNew.Enabled = False
+        btnDelete.Enabled = False
 
         txtNama.Focus()
         modeProses = 2
@@ -123,17 +137,35 @@
 
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Call RefreshGrid()
+        Call AturTxtBox(False)
+        Call Bersih()
+
+        btnNew.Enabled = True
+        btnEdit.Enabled = True
+        btnDelete.Enabled = True
+        btnSave.Enabled = False
+
+        modeProses = 0
     End Sub
 
     Private Sub DGJasa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGJasa.CellContentClick, DGJasa.CellClick
-        DTGrid = KontrolJasa.TampilData.ToTable
-        baris = e.RowIndex
-        DGJasa.Rows(baris).Selected = True
-        IsiBox(baris)
+        If modeProses = 0 Or modeProses = 2 Then
+            DTGrid = KontrolJasa.TampilData.ToTable
+            baris = e.RowIndex
+            DGJasa.Rows(baris).Selected = True
+            IsiBox(baris)
+        ElseIf modeProses = 1 Then
+            DTGrid = KontrolJasa.TampilData.ToTable
+            DGJasa.Rows(baris).Selected = False
+        End If
     End Sub
 
     Private Sub lblLihat_Click(sender As Object, e As EventArgs) Handles lblLihat.Click
         Me.Close()
         LihatJasa.Show()
+    End Sub
+
+    Private Sub txtHarga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHarga.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
     End Sub
 End Class

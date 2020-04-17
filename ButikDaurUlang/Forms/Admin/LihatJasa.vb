@@ -23,6 +23,13 @@
             DGDetailJasa.Columns(4).HeaderText = "Tanggal"
             DGDetailJasa.Columns(5).HeaderText = "ID User"
             DGDetailJasa.Columns(6).HeaderText = "ID Pendapatan"
+
+            DGDetailJasa.Columns(0).FillWeight = 12
+            DGDetailJasa.Columns(2).FillWeight = 8
+            DGDetailJasa.Columns(3).FillWeight = 10
+            DGDetailJasa.Columns(4).FillWeight = 10
+            DGDetailJasa.Columns(5).FillWeight = 12
+            DGDetailJasa.Columns(6).FillWeight = 12
         End With
     End Sub
 
@@ -70,4 +77,5 @@
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Call RefreshGrid()
     End Sub
+
 End Class

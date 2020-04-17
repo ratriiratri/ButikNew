@@ -2,6 +2,15 @@
 
     Dim baris As Integer
 
+    Private Sub isiCbPencarian()
+        cbPencarian.Items.Add("-Pencarian-")
+        cbPencarian.Items.Add("ID Pendapatan")
+        cbPencarian.Items.Add("ID User")
+        cbPencarian.Items.Add("Jumlah Pendapatan")
+        cbPencarian.Items.Add("Keterangan")
+        cbPencarian.Items.Add("Tanggal Pendapatan")
+    End Sub
+
     Private Sub RefreshGrid()
         DTGrid = KontrolPendapatan.TampilPendapatan.ToTable
         DGPendapatan.DataSource = DTGrid
@@ -49,6 +58,7 @@
 
         Call RefreshGrid()
         Call AturDGPendapatan()
+        Call isiCbPencarian()
     End Sub
 
     Private Sub DGPendapatan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGPendapatan.CellContentClick
@@ -57,7 +67,7 @@
         IsiBox(baris)
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs)
         If txtSearch.Text = "" Then
             Call RefreshGrid()
         Else

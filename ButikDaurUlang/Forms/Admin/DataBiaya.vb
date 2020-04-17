@@ -55,6 +55,8 @@
             btnEdit.Enabled = False
             btnDelete.Enabled = False
         End If
+
+        modeProses = 0
     End Sub
 
     Private Sub lblTambah_Click(sender As Object, e As EventArgs)
@@ -73,28 +75,40 @@
             .namaBiaya = txtNama.Text
         End With
 
-        If modeProses = 1 Then
-            KontrolBiaya.InsertData(EntitasBiaya)
-        ElseIf modeProses = 2 Then
-            KontrolBiaya.UpdateData(EntitasBiaya)
+        If txtNama.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!")
+            txtNama.Focus()
+            btnNew.Enabled = False
+        Else
+            If modeProses = 1 Then
+                KontrolBiaya.InsertData(EntitasBiaya)
+            ElseIf modeProses = 2 Then
+                KontrolBiaya.UpdateData(EntitasBiaya)
+            End If
+            MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+            Call RefreshGrid()
+            Call Bersih()
+            AturTxtBox(False)
+
+            btnNew.Enabled = True
+            btnDelete.Enabled = True
+            btnEdit.Enabled = True
+            btnSave.Enabled = False
+
+            modeProses = 0
         End If
 
-        MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
-
-        btnNew.Enabled = True
-        Call RefreshGrid()
-        Call Bersih()
-        AturTxtBox(False)
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
         Call AturTxtBox(True)
         Call Bersih()
+
         modeProses = 1
 
         btnNew.Enabled = False
-        btnEdit.Enabled = True
-        btnDelete.Enabled = True
+        btnEdit.Enabled = False
+        btnDelete.Enabled = False
 
         txtId.Text = KontrolBiaya.FCKdBiaya
     End Sub
@@ -103,6 +117,7 @@
         AturTxtBox(True)
 
         btnNew.Enabled = False
+        btnDelete.Enabled = False
 
         txtNama.Focus()
         modeProses = 2
@@ -127,16 +142,26 @@
 
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Call RefreshGrid()
+        Call Bersih()
+        AturTxtBox(False)
+
+        btnNew.Enabled = True
+        btnEdit.Enabled = True
+        btnDelete.Enabled = True
+        btnSave.Enabled = False
+
+        modeProses = 0
     End Sub
 
     Private Sub DGBiaya_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGBiaya.CellContentClick, DGBiaya.CellClick
-        DTGrid = KontrolBiaya.TampilData.ToTable
-        baris = e.RowIndex
-        DGBiaya.Rows(baris).Selected = True
-        IsiBox(baris)
-    End Sub
-
-    Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
-
+        If modeProses = 0 Or modeProses = 2 Then
+            DTGrid = KontrolBiaya.TampilData.ToTable
+            baris = e.RowIndex
+            DGBiaya.Rows(baris).Selected = True
+            IsiBox(baris)
+        ElseIf modeProses = 1 Then
+            DTGrid = KontrolBiaya.TampilData.ToTable
+            DGBiaya.Rows(baris).Selected = False
+        End If
     End Sub
 End Class

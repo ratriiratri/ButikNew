@@ -72,13 +72,61 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="Control\ControlBiaya.vb" />
+    <Compile Include="Control\ControlJasa.vb" />
+    <Compile Include="Control\ControlProduk.vb" />
+    <Compile Include="Control\ControlUser.vb" />
+    <Compile Include="Entity\EntityUser.vb" />
+    <Compile Include="Forms\DataAdmin.Designer.vb">
+      <DependentUpon>DataAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\LihatBiaya.Designer.vb">
+      <DependentUpon>LihatBiaya.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatBiaya.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\LihatJasa.Designer.vb">
+      <DependentUpon>LihatJasa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatJasa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatProduk.Designer.vb">
+      <DependentUpon>LihatProduk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatProduk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiProduk.Designer.vb">
+      <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiProduk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatUser.Designer.vb">
+      <DependentUpon>LihatUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PemilikUtama.Designer.vb">
+      <DependentUpon>PemilikUtama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PemilikUtama.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\ModKoneksiDB.vb" />
+    <Compile Include="Global\ModObjectFungsi.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -96,8 +144,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\DataAdmin.resx">
+      <DependentUpon>DataAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatBiaya.resx">
+      <DependentUpon>LihatBiaya.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatJasa.resx">
+      <DependentUpon>LihatJasa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatProduk.resx">
+      <DependentUpon>LihatProduk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatTransaksiProduk.resx">
+      <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatUser.resx">
+      <DependentUpon>LihatUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PemilikUtama.resx">
+      <DependentUpon>PemilikUtama.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -119,7 +188,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pemilik\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

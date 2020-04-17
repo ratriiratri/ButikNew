@@ -23,11 +23,11 @@ Partial Class DataProduk
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.btnNew = New System.Windows.Forms.Button()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.DGProduk = New System.Windows.Forms.DataGridView()
+        Me.btnNew = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtStock = New System.Windows.Forms.TextBox()
@@ -57,7 +57,6 @@ Partial Class DataProduk
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.btnNew)
         Me.Panel7.Controls.Add(Me.btnRefresh)
         Me.Panel7.Controls.Add(Me.btnDelete)
         Me.Panel7.Controls.Add(Me.btnEdit)
@@ -67,16 +66,6 @@ Partial Class DataProduk
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1154, 265)
         Me.Panel7.TabIndex = 48
-        '
-        'btnNew
-        '
-        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(566, 218)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(86, 31)
-        Me.btnNew.TabIndex = 35
-        Me.btnNew.Text = "New"
-        Me.btnNew.UseVisualStyleBackColor = True
         '
         'btnRefresh
         '
@@ -119,12 +108,24 @@ Partial Class DataProduk
         Me.DGProduk.Name = "DGProduk"
         Me.DGProduk.ReadOnly = True
         Me.DGProduk.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DGProduk.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DGProduk.Size = New System.Drawing.Size(739, 182)
         Me.DGProduk.TabIndex = 0
+        '
+        'btnNew
+        '
+        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNew.Location = New System.Drawing.Point(574, 160)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Size = New System.Drawing.Size(86, 31)
+        Me.btnNew.TabIndex = 35
+        Me.btnNew.Text = "New"
+        Me.btnNew.UseVisualStyleBackColor = True
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Controls.Add(Me.txtStock)
         Me.Panel5.Controls.Add(Me.btnSave)

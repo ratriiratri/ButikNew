@@ -8,13 +8,9 @@
     Public EntitasJasa As New EntityJasa
     Public KontrolJasa As New ControlJasa
 
-    Public EntitasBiaya As New EntityBiaya
-    'Public KontrolBiaya As New ControlBiaya
-
     Public EntitasPendapatan As New EntityPendapatan
     Public KontrolPendapatan As New ControlPendapatan
 
-    Public EntitasDetailBiaya As New EntityDetailBiaya
     Public EntitasDetailJasa As New EntityDetailJasa
     Public EntitasDetailProduk As New EntityDetailProduk
 

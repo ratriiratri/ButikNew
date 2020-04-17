@@ -68,9 +68,4 @@
         End If
     End Sub
 
-    Private Sub DGProduk_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGProduk.CellContentClick
-        baris = e.RowIndex
-        DGProduk.Rows(baris).Selected = True
-        IsiBox(baris)
-    End Sub
 End Class

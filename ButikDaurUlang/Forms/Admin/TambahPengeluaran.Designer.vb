@@ -119,6 +119,7 @@ Partial Class TambahPengeluaran
         '
         'cbBiaya
         '
+        Me.cbBiaya.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbBiaya.Enabled = False
         Me.cbBiaya.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbBiaya.FormattingEnabled = True
