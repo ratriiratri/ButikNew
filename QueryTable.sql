@@ -155,12 +155,13 @@ where pl.ketPengeluaran like '%B%' or db.idBiaya like '%B%'
 
 
 select p.idProduk, p.namaProduk, dp.jumlahProduk, p.hargaProduk, dp.discProduk, dp.idPendapatan, pd.tglPendapatan, us.idUser
-from Produk p join DetailProduk dp on p.idProduk = dp.idProduk
+from Produk p 
+join DetailProduk dp on p.idProduk = dp.idProduk
 			  join Pendapatan pd on pd.idPendapatan = dp.idPendapatan
 			  join Userr us on us.idUser = pd.idUser 
-where dp.jumlahProduk like 2 or p.hargaProduk like 2
+where dp.jumlahProduk like 1 or p.hargaProduk like 2
 
 
-select * from pendapatan where idPendapatan like 
+select * from Userr where idPendapatan like 
 
 select p.

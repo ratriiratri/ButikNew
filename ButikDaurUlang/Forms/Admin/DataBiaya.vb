@@ -76,7 +76,7 @@
         End With
 
         If txtNama.Text = "" Then
-            MsgBox("Lengkapi Data Terlebih Dahulu!")
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
             txtNama.Focus()
             btnNew.Enabled = False
         Else

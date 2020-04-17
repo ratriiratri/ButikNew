@@ -392,7 +392,7 @@ Partial Class TambahPengeluaran
         Me.lblTambah.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.lblTambah.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTambah.Location = New System.Drawing.Point(1073, 55)
+        Me.lblTambah.Location = New System.Drawing.Point(1067, 55)
         Me.lblTambah.Name = "lblTambah"
         Me.lblTambah.Size = New System.Drawing.Size(52, 13)
         Me.lblTambah.TabIndex = 11

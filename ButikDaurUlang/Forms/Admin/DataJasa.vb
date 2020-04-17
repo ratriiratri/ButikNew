@@ -162,7 +162,7 @@
 
     Private Sub lblLihat_Click(sender As Object, e As EventArgs) Handles lblLihat.Click
         Me.Close()
-        LihatJasa.Show()
+        LihatTransaksiJasa.Show()
     End Sub
 
     Private Sub txtHarga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHarga.KeyPress

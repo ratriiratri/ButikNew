@@ -1,4 +1,5 @@
 ﻿Public Class Login
+
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         DTGrid = KontrolUser.loginAdmin(txtUsername.Text).ToTable
 
@@ -19,11 +20,11 @@
             End With
 
             If txtUsername.Text = EntitasUser.usernameUser And txtPassword.Text = EntitasUser.passwordUser Then
-                MsgBox("Login Berhasil")
+                MsgBox("Login Berhasil", MsgBoxStyle.Information, "Info")
                 AdminUtama.Show()
                 Me.Hide()
             Else
-                MsgBox("Password Salah")
+                MsgBox("Username atau Password Salah")
                 txtPassword.Focus()
             End If
         Else
@@ -33,7 +34,8 @@
         End If
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Call CloseConnection()
+        Me.Close()
     End Sub
 End Class

@@ -3,11 +3,61 @@ Imports ButikDaurUlang
 
 Public Class ControlPendapatan
 
-    Public Function CariData(kunci As String) As DataView
+    Public Function CariDataID(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Pendapatan where idPendapatan like '%" & kunci & "%' " _
-                                        & "or jmlPendapatan like '" & kunci & "' or ketPendapatan like '%" & kunci & "%' " _
-                                        & "or tglPendapatan like '" & kunci & "' or idUser like '%" & kunci & "%' ", OpenConnection)
+            DTA = New OleDbDataAdapter("select * from Pendapatan where idPendapatan like '%" & kunci & "%' ", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariPendapatan")
+
+            Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataJumlah(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Pendapatan where jmlPendapatan like " & kunci & "", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariPendapatan")
+
+            Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataKeterangan(kunci As Integer) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Pendapatan where ketPendapatan like '%" & kunci & "%' ", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariPendapatan")
+
+            Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataTanggal(kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Pendapatan where tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariPendapatan")
+
+            Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDUser(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Pendapatan where idUser like '%" & kunci & "%' ", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPendapatan")
 

@@ -30,11 +30,13 @@ Partial Class AdminUtama
         Me.btnProduk = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnLihat = New System.Windows.Forms.Button()
         Me.btnJasa = New System.Windows.Forms.Button()
         Me.picGirl = New System.Windows.Forms.PictureBox()
-        Me.lblAdmin = New System.Windows.Forms.Label()
+        Me.lbl = New System.Windows.Forms.Label()
         Me.picDuarUlang = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblNama = New System.Windows.Forms.Label()
         Me.btnMin = New System.Windows.Forms.Button()
         Me.btnMax = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
@@ -144,6 +146,7 @@ Partial Class AdminUtama
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.btnLihat)
         Me.Panel3.Controls.Add(Me.btnLogOut)
         Me.Panel3.Controls.Add(Me.btnPengeluaran)
         Me.Panel3.Controls.Add(Me.btnUser)
@@ -157,6 +160,19 @@ Partial Class AdminUtama
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(169, 483)
         Me.Panel3.TabIndex = 5
+        '
+        'btnLihat
+        '
+        Me.btnLihat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLihat.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLihat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLihat.Location = New System.Drawing.Point(0, 369)
+        Me.btnLihat.Name = "btnLihat"
+        Me.btnLihat.Size = New System.Drawing.Size(169, 52)
+        Me.btnLihat.TabIndex = 9
+        Me.btnLihat.Text = "Lihat Transaksi"
+        Me.btnLihat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLihat.UseVisualStyleBackColor = True
         '
         'btnJasa
         '
@@ -174,26 +190,26 @@ Partial Class AdminUtama
         'picGirl
         '
         Me.picGirl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picGirl.Location = New System.Drawing.Point(607, 32)
+        Me.picGirl.Location = New System.Drawing.Point(696, 30)
         Me.picGirl.Name = "picGirl"
         Me.picGirl.Size = New System.Drawing.Size(32, 32)
         Me.picGirl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.picGirl.TabIndex = 3
         Me.picGirl.TabStop = False
         '
-        'lblAdmin
+        'lbl
         '
-        Me.lblAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblAdmin.AutoSize = True
-        Me.lblAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.lblAdmin.Location = New System.Drawing.Point(645, 36)
-        Me.lblAdmin.Name = "lblAdmin"
-        Me.lblAdmin.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblAdmin.Size = New System.Drawing.Size(110, 25)
-        Me.lblAdmin.TabIndex = 2
-        Me.lblAdmin.Text = "Hi, Admin!"
-        Me.lblAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lbl.AutoSize = True
+        Me.lbl.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lbl.Location = New System.Drawing.Point(734, 34)
+        Me.lbl.Name = "lbl"
+        Me.lbl.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lbl.Size = New System.Drawing.Size(38, 25)
+        Me.lbl.TabIndex = 2
+        Me.lbl.Text = "Hi,"
+        Me.lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'picDuarUlang
         '
@@ -210,14 +226,28 @@ Partial Class AdminUtama
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.lblNama)
         Me.Panel2.Controls.Add(Me.picGirl)
-        Me.Panel2.Controls.Add(Me.lblAdmin)
+        Me.Panel2.Controls.Add(Me.lbl)
         Me.Panel2.Controls.Add(Me.picDuarUlang)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 23)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(784, 89)
         Me.Panel2.TabIndex = 4
+        '
+        'lblNama
+        '
+        Me.lblNama.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblNama.AutoSize = True
+        Me.lblNama.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNama.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblNama.Location = New System.Drawing.Point(768, 34)
+        Me.lblNama.Name = "lblNama"
+        Me.lblNama.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.lblNama.Size = New System.Drawing.Size(0, 25)
+        Me.lblNama.TabIndex = 4
+        Me.lblNama.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnMin
         '
@@ -292,11 +322,13 @@ Partial Class AdminUtama
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnJasa As Button
     Friend WithEvents picGirl As PictureBox
-    Friend WithEvents lblAdmin As Label
+    Friend WithEvents lbl As Label
     Friend WithEvents picDuarUlang As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents btnMin As Button
     Friend WithEvents btnMax As Button
     Friend WithEvents btnClose As Button
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents lblNama As Label
+    Friend WithEvents btnLihat As Button
 End Class

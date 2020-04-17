@@ -124,10 +124,10 @@
     <Compile Include="Forms\Admin\DataUser.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\LihatJasa.Designer.vb">
-      <DependentUpon>LihatJasa.vb</DependentUpon>
+    <Compile Include="Forms\Admin\LihatTransaksiJasa.Designer.vb">
+      <DependentUpon>LihatTransaksiJasa.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\LihatJasa.vb">
+    <Compile Include="Forms\Admin\LihatTransaksiJasa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin\LihatPengeluaran.Designer.vb">
@@ -158,6 +158,12 @@
       <DependentUpon>TambahPengeluaran.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\TambahPengeluaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatTransaksiProduk.Designer.vb">
+      <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatTransaksiProduk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Global\ModKoneksiDB.vb" />
@@ -198,8 +204,8 @@
     <EmbeddedResource Include="Forms\Admin\DataUser.resx">
       <DependentUpon>DataUser.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\LihatJasa.resx">
-      <DependentUpon>LihatJasa.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\LihatTransaksiJasa.resx">
+      <DependentUpon>LihatTransaksiJasa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\LihatPengeluaran.resx">
       <DependentUpon>LihatPengeluaran.vb</DependentUpon>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\TambahPengeluaran.resx">
       <DependentUpon>TambahPengeluaran.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\LihatTransaksiProduk.resx">
+      <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

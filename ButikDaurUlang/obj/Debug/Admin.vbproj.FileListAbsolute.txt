@@ -27,7 +27,6 @@ E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.Da
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataJasa.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataProduk.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataUser.resources
-E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatJasa.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatPengeluaran.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatPendapatan.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatProduk.resources
@@ -43,4 +42,6 @@ E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\bin\Debug\ButikDaurUlang.ex
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\bin\Debug\ButikDaurUlang.exe
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\bin\Debug\ButikDaurUlang.pdb
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\bin\Debug\ButikDaurUlang.xml
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatTransaksiJasa.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatTransaksiProduk.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\Admin.vbprojAssemblyReference.cache

@@ -32,3 +32,4 @@ E:\#Kuliah\#SKRIPSI\Program\MasterFIX\User\obj\Debug\User.vbproj.CoreCompileInpu
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\User\obj\Debug\User.exe
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\User\obj\Debug\User.xml
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\User\obj\Debug\User.pdb
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\User\obj\Debug\User.vbprojAssemblyReference.cache
