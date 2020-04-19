@@ -71,6 +71,8 @@
             btnEdit.Enabled = False
             btnDelete.Enabled = False
         End If
+
+        modeProses = 0
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -83,19 +85,42 @@
             .statusUser = "1"
         End With
 
-        If modeProses = 1 Then
-            KontrolUser.InsertData(EntitasUser)
-        ElseIf modeProses = 2 Then
-            KontrolUser.UpdateData(EntitasUser)
+        If txtNama.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtNama.Focus()
+            btnNew.Enabled = False
+        ElseIf txtNoHp.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtNoHp.Focus()
+            btnNew.Enabled = False
+        ElseIf txtUsername.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtUsername.Focus()
+            btnNew.Enabled = False
+        ElseIf txtPassword.Text = "" Then
+            MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+            txtPassword.Focus()
+            btnNew.Enabled = False
+        Else
+            If modeProses = 1 Then
+                KontrolUser.InsertData(EntitasUser)
+            ElseIf modeProses = 2 Then
+                KontrolUser.UpdateData(EntitasUser)
+            End If
+
+            MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+
+            Call RefreshGrid()
+            Call Bersih()
+            AturTxtBox(False)
+
+            btnNew.Enabled = True
+            btnDelete.Enabled = True
+            btnEdit.Enabled = True
+            btnSave.Enabled = False
+
+            modeProses = 0
         End If
-
-        MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
-
-        Call RefreshGrid()
-        Call Bersih()
-        AturTxtBox(False)
-
-        btnNew.Enabled = True
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
@@ -104,8 +129,8 @@
         modeProses = 1
 
         btnNew.Enabled = False
-        btnEdit.Enabled = True
-        btnDelete.Enabled = True
+        btnEdit.Enabled = False
+        btnDelete.Enabled = False
 
         txtId.Text = KontrolUser.FCKdUser
     End Sub
@@ -116,6 +141,7 @@
         txtUsername.Enabled = False
         txtPassword.Enabled = False
         btnNew.Enabled = False
+        btnDelete.Enabled = False
 
         txtNama.Focus()
         modeProses = 2
@@ -139,12 +165,26 @@
 
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Call RefreshGrid()
+        Call Bersih()
+        AturTxtBox(False)
+
+        btnNew.Enabled = True
+        btnEdit.Enabled = True
+        btnDelete.Enabled = True
+        btnSave.Enabled = False
+
+        modeProses = 0
     End Sub
 
     Private Sub DGAdmin_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGAdmin.CellContentClick, DGAdmin.CellClick
-        DTGrid = KontrolUser.TampilData.ToTable
-        baris = e.RowIndex
-        DGAdmin.Rows(baris).Selected = True
-        IsiBox(baris)
+        If modeProses = 0 Or modeProses = 2 Then
+            DTGrid = KontrolUser.TampilData.ToTable
+            baris = e.RowIndex
+            DGAdmin.Rows(baris).Selected = True
+            IsiBox(baris)
+        ElseIf modeProses = 1 Then
+            DTGrid = KontrolUser.TampilData.ToTable
+            DGAdmin.Rows(baris).Selected = False
+        End If
     End Sub
 End Class

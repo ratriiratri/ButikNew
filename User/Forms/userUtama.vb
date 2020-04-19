@@ -15,7 +15,38 @@
         Me.WindowState = WindowState.Minimized
     End Sub
 
-    Private Sub btnTransaksi_Click(sender As Object, e As EventArgs) Handles btnProduk.Click
+    Private Sub btnProduk_Click(sender As Object, e As EventArgs) Handles btnProduk.Click
+        Dashboard.Close()
         TambahTransaksiProduk.Show()
+        TambahTransaksiJasa.Close()
+        DataProduk.Close()
+    End Sub
+
+    Private Sub btnJasa_Click(sender As Object, e As EventArgs) Handles btnJasa.Click
+        Dashboard.Close()
+        TambahTransaksiProduk.Close()
+        TambahTransaksiJasa.Show()
+        DataProduk.Close()
+    End Sub
+
+    Private Sub UserUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dashboard.Show()
+        TambahTransaksiProduk.Close()
+        TambahTransaksiJasa.Close()
+        DataProduk.Close()
+    End Sub
+
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        Dashboard.Show()
+        TambahTransaksiProduk.Close()
+        TambahTransaksiJasa.Close()
+        DataProduk.Close()
+    End Sub
+
+    Private Sub btnLihat_Click(sender As Object, e As EventArgs) Handles btnLihat.Click
+        Dashboard.Close()
+        TambahTransaksiProduk.Close()
+        TambahTransaksiJasa.Close()
+        DataProduk.Show()
     End Sub
 End Class

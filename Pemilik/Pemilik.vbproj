@@ -101,6 +101,12 @@
     <Compile Include="Forms\LihatProduk.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\LihatTransaksiBiaya.Designer.vb">
+      <DependentUpon>LihatTransaksiBiaya.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiBiaya.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\LihatTransaksiProduk.Designer.vb">
       <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LihatProduk.resx">
       <DependentUpon>LihatProduk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatTransaksiBiaya.resx">
+      <DependentUpon>LihatTransaksiBiaya.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LihatTransaksiProduk.resx">
       <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>

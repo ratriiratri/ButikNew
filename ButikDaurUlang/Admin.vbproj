@@ -124,6 +124,12 @@
     <Compile Include="Forms\Admin\DataUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Admin\LihatTransaksiBiaya.Designer.vb">
+      <DependentUpon>LihatTransaksiBiaya.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\LihatTransaksiBiaya.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Admin\LihatTransaksiJasa.Designer.vb">
       <DependentUpon>LihatTransaksiJasa.vb</DependentUpon>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\DataUser.resx">
       <DependentUpon>DataUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\LihatTransaksiBiaya.resx">
+      <DependentUpon>LihatTransaksiBiaya.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\LihatTransaksiJasa.resx">
       <DependentUpon>LihatTransaksiJasa.vb</DependentUpon>

@@ -124,4 +124,24 @@
             dateAkhir.Enabled = False
         End If
     End Sub
+
+    Private Sub lblTransaksiProduk_Click(sender As Object, e As EventArgs) Handles lblTransaksiProduk.Click
+        Me.Close()
+        LihatTransaksiProduk.Show()
+    End Sub
+
+    Private Sub lblTransaksiJasa_Click(sender As Object, e As EventArgs) Handles lblTransaksiJasa.Click
+        Me.Close()
+        LihatTransaksiJasa.Show()
+    End Sub
+
+    Private Sub lblTransaksiBiaya_Click(sender As Object, e As EventArgs) Handles lblTransaksiBiaya.Click
+        Me.Close()
+        LihatTransaksiBiaya.Show()
+    End Sub
+
+    Private Sub lblPengeluaran_Click(sender As Object, e As EventArgs) Handles lblPengeluaran.Click
+        Me.Close()
+        LihatPengeluaran.Show()
+    End Sub
 End Class

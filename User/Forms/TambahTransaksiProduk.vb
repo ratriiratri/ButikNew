@@ -41,6 +41,21 @@
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'deklarasi array string
         Dim strItem(5) As String
+        Dim update As Integer
+
+        For Each id As ListViewItem In LVDetailProduk.Items
+            If id.Text = txtId.Text Then
+                update = txtQty.Text + LVDetailProduk.Items(0).SubItems(3).Text
+            End If
+        Next
+
+        If txtNama.Text = "" Then
+            MsgBox("Masukan Produk Terlebih Dahulu!", MsgBoxStyle.Information, "Info")
+        ElseIf txtQty.Text = "" Then
+            MsgBox("Masukan Jumlah Produk Terlebih Dahulu!", MsgBoxStyle.Information, "Info")
+        ElseIf txtDisc.Text = "" Then
+            txtDisc.Text = 0
+        End If
 
         strItem(0) = txtId.Text
         strItem(1) = txtNama.Text
@@ -51,6 +66,20 @@
 
         'tambahkan item add (ListViewDetailBiaya) dengan isi array
         LVDetailProduk.Items.Add(New ListViewItem(strItem))
+
+        For Each id As ListViewItem In LVDetailProduk.Items
+            If id.Text = txtId.Text Then
+                update = txtQty.Text + LVDetailProduk.Items(0).SubItems(3).Text
+
+                strItem(0) = txtId.Text
+                strItem(1) = txtNama.Text
+                strItem(2) = update
+                strItem(3) = txtHarga.Text
+                strItem(4) = txtDisc.Text
+                strItem(5) = txtQty.Text * txtHarga.Text - ((txtDisc.Text / 100) * (txtQty.Text * txtHarga.Text))
+            End If
+        Next
+
 
         Call HitungTotal()
         Call Bersih()

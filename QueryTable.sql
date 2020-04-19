@@ -162,6 +162,15 @@ join DetailProduk dp on p.idProduk = dp.idProduk
 where dp.jumlahProduk like 1 or p.hargaProduk like 2
 
 
-select * from Userr where idPendapatan like 
+SELECT idUser, namaUSer, hpUser, usernameUser, passwordUser, case statusUser 
+   WHEN '1' THEN 'Admin' 
+   when '2' then 'User'
+   end as status
+   FROM Userr where statusUser != '3' and statusUser = '2'
 
-select p.
+select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, pl.idPengeluaran, pl.tglPengeluaran, us.idUser
+from Biaya b join DetailBiaya db on b.idBiaya = db.idBiaya
+			 join Pengeluaran pl on pl.idPengeluaran = db.idPengeluaran
+			 join Userr us on us.idUser = pl.idUser where b.idBiaya = 'BY0001'
+
+select * from pengeluaran

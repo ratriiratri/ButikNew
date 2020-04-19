@@ -18,7 +18,6 @@
         txtId.Text = ""
         txtQty.Text = ""
         txtJumlah.Text = ""
-        lblNominal.Text = 0
     End Sub
 
     Sub HitungTotal()
@@ -38,17 +37,15 @@
 
         Call Bersih()
 
+        btnNew.Enabled = True
         btnAdd.Enabled = False
         btnEdit.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
 
         lblUser.Text = kodeLogin
 
         lblTanggal.Text = Format(Now, "yyyy/MM/dd hh:mm")
-    End Sub
-
-    Private Sub lblLihat_Click(sender As Object, e As EventArgs) Handles lblLihat.Click
-        Me.Close()
-        LihatPengeluaran.Show()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -113,6 +110,7 @@
 
         Call Bersih()
 
+        lblNominal.Text = 0
         LVDetailBiaya.Items.Clear()
 
         cbBiaya.Enabled = False
@@ -126,24 +124,29 @@
         btnNew.Enabled = True
         btnEdit.Enabled = False
         btnAdd.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
         Call Bersih()
         Call isiCbBiaya()
 
+        txtQty.Focus()
+
         LVDetailBiaya.Items.Clear()
 
-        txtQty.Focus()
         cbBiaya.Enabled = True
         txtQty.Enabled = True
         txtQty.ReadOnly = False
         txtJumlah.Enabled = True
         txtJumlah.ReadOnly = False
 
-        btnAdd.Enabled = True
         btnNew.Enabled = False
         btnEdit.Enabled = True
+        btnAdd.Enabled = True
+        btnSave.Enabled = True
+        btnDelete.Enabled = True
 
         lblPengeluaran.Text = KontrolPengeluaran.FCKdPengeluaran
     End Sub
@@ -157,9 +160,5 @@
             txtId.Text = DTR.Item("idBiaya")
             txtQty.Focus()
         End If
-    End Sub
-
-    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        'belum
     End Sub
 End Class

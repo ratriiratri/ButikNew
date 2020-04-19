@@ -52,9 +52,6 @@ Partial Class TambahPengeluaran
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.lblLihat = New System.Windows.Forms.Label()
-        Me.lblTambah = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -180,7 +177,7 @@ Partial Class TambahPengeluaran
         '
         Me.lblPengeluaran.AutoSize = True
         Me.lblPengeluaran.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPengeluaran.Location = New System.Drawing.Point(425, 23)
+        Me.lblPengeluaran.Location = New System.Drawing.Point(449, 23)
         Me.lblPengeluaran.Name = "lblPengeluaran"
         Me.lblPengeluaran.Size = New System.Drawing.Size(60, 17)
         Me.lblPengeluaran.TabIndex = 89
@@ -190,7 +187,7 @@ Partial Class TambahPengeluaran
         '
         Me.lblUser.AutoSize = True
         Me.lblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUser.Location = New System.Drawing.Point(216, 23)
+        Me.lblUser.Location = New System.Drawing.Point(240, 23)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(52, 17)
         Me.lblUser.TabIndex = 88
@@ -209,7 +206,7 @@ Partial Class TambahPengeluaran
         'btnNew
         '
         Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(717, 464)
+        Me.btnNew.Location = New System.Drawing.Point(79, 16)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(86, 31)
         Me.btnNew.TabIndex = 83
@@ -223,13 +220,13 @@ Partial Class TambahPengeluaran
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 31)
         Me.btnDelete.TabIndex = 81
-        Me.btnDelete.Text = "Del"
+        Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(901, 464)
+        Me.btnSave.Location = New System.Drawing.Point(810, 464)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 31)
         Me.btnSave.TabIndex = 80
@@ -239,7 +236,7 @@ Partial Class TambahPengeluaran
         'btnEdit
         '
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(809, 464)
+        Me.btnEdit.Location = New System.Drawing.Point(902, 464)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(86, 31)
         Me.btnEdit.TabIndex = 79
@@ -321,7 +318,7 @@ Partial Class TambahPengeluaran
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(313, 23)
+        Me.Label3.Location = New System.Drawing.Point(337, 23)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(106, 17)
         Me.Label3.TabIndex = 65
@@ -331,7 +328,7 @@ Partial Class TambahPengeluaran
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(155, 23)
+        Me.Label2.Location = New System.Drawing.Point(179, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(55, 17)
         Me.Label2.TabIndex = 63
@@ -351,9 +348,6 @@ Partial Class TambahPengeluaran
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.lblLihat)
-        Me.Panel1.Controls.Add(Me.lblTambah)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -361,42 +355,6 @@ Partial Class TambahPengeluaran
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 56
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Location = New System.Drawing.Point(1125, 55)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(12, 13)
-        Me.Label13.TabIndex = 13
-        Me.Label13.Text = "/"
-        '
-        'lblLihat
-        '
-        Me.lblLihat.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblLihat.AutoSize = True
-        Me.lblLihat.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblLihat.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblLihat.Location = New System.Drawing.Point(1143, 55)
-        Me.lblLihat.Name = "lblLihat"
-        Me.lblLihat.Size = New System.Drawing.Size(30, 13)
-        Me.lblLihat.TabIndex = 12
-        Me.lblLihat.Text = "Lihat"
-        '
-        'lblTambah
-        '
-        Me.lblTambah.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTambah.AutoSize = True
-        Me.lblTambah.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblTambah.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTambah.Location = New System.Drawing.Point(1067, 55)
-        Me.lblTambah.Name = "lblTambah"
-        Me.lblTambah.Size = New System.Drawing.Size(52, 13)
-        Me.lblTambah.TabIndex = 11
-        Me.lblTambah.Text = "Tambah"
         '
         'Label1
         '
@@ -486,9 +444,6 @@ Partial Class TambahPengeluaran
     Friend WithEvents lblNominal As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label13 As Label
-    Friend WithEvents lblLihat As Label
-    Friend WithEvents lblTambah As Label
     Friend WithEvents btnNew As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnSave As Button

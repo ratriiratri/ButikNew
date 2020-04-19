@@ -160,11 +160,6 @@
         End If
     End Sub
 
-    Private Sub lblLihat_Click(sender As Object, e As EventArgs) Handles lblLihat.Click
-        Me.Close()
-        LihatTransaksiJasa.Show()
-    End Sub
-
     Private Sub txtHarga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHarga.KeyPress
         If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
     End Sub

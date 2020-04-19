@@ -18,15 +18,11 @@
             DGUser.Columns(0).HeaderText = "ID"
             DGUser.Columns(1).HeaderText = "Nama"
             DGUser.Columns(2).HeaderText = "No. Handphone"
-            DGUser.Columns(3).HeaderText = "Username"
-            DGUser.Columns(4).HeaderText = "Password"
-            DGUser.Columns(5).HeaderText = "Status"
+            DGUser.Columns(3).HeaderText = "Status"
 
             DGUser.Columns(0).FillWeight = 20
             DGUser.Columns(2).FillWeight = 40
             DGUser.Columns(3).FillWeight = 35
-            DGUser.Columns(4).FillWeight = 35
-            DGUser.Columns(5).FillWeight = 20
         End With
     End Sub
 

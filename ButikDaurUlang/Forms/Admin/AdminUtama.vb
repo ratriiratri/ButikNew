@@ -30,8 +30,11 @@
         LihatPengeluaran.Close()
         LihatProduk.Close()
         TambahPengeluaran.Close()
+        LihatTransaksiBiaya.Close()
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
+
+        btnDashboard.Font.Bold = True
     End Sub
 
     Private Sub btnUser_Click(sender As Object, e As EventArgs) Handles btnUser.Click
@@ -45,6 +48,7 @@
         LihatPengeluaran.Close()
         LihatProduk.Close()
         TambahPengeluaran.Close()
+        LihatTransaksiBiaya.Close()
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
     End Sub
@@ -60,6 +64,7 @@
         LihatPengeluaran.Close()
         LihatProduk.Close()
         TambahPengeluaran.Close()
+        LihatTransaksiBiaya.Close()
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
     End Sub
@@ -75,6 +80,7 @@
         LihatPengeluaran.Close()
         LihatProduk.Close()
         TambahPengeluaran.Close()
+        LihatTransaksiBiaya.Close()
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
     End Sub
@@ -90,21 +96,7 @@
         LihatPengeluaran.Close()
         LihatProduk.Close()
         TambahPengeluaran.Close()
-        LihatTransaksiJasa.Close()
-        LihatTransaksiProduk.Close()
-    End Sub
-
-    Private Sub btnPendapatan_Click(sender As Object, e As EventArgs) Handles btnPendapatan.Click
-        Dashboard.Close()
-        DataBiaya.Close()
-        DataJasa.Close()
-        DataProduk.Close()
-        DataUser.Close()
-        LihatTransaksiJasa.Close()
-        LihatPendapatan.Show()
-        LihatPengeluaran.Close()
-        LihatProduk.Close()
-        TambahPengeluaran.Close()
+        LihatTransaksiBiaya.Close()
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
     End Sub
@@ -120,6 +112,7 @@
         LihatPengeluaran.Close()
         LihatProduk.Close()
         TambahPengeluaran.Show()
+        LihatTransaksiBiaya.Close()
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
     End Sub
@@ -153,7 +146,9 @@
         LihatPengeluaran.Close()
         LihatProduk.Close()
         TambahPengeluaran.Close()
+        LihatTransaksiBiaya.Close()
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Show()
     End Sub
+
 End Class

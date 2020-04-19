@@ -43,7 +43,7 @@
             DGProduk.Rows(DTGrid.Rows.Count - 1).Selected = True
             DGProduk.CurrentCell = DGProduk.Item(1, baris)
         End If
-        MsgBox("Data Tidak Ditemukan!")
+        MsgBox("Data Tidak Ditemukan!", MsgBoxStyle.Information, "Info")
         RefreshGrid()
     End Sub
 

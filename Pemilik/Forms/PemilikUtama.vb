@@ -1,6 +1,12 @@
 ﻿Public Class PemilikUtama
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        If MsgBox("Apakah Anda Yakin Ingin Keluar?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Konfirmasi") = MsgBoxResult.Yes Then
+            Me.Close()
+            Call CloseConnection()
+        End If
+    End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
+    Private Sub btnMax_Click(sender As Object, e As EventArgs) Handles btnMax.Click
         If Me.WindowState = WindowState.Normal Then
             Me.WindowState = WindowState.Maximized
         Else
@@ -8,35 +14,27 @@
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub btnMin_Click(sender As Object, e As EventArgs) Handles btnMin.Click
         Me.WindowState = WindowState.Minimized
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
-
-    Private Sub btnAdmin(sender As Object, e As EventArgs)
-        DataAdmin.Show()
-        LihatBiaya.Close()
-        LihatJasa.Close()
-        LihatTransaksiProduk.Close()
-        LihatUser.Close()
-    End Sub
-
-    Private Sub btnData(sender As Object, e As EventArgs)
-        DataAdmin.Close()
-        LihatBiaya.Close()
-        LihatJasa.Show()
-        LihatTransaksiProduk.Close()
+    Private Sub btnProduk_Click(sender As Object, e As EventArgs) Handles btnTransaksi.Click
         LihatUser.Show()
     End Sub
 
-    Private Sub btnTransaksi(sender As Object, e As EventArgs)
-        DataAdmin.Close()
-        LihatBiaya.Close()
-        LihatJasa.Close()
-        LihatTransaksiProduk.Show()
-        LihatUser.Close()
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        Call CloseConnection()
+        MsgBox("Logout Berhasil!", MsgBoxStyle.Information, "Info")
+        Me.Close()
+        Login.Show()
+        With Login
+            Login.txtUsername.Focus()
+            Login.txtUsername.ResetText()
+            Login.txtPassword.ResetText()
+        End With
+    End Sub
+
+    Private Sub PemilikUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Dashboard.Show()
     End Sub
 End Class

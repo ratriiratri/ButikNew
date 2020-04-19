@@ -186,7 +186,7 @@ Partial Class DataAdmin
         'btnNew
         '
         Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(717, 235)
+        Me.btnNew.Location = New System.Drawing.Point(556, 175)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(86, 31)
         Me.btnNew.TabIndex = 40
@@ -235,7 +235,6 @@ Partial Class DataAdmin
         '
         'Panel7
         '
-        Me.Panel7.Controls.Add(Me.btnNew)
         Me.Panel7.Controls.Add(Me.btnRefresh)
         Me.Panel7.Controls.Add(Me.btnDelete)
         Me.Panel7.Controls.Add(Me.btnEdit)
@@ -304,6 +303,7 @@ Partial Class DataAdmin
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.btnSave)
         Me.Panel5.Controls.Add(Me.Label9)
         Me.Panel5.Controls.Add(Me.Label8)

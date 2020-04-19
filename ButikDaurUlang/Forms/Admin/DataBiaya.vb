@@ -97,7 +97,6 @@
 
             modeProses = 0
         End If
-
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click

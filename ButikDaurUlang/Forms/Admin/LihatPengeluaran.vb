@@ -28,9 +28,8 @@
         With DGPengeluaran.ColumnHeadersDefaultCellStyle
             DGPengeluaran.Columns(0).HeaderText = "ID Pengeluaran"
             DGPengeluaran.Columns(1).HeaderText = "Jumlah"
-            DGPengeluaran.Columns(2).HeaderText = "Keterangan"
-            DGPengeluaran.Columns(3).HeaderText = "Tanggal"
-            DGPengeluaran.Columns(4).HeaderText = "ID User"
+            DGPengeluaran.Columns(2).HeaderText = "Tanggal"
+            DGPengeluaran.Columns(3).HeaderText = "ID User"
         End With
     End Sub
 
@@ -80,33 +79,6 @@
         IsiBox(baris)
     End Sub
 
-    Private Sub cbPencarian_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPencarian.SelectedIndexChanged
-        If cbPencarian.SelectedItem = cbPencarian.Items(4) Then
-            txtSearch.Enabled = False
-            dateAwal.Enabled = True
-            dateAkhir.Enabled = True
-        Else
-            txtSearch.Enabled = True
-            dateAwal.Enabled = False
-            dateAkhir.Enabled = False
-        End If
-    End Sub
-
-    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
-        Call RefreshGrid()
-
-        cbPencarian.SelectedItem = cbPencarian.Items(0)
-        txtSearch.Text = ""
-
-        dateAwal.Value = Format(Now)
-        dateAkhir.Value = Format(Now)
-    End Sub
-
-    Private Sub lblTambah_Click(sender As Object, e As EventArgs) Handles lblTambah.Click
-        Me.Close()
-        TambahPengeluaran.Show()
-    End Sub
-
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         If cbPencarian.SelectedItem = cbPencarian.Items(4) Then
             Call tampilCari(dateAwal.Value)
@@ -125,5 +97,47 @@
             dateAwal.Value = Format(Now)
             dateAkhir.Value = Format(Now)
         End If
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Call RefreshGrid()
+
+        cbPencarian.SelectedItem = cbPencarian.Items(0)
+        txtSearch.Text = ""
+
+        dateAwal.Value = Format(Now)
+        dateAkhir.Value = Format(Now)
+    End Sub
+
+    Private Sub cbPencarian_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPencarian.SelectedIndexChanged
+        If cbPencarian.SelectedItem = cbPencarian.Items(4) Then
+            txtSearch.Enabled = False
+            dateAwal.Enabled = True
+            dateAkhir.Enabled = True
+        Else
+            txtSearch.Enabled = True
+            dateAwal.Enabled = False
+            dateAkhir.Enabled = False
+        End If
+    End Sub
+
+    Private Sub lblTransaksiProduk_Click_1(sender As Object, e As EventArgs) Handles lblTransaksiProduk.Click
+        Me.Close()
+        LihatTransaksiProduk.Show()
+    End Sub
+
+    Private Sub lblTransaksiJasa_Click_1(sender As Object, e As EventArgs) Handles lblTransaksiJasa.Click
+        Me.Close()
+        LihatTransaksiJasa.Show()
+    End Sub
+
+    Private Sub lblTransaksiBiaya_Click(sender As Object, e As EventArgs) Handles lblTransaksiBiaya.Click
+        Me.Close()
+        LihatTransaksiBiaya.Show()
+    End Sub
+
+    Private Sub lblPendapatan_Click_1(sender As Object, e As EventArgs) Handles lblPendapatan.Click
+        Me.Close()
+        LihatPendapatan.Show()
     End Sub
 End Class

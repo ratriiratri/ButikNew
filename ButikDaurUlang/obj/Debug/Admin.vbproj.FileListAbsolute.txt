@@ -45,3 +45,4 @@ E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\bin\Debug\ButikDaurUlang.xm
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatTransaksiJasa.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatTransaksiProduk.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\Admin.vbprojAssemblyReference.cache
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatTransaksiBiaya.resources

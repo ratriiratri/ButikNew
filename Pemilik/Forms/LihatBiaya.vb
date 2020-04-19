@@ -29,24 +29,20 @@
     End Sub
 
     Private Sub tampilCari(kunci As String)
-        DTGrid = KontrolBiaya.CariData(kunci).ToTable
+        If rbID.Checked = True Then
+            DTGrid = KontrolBiaya.CariDataID(kunci).ToTable
+        ElseIf rbNama.Checked = True Then
+            DTGrid = KontrolBiaya.CariDataNama(kunci).ToTable
+        Else
+            MsgBox("Data Tidak Ditemukan!", MsgBoxStyle.Information, "Info")
+            RefreshGrid()
+        End If
 
         If DTGrid.Rows.Count > 0 Then
             baris = DTGrid.Rows.Count - 1
             DGBiaya.DataSource = DTGrid
             DGBiaya.Rows(DTGrid.Rows.Count - 1).Selected = True
             DGBiaya.CurrentCell = DGBiaya.Item(1, baris)
-        End If
-        MsgBox("Data Tidak Ditemukan!")
-        RefreshGrid()
-    End Sub
-
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        If txtSearch.Text = "" Then
-            Call RefreshGrid()
-        Else
-            Call tampilCari(txtSearch.Text)
-            txtSearch.Focus()
         End If
     End Sub
 
@@ -55,6 +51,9 @@
 
         Call RefreshGrid()
         Call AturDGBiaya()
+
+        rbID.Checked = True
+        rbNama.Checked = False
     End Sub
 
     Private Sub lblUser_Click(sender As Object, e As EventArgs) Handles lblUser.Click
@@ -70,5 +69,24 @@
     Private Sub lblJasa_Click(sender As Object, e As EventArgs) Handles lblJasa.Click
         LihatJasa.Show()
         Me.Close()
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        If txtSearch.Text = "" Then
+
+            Call RefreshGrid()
+        Else
+            Call tampilCari(txtSearch.Text)
+            txtSearch.Focus()
+        End If
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Call RefreshGrid()
+
+        rbID.Checked = True
+        rbNama.Checked = False
+
+        txtSearch.Text = ""
     End Sub
 End Class

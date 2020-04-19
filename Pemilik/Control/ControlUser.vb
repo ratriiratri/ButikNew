@@ -52,7 +52,8 @@ Public Class ControlUser
 
     Public Function TampilDataUser() As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Userr", OpenConnection)
+            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, case statusUser when '1' then 'Admin' " _
+                                       & "when '2' then 'User' end as Status from Userr where statusUser != '3'", OpenConnection)
 
             Try
                 DTS = New DataSet()

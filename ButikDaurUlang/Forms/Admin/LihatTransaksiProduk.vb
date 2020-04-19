@@ -80,11 +80,6 @@
         End If
     End Sub
 
-    Private Sub lblTransaksiJasa_Click(sender As Object, e As EventArgs) Handles lblTransaksiJasa.Click
-        Me.Close()
-        LihatTransaksiJasa.Show()
-    End Sub
-
     Private Sub LihatTransaksiProduk_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = AdminUtama
 
@@ -136,5 +131,25 @@
             dateAwal.Value = Format(Now)
             dateAkhir.Value = Format(Now)
         End If
+    End Sub
+
+    Private Sub lblTransaksiJasa_Click_1(sender As Object, e As EventArgs) Handles lblTransaksiJasa.Click
+        Me.Close()
+        LihatTransaksiJasa.Show()
+    End Sub
+
+    Private Sub lblTransaksiBiaya_Click(sender As Object, e As EventArgs) Handles lblTransaksiBiaya.Click
+        Me.Close()
+        LihatTransaksiBiaya.Show()
+    End Sub
+
+    Private Sub lblPendapatan_Click(sender As Object, e As EventArgs) Handles lblPendapatan.Click
+        Me.Close()
+        LihatPendapatan.Show()
+    End Sub
+
+    Private Sub lblPengeluaran_Click(sender As Object, e As EventArgs) Handles lblPengeluaran.Click
+        Me.Close()
+        LihatPengeluaran.Show()
     End Sub
 End Class

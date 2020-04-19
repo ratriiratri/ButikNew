@@ -34,6 +34,7 @@ Partial Class UserUtama
         Me.btnProduk = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.btnLihat = New System.Windows.Forms.Button()
         Me.btnJasa = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -173,6 +174,7 @@ Partial Class UserUtama
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.btnLihat)
         Me.Panel3.Controls.Add(Me.btnJasa)
         Me.Panel3.Controls.Add(Me.btnLogOut)
         Me.Panel3.Controls.Add(Me.btnProduk)
@@ -182,6 +184,19 @@ Partial Class UserUtama
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(169, 483)
         Me.Panel3.TabIndex = 8
+        '
+        'btnLihat
+        '
+        Me.btnLihat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLihat.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLihat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLihat.Location = New System.Drawing.Point(0, 165)
+        Me.btnLihat.Name = "btnLihat"
+        Me.btnLihat.Size = New System.Drawing.Size(169, 52)
+        Me.btnLihat.TabIndex = 10
+        Me.btnLihat.Text = "Lihat Produk"
+        Me.btnLihat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLihat.UseVisualStyleBackColor = True
         '
         'btnJasa
         '
@@ -233,4 +248,5 @@ Partial Class UserUtama
     Friend WithEvents btnDashboard As Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents btnJasa As Button
+    Friend WithEvents btnLihat As Button
 End Class

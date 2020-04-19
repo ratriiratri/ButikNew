@@ -26,7 +26,6 @@ Partial Class AdminUtama
         Me.btnPengeluaran = New System.Windows.Forms.Button()
         Me.btnUser = New System.Windows.Forms.Button()
         Me.btnBiaya = New System.Windows.Forms.Button()
-        Me.btnPendapatan = New System.Windows.Forms.Button()
         Me.btnProduk = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -68,7 +67,7 @@ Partial Class AdminUtama
         Me.btnPengeluaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPengeluaran.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPengeluaran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPengeluaran.Location = New System.Drawing.Point(0, 318)
+        Me.btnPengeluaran.Location = New System.Drawing.Point(0, 257)
         Me.btnPengeluaran.Name = "btnPengeluaran"
         Me.btnPengeluaran.Size = New System.Drawing.Size(169, 52)
         Me.btnPengeluaran.TabIndex = 7
@@ -81,7 +80,7 @@ Partial Class AdminUtama
         Me.btnUser.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUser.Location = New System.Drawing.Point(0, 63)
+        Me.btnUser.Location = New System.Drawing.Point(0, 53)
         Me.btnUser.Name = "btnUser"
         Me.btnUser.Size = New System.Drawing.Size(169, 52)
         Me.btnUser.TabIndex = 1
@@ -94,7 +93,7 @@ Partial Class AdminUtama
         Me.btnBiaya.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBiaya.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBiaya.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBiaya.Location = New System.Drawing.Point(0, 216)
+        Me.btnBiaya.Location = New System.Drawing.Point(0, 206)
         Me.btnBiaya.Name = "btnBiaya"
         Me.btnBiaya.Size = New System.Drawing.Size(169, 52)
         Me.btnBiaya.TabIndex = 4
@@ -102,25 +101,12 @@ Partial Class AdminUtama
         Me.btnBiaya.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBiaya.UseVisualStyleBackColor = True
         '
-        'btnPendapatan
-        '
-        Me.btnPendapatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPendapatan.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPendapatan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPendapatan.Location = New System.Drawing.Point(0, 267)
-        Me.btnPendapatan.Name = "btnPendapatan"
-        Me.btnPendapatan.Size = New System.Drawing.Size(169, 52)
-        Me.btnPendapatan.TabIndex = 6
-        Me.btnPendapatan.Text = "Pendapatan"
-        Me.btnPendapatan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPendapatan.UseVisualStyleBackColor = True
-        '
         'btnProduk
         '
         Me.btnProduk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProduk.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProduk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnProduk.Location = New System.Drawing.Point(0, 114)
+        Me.btnProduk.Location = New System.Drawing.Point(0, 104)
         Me.btnProduk.Name = "btnProduk"
         Me.btnProduk.Size = New System.Drawing.Size(169, 52)
         Me.btnProduk.TabIndex = 2
@@ -135,7 +121,7 @@ Partial Class AdminUtama
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDashboard.Location = New System.Drawing.Point(0, 12)
+        Me.btnDashboard.Location = New System.Drawing.Point(0, 2)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(169, 52)
         Me.btnDashboard.TabIndex = 0
@@ -152,7 +138,6 @@ Partial Class AdminUtama
         Me.Panel3.Controls.Add(Me.btnUser)
         Me.Panel3.Controls.Add(Me.btnJasa)
         Me.Panel3.Controls.Add(Me.btnBiaya)
-        Me.Panel3.Controls.Add(Me.btnPendapatan)
         Me.Panel3.Controls.Add(Me.btnProduk)
         Me.Panel3.Controls.Add(Me.btnDashboard)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
@@ -166,7 +151,7 @@ Partial Class AdminUtama
         Me.btnLihat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLihat.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLihat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLihat.Location = New System.Drawing.Point(0, 369)
+        Me.btnLihat.Location = New System.Drawing.Point(0, 308)
         Me.btnLihat.Name = "btnLihat"
         Me.btnLihat.Size = New System.Drawing.Size(169, 52)
         Me.btnLihat.TabIndex = 9
@@ -179,7 +164,7 @@ Partial Class AdminUtama
         Me.btnJasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnJasa.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnJasa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnJasa.Location = New System.Drawing.Point(0, 165)
+        Me.btnJasa.Location = New System.Drawing.Point(0, 155)
         Me.btnJasa.Name = "btnJasa"
         Me.btnJasa.Size = New System.Drawing.Size(169, 52)
         Me.btnJasa.TabIndex = 5
@@ -316,7 +301,6 @@ Partial Class AdminUtama
     Friend WithEvents btnPengeluaran As Button
     Friend WithEvents btnUser As Button
     Friend WithEvents btnBiaya As Button
-    Friend WithEvents btnPendapatan As Button
     Friend WithEvents btnProduk As Button
     Friend WithEvents btnDashboard As Button
     Friend WithEvents Panel3 As Panel

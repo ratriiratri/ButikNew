@@ -37,9 +37,6 @@ Partial Class DataJasa
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.lblLihat = New System.Windows.Forms.Label()
-        Me.lblData = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -205,9 +202,6 @@ Partial Class DataJasa
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.lblLihat)
-        Me.Panel1.Controls.Add(Me.lblData)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -215,42 +209,6 @@ Partial Class DataJasa
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 56
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Location = New System.Drawing.Point(1125, 55)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(12, 13)
-        Me.Label13.TabIndex = 16
-        Me.Label13.Text = "/"
-        '
-        'lblLihat
-        '
-        Me.lblLihat.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblLihat.AutoSize = True
-        Me.lblLihat.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblLihat.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblLihat.Location = New System.Drawing.Point(1143, 55)
-        Me.lblLihat.Name = "lblLihat"
-        Me.lblLihat.Size = New System.Drawing.Size(30, 13)
-        Me.lblLihat.TabIndex = 15
-        Me.lblLihat.Text = "Lihat"
-        '
-        'lblData
-        '
-        Me.lblData.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblData.AutoSize = True
-        Me.lblData.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblData.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblData.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblData.Location = New System.Drawing.Point(1085, 55)
-        Me.lblData.Name = "lblData"
-        Me.lblData.Size = New System.Drawing.Size(34, 13)
-        Me.lblData.TabIndex = 10
-        Me.lblData.Text = "Data"
         '
         'Label1
         '
@@ -343,7 +301,6 @@ Partial Class DataJasa
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents lblData As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel3 As Panel
@@ -354,6 +311,4 @@ Partial Class DataJasa
     Friend WithEvents btnRefresh As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnEdit As Button
-    Friend WithEvents Label13 As Label
-    Friend WithEvents lblLihat As Label
 End Class

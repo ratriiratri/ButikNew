@@ -26,15 +26,14 @@ Partial Class DataUser
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblTambah = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.DGUser = New System.Windows.Forms.DataGridView()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.btnNew = New System.Windows.Forms.Button()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnNew = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -92,19 +91,6 @@ Partial Class DataUser
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
-        'lblTambah
-        '
-        Me.lblTambah.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTambah.AutoSize = True
-        Me.lblTambah.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblTambah.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTambah.Location = New System.Drawing.Point(1139, 57)
-        Me.lblTambah.Name = "lblTambah"
-        Me.lblTambah.Size = New System.Drawing.Size(34, 13)
-        Me.lblTambah.TabIndex = 2
-        Me.lblTambah.Text = "Data"
-        '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
@@ -146,16 +132,6 @@ Partial Class DataUser
         Me.Panel7.Size = New System.Drawing.Size(1154, 258)
         Me.Panel7.TabIndex = 41
         '
-        'btnNew
-        '
-        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(556, 192)
-        Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(86, 31)
-        Me.btnNew.TabIndex = 40
-        Me.btnNew.Text = "New"
-        Me.btnNew.UseVisualStyleBackColor = True
-        '
         'btnRefresh
         '
         Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -185,6 +161,16 @@ Partial Class DataUser
         Me.btnEdit.TabIndex = 36
         Me.btnEdit.Text = "Edit"
         Me.btnEdit.UseVisualStyleBackColor = True
+        '
+        'btnNew
+        '
+        Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNew.Location = New System.Drawing.Point(556, 192)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Size = New System.Drawing.Size(86, 31)
+        Me.btnNew.TabIndex = 40
+        Me.btnNew.Text = "New"
+        Me.btnNew.UseVisualStyleBackColor = True
         '
         'Panel5
         '
@@ -314,7 +300,6 @@ Partial Class DataUser
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.lblTambah)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -352,7 +337,6 @@ Partial Class DataUser
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents lblTambah As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents DGUser As DataGridView
