@@ -36,21 +36,27 @@ Partial Class LihatJasa
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblBiaya = New System.Windows.Forms.Label()
         Me.lblProduk = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.DGJasa = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.rbNama = New System.Windows.Forms.RadioButton()
+        Me.rbID = New System.Windows.Forms.RadioButton()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
         CType(Me.DGJasa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnRefresh
         '
         Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.Location = New System.Drawing.Point(1071, 568)
+        Me.btnRefresh.Location = New System.Drawing.Point(1081, 594)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(86, 31)
         Me.btnRefresh.TabIndex = 81
@@ -60,7 +66,7 @@ Partial Class LihatJasa
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(19, 172)
+        Me.Panel6.Location = New System.Drawing.Point(19, 203)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1154, 21)
         Me.Panel6.TabIndex = 79
@@ -194,35 +200,6 @@ Partial Class LihatJasa
         Me.lblProduk.TabIndex = 2
         Me.lblProduk.Text = "Produk"
         '
-        'txtSearch
-        '
-        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(38, 20)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(972, 23)
-        Me.txtSearch.TabIndex = 56
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Panel5.Controls.Add(Me.txtSearch)
-        Me.Panel5.Controls.Add(Me.btnSearch)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(19, 103)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1154, 69)
-        Me.Panel5.TabIndex = 78
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(1016, 16)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(86, 31)
-        Me.btnSearch.TabIndex = 55
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
         'DGJasa
         '
         Me.DGJasa.AllowUserToOrderColumns = True
@@ -232,7 +209,7 @@ Partial Class LihatJasa
         Me.DGJasa.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGJasa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGJasa.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DGJasa.Location = New System.Drawing.Point(19, 193)
+        Me.DGJasa.Location = New System.Drawing.Point(19, 224)
         Me.DGJasa.Name = "DGJasa"
         Me.DGJasa.ReadOnly = True
         Me.DGJasa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
@@ -257,6 +234,106 @@ Partial Class LihatJasa
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 74
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.btnSearch)
+        Me.GroupBox1.Controls.Add(Me.rbNama)
+        Me.GroupBox1.Controls.Add(Me.rbID)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.txtSearch)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 103)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1154, 100)
+        Me.GroupBox1.TabIndex = 95
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Pencarian"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(110, 70)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(12, 17)
+        Me.Label3.TabIndex = 102
+        Me.Label3.Text = ":"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(110, 33)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(12, 17)
+        Me.Label6.TabIndex = 101
+        Me.Label6.Text = ":"
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Location = New System.Drawing.Point(1038, 61)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(86, 31)
+        Me.btnSearch.TabIndex = 59
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'rbNama
+        '
+        Me.rbNama.AutoSize = True
+        Me.rbNama.Checked = True
+        Me.rbNama.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNama.Location = New System.Drawing.Point(222, 31)
+        Me.rbNama.Name = "rbNama"
+        Me.rbNama.Size = New System.Drawing.Size(97, 21)
+        Me.rbNama.TabIndex = 100
+        Me.rbNama.TabStop = True
+        Me.rbNama.Text = "Nama Jasa"
+        Me.rbNama.UseVisualStyleBackColor = True
+        '
+        'rbID
+        '
+        Me.rbID.AutoSize = True
+        Me.rbID.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbID.Location = New System.Drawing.Point(128, 31)
+        Me.rbID.Name = "rbID"
+        Me.rbID.Size = New System.Drawing.Size(73, 21)
+        Me.rbID.TabIndex = 99
+        Me.rbID.Text = "ID Jasa"
+        Me.rbID.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(21, 70)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(80, 17)
+        Me.Label9.TabIndex = 98
+        Me.Label9.Text = "Kata Kunci "
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(21, 31)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(93, 17)
+        Me.Label10.TabIndex = 96
+        Me.Label10.Text = "Berdasarkan "
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(128, 67)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(901, 23)
+        Me.txtSearch.TabIndex = 97
+        '
         'LihatJasa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -265,21 +342,21 @@ Partial Class LihatJasa
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.DGJasa)
         Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "LihatJasa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "LihatJasa"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         CType(Me.DGJasa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -298,9 +375,15 @@ Partial Class LihatJasa
     Friend WithEvents Label13 As Label
     Friend WithEvents lblBiaya As Label
     Friend WithEvents lblProduk As Label
-    Friend WithEvents txtSearch As TextBox
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents btnSearch As Button
     Friend WithEvents DGJasa As DataGridView
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents rbNama As RadioButton
+    Friend WithEvents rbID As RadioButton
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents txtSearch As TextBox
 End Class

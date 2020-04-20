@@ -58,13 +58,12 @@
         Call RefreshGrid()
         Call AturDGProduk()
 
-        rbID.Checked = True
-        rbNama.Checked = False
+        rbID.Checked = False
+        rbNama.Checked = True
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         If txtSearch.Text = "" Then
-
             Call RefreshGrid()
         Else
             Call tampilCari(txtSearch.Text)
@@ -75,8 +74,8 @@
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Call RefreshGrid()
 
-        rbID.Checked = True
-        rbNama.Checked = False
+        rbID.Checked = False
+        rbNama.Checked = True
 
         txtSearch.Text = ""
     End Sub

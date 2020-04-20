@@ -59,9 +59,6 @@ Partial Class TambahTransaksiJasa
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.lblTambahProduk = New System.Windows.Forms.Label()
-        Me.lblTambahJasa = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -272,6 +269,7 @@ Partial Class TambahTransaksiJasa
         '
         'cbJasa
         '
+        Me.cbJasa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbJasa.Enabled = False
         Me.cbJasa.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbJasa.FormattingEnabled = True
@@ -405,9 +403,6 @@ Partial Class TambahTransaksiJasa
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.lblTambahProduk)
-        Me.Panel1.Controls.Add(Me.lblTambahJasa)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -415,45 +410,6 @@ Partial Class TambahTransaksiJasa
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 66
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(1063, 55)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(12, 13)
-        Me.Label13.TabIndex = 13
-        Me.Label13.Text = "/"
-        '
-        'lblTambahProduk
-        '
-        Me.lblTambahProduk.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTambahProduk.AutoSize = True
-        Me.lblTambahProduk.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblTambahProduk.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblTambahProduk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTambahProduk.Location = New System.Drawing.Point(967, 55)
-        Me.lblTambahProduk.Name = "lblTambahProduk"
-        Me.lblTambahProduk.Size = New System.Drawing.Size(90, 13)
-        Me.lblTambahProduk.TabIndex = 12
-        Me.lblTambahProduk.Text = "Transaksi Produk"
-        '
-        'lblTambahJasa
-        '
-        Me.lblTambahJasa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTambahJasa.AutoSize = True
-        Me.lblTambahJasa.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblTambahJasa.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblTambahJasa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTambahJasa.Location = New System.Drawing.Point(1081, 55)
-        Me.lblTambahJasa.Name = "lblTambahJasa"
-        Me.lblTambahJasa.Size = New System.Drawing.Size(92, 13)
-        Me.lblTambahJasa.TabIndex = 11
-        Me.lblTambahJasa.Text = "Transaksi Jasa"
         '
         'Label1
         '
@@ -542,9 +498,6 @@ Partial Class TambahTransaksiJasa
     Friend WithEvents Label2 As Label
     Friend WithEvents btnAdd As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label13 As Label
-    Friend WithEvents lblTambahProduk As Label
-    Friend WithEvents lblTambahJasa As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel4 As Panel

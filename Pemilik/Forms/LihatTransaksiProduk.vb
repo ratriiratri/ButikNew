@@ -1,65 +1,82 @@
 ﻿Public Class LihatTransaksiProduk
+
     Dim baris As Integer
+
+    Private Sub isiCbPencarian()
+        cbPencarian.Items.Clear()
+        cbPencarian.Items.Add("-Pencarian-")
+        cbPencarian.Items.Add("ID Produk")
+        cbPencarian.Items.Add("ID Pendapatan")
+        cbPencarian.Items.Add("ID User")
+        cbPencarian.Items.Add("Nama Produk")
+        cbPencarian.Items.Add("Diskon")
+        cbPencarian.Items.Add("Tanggal Pendapatan")
+        cbPencarian.SelectedItem = cbPencarian.Items(0)
+    End Sub
 
     Private Sub RefreshGrid()
         DTGrid = KontrolProduk.TampilDetailProduk.ToTable
-        DGTransaksiProduk.DataSource = DTGrid
+        DGDetailProduk.DataSource = DTGrid
 
         If DTGrid.Rows.Count > 0 Then
             baris = DTGrid.Rows.Count - 1
-            DGTransaksiProduk.Rows(DTGrid.Rows.Count - 1).Selected = True
-            DGTransaksiProduk.CurrentCell = DGTransaksiProduk.Item(1, baris)
+            DGDetailProduk.Rows(DTGrid.Rows.Count - 1).Selected = True
+            DGDetailProduk.CurrentCell = DGDetailProduk.Item(1, baris)
             IsiBox(baris)
         End If
     End Sub
 
-    Private Sub AturDGTransaksiProduk()
-        With DGTransaksiProduk.ColumnHeadersDefaultCellStyle
-            DGTransaksiProduk.Columns(0).HeaderText = "ID Produk"
-            DGTransaksiProduk.Columns(1).HeaderText = "Nama Produk"
-            DGTransaksiProduk.Columns(2).HeaderText = "Jumlah"
-            DGTransaksiProduk.Columns(3).HeaderText = "Harga"
-            DGTransaksiProduk.Columns(4).HeaderText = "Diskon"
-            DGTransaksiProduk.Columns(5).HeaderText = "Tanggal"
-            DGTransaksiProduk.Columns(6).HeaderText = "ID Pendapatan"
-            DGTransaksiProduk.Columns(7).HeaderText = "ID User"
+    Private Sub aturDGDetailProduk()
+        With DGDetailProduk.ColumnHeadersDefaultCellStyle
+            DGDetailProduk.Columns(0).HeaderText = "ID Produk"
+            DGDetailProduk.Columns(1).HeaderText = "Nama Produk"
+            DGDetailProduk.Columns(2).HeaderText = "Jumlah"
+            DGDetailProduk.Columns(3).HeaderText = "Harga"
+            DGDetailProduk.Columns(4).HeaderText = "Disc"
+            DGDetailProduk.Columns(5).HeaderText = "ID Pendapatan"
+            DGDetailProduk.Columns(6).HeaderText = "Tanggal Pendapatan"
+            DGDetailProduk.Columns(7).HeaderText = "ID User"
 
-            DGTransaksiProduk.Columns(0).FillWeight = 15
-            DGTransaksiProduk.Columns(2).FillWeight = 20
-            DGTransaksiProduk.Columns(3).FillWeight = 20
-            DGTransaksiProduk.Columns(4).FillWeight = 10
-            DGTransaksiProduk.Columns(5).FillWeight = 20
-            DGTransaksiProduk.Columns(6).FillWeight = 15
-            DGTransaksiProduk.Columns(7).FillWeight = 15
+            DGDetailProduk.Columns(0).FillWeight = 15
+            DGDetailProduk.Columns(2).FillWeight = 8
+            DGDetailProduk.Columns(3).FillWeight = 15
+            DGDetailProduk.Columns(4).FillWeight = 7
+            DGDetailProduk.Columns(5).FillWeight = 15
+            DGDetailProduk.Columns(6).FillWeight = 25
+            DGDetailProduk.Columns(7).FillWeight = 15
         End With
     End Sub
 
     Private Sub IsiBox(br As Integer)
         If br < DTGrid.Rows.Count Then
-            With DGTransaksiProduk.Rows(br)
+            With DGDetailProduk.Rows(br)
             End With
         End If
     End Sub
 
     Private Sub tampilCari(kunci As String)
-        DTGrid = KontrolJasa.CariData(kunci).ToTable
+        If cbPencarian.SelectedItem = cbPencarian.Items(1) Then
+            DTGrid = KontrolProduk.CariDataIDProduk(kunci).ToTable
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(2) Then
+            DTGrid = KontrolProduk.CariDataIDPendapatan(kunci).ToTable
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(3) Then
+            DTGrid = KontrolProduk.CariDataIDUser(kunci).ToTable
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(4) Then
+            DTGrid = KontrolProduk.CariDataNamaProduk(kunci).ToTable
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(5) Then
+            DTGrid = KontrolProduk.CariDataDiskon(kunci).ToTable
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(6) Then
+            DTGrid = KontrolProduk.CariDataTanggal(kunci1:=dateAwal.Value, kunci2:=dateAkhir.Value).ToTable
+        Else
+            MsgBox("Data Tidak Ditemukan!")
+            RefreshGrid()
+        End If
 
         If DTGrid.Rows.Count > 0 Then
             baris = DTGrid.Rows.Count - 1
-            DGTransaksiProduk.DataSource = DTGrid
-            DGTransaksiProduk.Rows(DTGrid.Rows.Count - 1).Selected = True
-            DGTransaksiProduk.CurrentCell = DGTransaksiProduk.Item(1, baris)
-        End If
-        MsgBox("Data Tidak Ditemukan!")
-        RefreshGrid()
-    End Sub
-
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        If txtSearch.Text = "" Then
-            Call RefreshGrid()
-        Else
-            Call tampilCari(txtSearch.Text)
-            txtSearch.Focus()
+            DGDetailProduk.DataSource = DTGrid
+            DGDetailProduk.Rows(DTGrid.Rows.Count - 1).Selected = True
+            DGDetailProduk.CurrentCell = DGDetailProduk.Item(1, baris)
         End If
     End Sub
 
@@ -67,6 +84,72 @@
         Me.MdiParent = PemilikUtama
 
         Call RefreshGrid()
-        Call AturDGTransaksiProduk()
+        Call aturDGDetailProduk()
+        Call isiCbPencarian()
+
+        dateAkhir.Enabled = False
+        dateAwal.Enabled = False
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Call RefreshGrid()
+
+        cbPencarian.SelectedItem = cbPencarian.Items(0)
+        txtSearch.Text = ""
+
+        dateAwal.Value = Format(Now)
+        dateAkhir.Value = Format(Now)
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        If cbPencarian.SelectedItem = cbPencarian.Items(6) Then
+            Call tampilCari(dateAwal.Value)
+        ElseIf txtSearch.Text = "" Then
+            MsgBox("Masukan Kata Kunci", MsgBoxStyle.Information, "Info")
+            txtSearch.Focus()
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(0) Then
+            MsgBox("Pilih Kategori Pencarian!", MsgBoxStyle.Information, "Info")
+        Else
+            Call tampilCari(txtSearch.Text)
+            txtSearch.Focus()
+
+            dateAkhir.Enabled = False
+            dateAwal.Enabled = False
+
+            dateAwal.Value = Format(Now)
+            dateAkhir.Value = Format(Now)
+        End If
+    End Sub
+
+    Private Sub cbPencarian_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPencarian.SelectedIndexChanged
+        If cbPencarian.SelectedItem = cbPencarian.Items(5) Then
+            txtSearch.Enabled = False
+            dateAwal.Enabled = True
+            dateAkhir.Enabled = True
+        Else
+            txtSearch.Enabled = True
+            dateAwal.Enabled = False
+            dateAkhir.Enabled = False
+        End If
+    End Sub
+
+    Private Sub lblTransaksiJasa_Click(sender As Object, e As EventArgs) Handles lblTransaksiJasa.Click
+        Me.Close()
+        LihatTransaksiJasa.Show()
+    End Sub
+
+    Private Sub lblTransaksiBiaya_Click(sender As Object, e As EventArgs) Handles lblTransaksiBiaya.Click
+        Me.Close()
+        LihatTransaksiBiaya.Show()
+    End Sub
+
+    Private Sub lblPendapatan_Click(sender As Object, e As EventArgs) Handles lblPendapatan.Click
+        Me.Close()
+        LihatPendapatan.Show()
+    End Sub
+
+    Private Sub lblPengeluaran_Click(sender As Object, e As EventArgs) Handles lblPengeluaran.Click
+        Me.Close()
+        LihatPengeluaran.Show()
     End Sub
 End Class

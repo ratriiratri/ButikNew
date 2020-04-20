@@ -52,8 +52,8 @@
         Call RefreshGrid()
         Call AturDGBiaya()
 
-        rbID.Checked = True
-        rbNama.Checked = False
+        rbID.Checked = False
+        rbNama.Checked = True
     End Sub
 
     Private Sub lblUser_Click(sender As Object, e As EventArgs) Handles lblUser.Click
@@ -84,8 +84,8 @@
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Call RefreshGrid()
 
-        rbID.Checked = True
-        rbNama.Checked = False
+        rbID.Checked = False
+        rbNama.Checked = True
 
         txtSearch.Text = ""
     End Sub

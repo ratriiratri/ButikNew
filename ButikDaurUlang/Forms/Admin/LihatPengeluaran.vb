@@ -73,12 +73,6 @@
         dateAwal.Enabled = False
     End Sub
 
-    Private Sub DGBiaya_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-        baris = e.RowIndex
-        DGPengeluaran.Rows(baris).Selected = True
-        IsiBox(baris)
-    End Sub
-
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         If cbPencarian.SelectedItem = cbPencarian.Items(4) Then
             Call tampilCari(dateAwal.Value)

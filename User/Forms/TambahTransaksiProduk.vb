@@ -6,7 +6,6 @@
         txtHarga.Text = ""
         txtQty.Text = ""
         txtDisc.Text = ""
-        lblNominal.Text = 0
     End Sub
 
     Sub HitungTotal()
@@ -26,8 +25,11 @@
 
         Call Bersih()
 
+        btnNew.Enabled = True
         btnAdd.Enabled = False
         btnEdit.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
 
         lblUser.Text = kodeLogin
 
@@ -80,7 +82,6 @@
             End If
         Next
 
-
         Call HitungTotal()
         Call Bersih()
     End Sub
@@ -121,6 +122,7 @@
 
         Call Bersih()
 
+        lblNominal.Text = 0
         LVDetailProduk.Items.Clear()
 
         lblPendapatan.Text = ""
@@ -128,6 +130,9 @@
         btnNew.Enabled = True
         btnEdit.Enabled = False
         btnAdd.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
+        btnProduk.Enabled = False
 
         txtQty.Enabled = False
         txtQty.ReadOnly = True
@@ -142,9 +147,11 @@
 
         txtQty.Focus()
 
-        btnAdd.Enabled = True
         btnNew.Enabled = False
         btnEdit.Enabled = True
+        btnAdd.Enabled = True
+        btnSave.Enabled = True
+        btnDelete.Enabled = True
         btnProduk.Enabled = True
 
         txtQty.Enabled = True
@@ -155,7 +162,7 @@
         lblPendapatan.Text = KontrolPendapatan.FCKdPendapatan
     End Sub
 
-    Private Sub lblTambahJasa_Click(sender As Object, e As EventArgs) Handles lblTambahJasa.Click
+    Private Sub lblTambahJasa_Click(sender As Object, e As EventArgs)
         Me.Close()
         TambahTransaksiJasa.Show()
     End Sub

@@ -33,8 +33,6 @@
         LihatTransaksiBiaya.Close()
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
-
-        btnDashboard.Font.Bold = True
     End Sub
 
     Private Sub btnUser_Click(sender As Object, e As EventArgs) Handles btnUser.Click

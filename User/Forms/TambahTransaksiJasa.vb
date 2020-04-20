@@ -19,7 +19,6 @@
         txtQty.Text = ""
         txtHarga.Text = ""
         txtDisc.Text = ""
-        lblNominal.Text = 0
     End Sub
 
     Sub HitungTotal()
@@ -34,18 +33,16 @@
         lblNominal.Text = total
     End Sub
 
-    Private Sub lblTambahProduk_Click(sender As Object, e As EventArgs) Handles lblTambahProduk.Click
-        TambahTransaksiProduk.Show()
-        Me.Close()
-    End Sub
-
     Private Sub TambahTransaksiJasa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = UserUtama
 
         Call Bersih()
 
+        btnNew.Enabled = True
         btnAdd.Enabled = False
         btnEdit.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
 
         lblUser.Text = kodeLogin
 
@@ -55,6 +52,12 @@
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'deklarasi array string
         Dim strItem(5) As String
+
+        If txtQty.Text = "" Then
+            txtQty.Text = 1
+        ElseIf txtDisc.Text = "" Then
+            txtDisc.Text = 0
+        End If
 
         strItem(0) = txtId.Text
         strItem(1) = cbJasa.Text
@@ -108,6 +111,9 @@
 
         Call Bersih()
 
+        lblNominal.Text = 0
+        LVDetailJasa.Items.Clear()
+
         cbJasa.Enabled = False
         txtQty.Enabled = False
         txtQty.ReadOnly = True
@@ -119,8 +125,10 @@
         btnNew.Enabled = True
         btnEdit.Enabled = False
         btnAdd.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
 
-        LVDetailJasa.Items.Clear()
+        cbJasa.Enabled = False
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
@@ -130,15 +138,20 @@
         LVDetailJasa.Items.Clear()
 
         txtQty.Focus()
+
         cbJasa.Enabled = True
         txtQty.Enabled = True
         txtQty.ReadOnly = False
         txtDisc.Enabled = True
         txtDisc.ReadOnly = False
 
-        btnAdd.Enabled = True
         btnNew.Enabled = False
         btnEdit.Enabled = True
+        btnAdd.Enabled = True
+        btnSave.Enabled = True
+        btnDelete.Enabled = True
+
+        cbJasa.Enabled = True
 
         lblPendapatan.Text = KontrolPendapatan.FCKdPendapatan
     End Sub

@@ -77,12 +77,6 @@
         dateAwal.Enabled = False
     End Sub
 
-    Private Sub DGPendapatan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGPendapatan.CellContentClick
-        baris = e.RowIndex
-        DGPendapatan.Rows(baris).Selected = True
-        IsiBox(baris)
-    End Sub
-
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Call RefreshGrid()
 

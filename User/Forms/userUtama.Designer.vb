@@ -136,7 +136,7 @@ Partial Class UserUtama
         Me.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLogOut.Location = New System.Drawing.Point(0, 439)
+        Me.btnLogOut.Location = New System.Drawing.Point(0, 431)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(169, 52)
         Me.btnLogOut.TabIndex = 8

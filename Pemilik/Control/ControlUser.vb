@@ -54,7 +54,6 @@ Public Class ControlUser
         Try
             DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, case statusUser when '1' then 'Admin' " _
                                        & "when '2' then 'User' end as Status from Userr where statusUser != '3'", OpenConnection)
-
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblUser").Clear()
@@ -69,10 +68,41 @@ Public Class ControlUser
         End Try
     End Function
 
-    Public Function CariData(kunci As String) As DataView
+    Public Function CariDataID(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Userr where namaUser" _
-                                       & "like '%" & kunci & "%'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, case statusUser when '1' then 'Admin' " _
+                                       & "when '2' then 'User' end as Status from Userr where statusUser != '3' " _
+                                       & "and idUser like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariUser")
+
+            Dim grid As New DataView(DTS.Tables("cariUser"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataNama(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, case statusUser when '1' then 'Admin' " _
+                                       & "when '2' then 'User' end as Status from Userr where statusUser != '3' " _
+                                       & "and namaUser like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariUser")
+
+            Dim grid As New DataView(DTS.Tables("cariUser"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataHp(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, case statusUser when '1' then 'Admin' " _
+                                       & "when '2' then 'User' end as Status from Userr where statusUser != '3' " _
+                                       & "and hpUser like '%" & kunci & "%'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariUser")
 

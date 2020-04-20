@@ -158,7 +158,6 @@ Public Class ControlBiaya : Implements InterfaceProses
                                        & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
                                        & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
                                        & "on us.idUser = pl.idUser", OpenConnection)
-
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblBiaya").Clear()

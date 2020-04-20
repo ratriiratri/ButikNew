@@ -19,6 +19,81 @@ Public Class ControlJasa
         End Try
     End Function
 
+    Public Function CariDataIDJasa(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where js.idJasa Like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDUser(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where us.idUser Like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDPendapatan(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where pd.idPendapatan Like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataNamaJasa(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where js.namaJasa Like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataTanggalPendapatan(kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
     Public Function TampilDetailJasa() As DataView
         Try
             DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
@@ -39,9 +114,23 @@ Public Class ControlJasa
         End Try
     End Function
 
-    Public Function CariData(kunci As String) As DataView
+    Public Function CariDataID(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Jasa where namaJasa" _
+            DTA = New OleDbDataAdapter("select * from Jasa where idJasa " _
+                                       & "like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataNama(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select * from Jasa where namaJasa " _
                                        & "like '%" & kunci & "%'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariJasa")

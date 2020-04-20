@@ -74,6 +74,8 @@
   <ItemGroup>
     <Compile Include="Control\ControlBiaya.vb" />
     <Compile Include="Control\ControlJasa.vb" />
+    <Compile Include="Control\ControlPendapatan.vb" />
+    <Compile Include="Control\ControlPengeluaran.vb" />
     <Compile Include="Control\ControlProduk.vb" />
     <Compile Include="Control\ControlUser.vb" />
     <Compile Include="Entity\EntityUser.vb" />
@@ -95,6 +97,18 @@
     <Compile Include="Forms\LihatJasa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\LihatPendapatan.Designer.vb">
+      <DependentUpon>LihatPendapatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatPendapatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatPengeluaran.Designer.vb">
+      <DependentUpon>LihatPengeluaran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatPengeluaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\LihatProduk.Designer.vb">
       <DependentUpon>LihatProduk.vb</DependentUpon>
     </Compile>
@@ -105,6 +119,12 @@
       <DependentUpon>LihatTransaksiBiaya.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\LihatTransaksiBiaya.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiJasa.Designer.vb">
+      <DependentUpon>LihatTransaksiJasa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LihatTransaksiJasa.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LihatTransaksiProduk.Designer.vb">
@@ -159,11 +179,20 @@
     <EmbeddedResource Include="Forms\LihatJasa.resx">
       <DependentUpon>LihatJasa.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatPendapatan.resx">
+      <DependentUpon>LihatPendapatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatPengeluaran.resx">
+      <DependentUpon>LihatPengeluaran.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LihatProduk.resx">
       <DependentUpon>LihatProduk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LihatTransaksiBiaya.resx">
       <DependentUpon>LihatTransaksiBiaya.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LihatTransaksiJasa.resx">
+      <DependentUpon>LihatTransaksiJasa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LihatTransaksiProduk.resx">
       <DependentUpon>LihatTransaksiProduk.vb</DependentUpon>

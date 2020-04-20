@@ -1,6 +1,9 @@
 ﻿Public Class UserUtama
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
-        Me.Close()
+        If MsgBox("Apakah Anda Yakin Ingin Keluar?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Konfirmasi") = MsgBoxResult.Yes Then
+            Me.Close()
+            Call CloseConnection()
+        End If
     End Sub
 
     Private Sub btnMax_Click(sender As Object, e As EventArgs) Handles btnMax.Click
@@ -31,9 +34,8 @@
 
     Private Sub UserUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dashboard.Show()
-        TambahTransaksiProduk.Close()
-        TambahTransaksiJasa.Close()
-        DataProduk.Close()
+
+        lblUser.Text = nama
     End Sub
 
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
@@ -48,5 +50,17 @@
         TambahTransaksiProduk.Close()
         TambahTransaksiJasa.Close()
         DataProduk.Show()
+    End Sub
+
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+        Call CloseConnection()
+        MsgBox("Logout Berhasil!", MsgBoxStyle.Information, "Info")
+        Me.Close()
+        Login.Show()
+        With Login
+            Login.txtUsername.Focus()
+            Login.txtUsername.ResetText()
+            Login.txtPassword.ResetText()
+        End With
     End Sub
 End Class

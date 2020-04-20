@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class TambahTransaksiProduk
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,10 @@ Partial Class TambahTransaksiProduk
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.lblTambahProduk = New System.Windows.Forms.Label()
-        Me.lblTambahJasa = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -74,9 +71,6 @@ Partial Class TambahTransaksiProduk
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.Label13)
-        Me.Panel1.Controls.Add(Me.lblTambahProduk)
-        Me.Panel1.Controls.Add(Me.lblTambahJasa)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -84,45 +78,6 @@ Partial Class TambahTransaksiProduk
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 61
-        '
-        'Label13
-        '
-        Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(1077, 55)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(12, 13)
-        Me.Label13.TabIndex = 16
-        Me.Label13.Text = "/"
-        '
-        'lblTambahProduk
-        '
-        Me.lblTambahProduk.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTambahProduk.AutoSize = True
-        Me.lblTambahProduk.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblTambahProduk.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblTambahProduk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTambahProduk.Location = New System.Drawing.Point(965, 55)
-        Me.lblTambahProduk.Name = "lblTambahProduk"
-        Me.lblTambahProduk.Size = New System.Drawing.Size(106, 13)
-        Me.lblTambahProduk.TabIndex = 15
-        Me.lblTambahProduk.Text = "Transaksi Produk"
-        '
-        'lblTambahJasa
-        '
-        Me.lblTambahJasa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTambahJasa.AutoSize = True
-        Me.lblTambahJasa.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblTambahJasa.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblTambahJasa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTambahJasa.Location = New System.Drawing.Point(1095, 55)
-        Me.lblTambahJasa.Name = "lblTambahJasa"
-        Me.lblTambahJasa.Size = New System.Drawing.Size(78, 13)
-        Me.lblTambahJasa.TabIndex = 11
-        Me.lblTambahJasa.Text = "Transaksi Jasa"
         '
         'Label1
         '
@@ -559,7 +514,4 @@ Partial Class TambahTransaksiProduk
     Friend WithEvents Label11 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents txtDisc As TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents lblTambahProduk As Label
-    Friend WithEvents lblTambahJasa As Label
 End Class

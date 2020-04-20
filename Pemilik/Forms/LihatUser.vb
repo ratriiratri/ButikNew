@@ -34,24 +34,22 @@
     End Sub
 
     Private Sub tampilCari(kunci As String)
-        DTGrid = KontrolUser.CariData(kunci).ToTable
+        If rbID.Checked = True Then
+            DTGrid = KontrolUser.CariDataID(kunci).ToTable
+        ElseIf rbNama.Checked = True Then
+            DTGrid = KontrolUser.CariDataNama(kunci).ToTable
+        ElseIf rbHp.Checked = True Then
+            DTGrid = KontrolUser.CariDataHp(kunci).ToTable
+        Else
+            MsgBox("Data Tidak Ditemukan!", MsgBoxStyle.Information, "Info")
+            RefreshGrid()
+        End If
 
         If DTGrid.Rows.Count > 0 Then
             baris = DTGrid.Rows.Count - 1
             DGUser.DataSource = DTGrid
             DGUser.Rows(DTGrid.Rows.Count - 1).Selected = True
             DGUser.CurrentCell = DGUser.Item(1, baris)
-        End If
-        MsgBox("Data Tidak Ditemukan!")
-        RefreshGrid()
-    End Sub
-
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        If txtSearch.Text = "" Then
-            Call RefreshGrid()
-        Else
-            Call tampilCari(txtSearch.Text)
-            txtSearch.Focus()
         End If
     End Sub
 
@@ -60,6 +58,10 @@
 
         Call RefreshGrid()
         Call AturDGUser()
+
+        rbID.Checked = False
+        rbNama.Checked = True
+        rbHp.Checked = False
     End Sub
 
     Private Sub lblProduk_Click(sender As Object, e As EventArgs) Handles lblProduk.Click
@@ -75,5 +77,25 @@
     Private Sub lblBiaya_Click(sender As Object, e As EventArgs) Handles lblBiaya.Click
         LihatBiaya.Show()
         Me.Close()
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Call RefreshGrid()
+
+        rbID.Checked = False
+        rbNama.Checked = True
+        rbHp.Checked = False
+
+        txtSearch.Text = ""
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        If txtSearch.Text = "" Then
+
+            Call RefreshGrid()
+        Else
+            Call tampilCari(txtSearch.Text)
+            txtSearch.Focus()
+        End If
     End Sub
 End Class

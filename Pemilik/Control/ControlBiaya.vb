@@ -1,6 +1,91 @@
 ﻿Imports System.Data.OleDb
 
 Public Class ControlBiaya
+    Public Function CariDataIDBiaya(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where b.idBiaya='" & kunci & "'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDPengeluaran(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where pl.idPengeluaran='" & kunci & "'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDUser(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where us.idUser='" & kunci & "'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataNamaBiaya(kunci As String) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where b.namaBiaya='" & kunci & "'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataTanggalPengeluaran(kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where pl.tglPengeluaran between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
     Public Function TampilData() As DataView
         Try
             DTA = New OleDbDataAdapter("select * from Biaya", OpenConnection)
@@ -21,9 +106,11 @@ Public Class ControlBiaya
 
     Function TampilDetailBiaya() As DataView
         Try
-            DTA = New OleDbDataAdapter("select db.idBiaya, pl.ketPengeluaran, db.idPengeluaran, db.jumlahBiaya, pl.tglPengeluaran 
-from Pengeluaran pl join DetailBiaya db on pl.idPengeluaran = db.idPengeluaran", OpenConnection)
-
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser", OpenConnection)
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblBiaya").Clear()

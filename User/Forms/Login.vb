@@ -23,7 +23,7 @@
                 UserUtama.Show()
                 Me.Hide()
             Else
-                MsgBox("Password Salah")
+                MsgBox("Username atau Password Salah")
                 txtPassword.Focus()
             End If
         Else
@@ -33,4 +33,8 @@
         End If
     End Sub
 
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Call CloseConnection()
+        Me.Close()
+    End Sub
 End Class

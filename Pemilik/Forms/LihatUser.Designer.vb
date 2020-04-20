@@ -23,9 +23,6 @@ Partial Class LihatUser
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DGUser = New System.Windows.Forms.DataGridView()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblJasa = New System.Windows.Forms.Label()
@@ -41,10 +38,20 @@ Partial Class LihatUser
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.rbNama = New System.Windows.Forms.RadioButton()
+        Me.rbID = New System.Windows.Forms.RadioButton()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.rbHp = New System.Windows.Forms.RadioButton()
         CType(Me.DGUser, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DGUser
@@ -56,41 +63,12 @@ Partial Class LihatUser
         Me.DGUser.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGUser.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DGUser.Location = New System.Drawing.Point(19, 193)
+        Me.DGUser.Location = New System.Drawing.Point(19, 224)
         Me.DGUser.Name = "DGUser"
         Me.DGUser.ReadOnly = True
         Me.DGUser.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.DGUser.Size = New System.Drawing.Size(1154, 364)
         Me.DGUser.TabIndex = 72
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(1016, 16)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(86, 31)
-        Me.btnSearch.TabIndex = 55
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
-        Me.Panel5.Controls.Add(Me.txtSearch)
-        Me.Panel5.Controls.Add(Me.btnSearch)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(19, 103)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1154, 69)
-        Me.Panel5.TabIndex = 70
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(38, 20)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(972, 23)
-        Me.txtSearch.TabIndex = 56
         '
         'Panel1
         '
@@ -217,7 +195,7 @@ Partial Class LihatUser
         'btnRefresh
         '
         Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.Location = New System.Drawing.Point(1071, 568)
+        Me.btnRefresh.Location = New System.Drawing.Point(1081, 594)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(86, 31)
         Me.btnRefresh.TabIndex = 73
@@ -227,7 +205,7 @@ Partial Class LihatUser
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(19, 172)
+        Me.Panel6.Location = New System.Drawing.Point(19, 203)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1154, 21)
         Me.Panel6.TabIndex = 71
@@ -256,6 +234,117 @@ Partial Class LihatUser
         Me.Panel2.Size = New System.Drawing.Size(19, 576)
         Me.Panel2.TabIndex = 67
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.GroupBox1.Controls.Add(Me.rbHp)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.rbNama)
+        Me.GroupBox1.Controls.Add(Me.rbID)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.btnSearch)
+        Me.GroupBox1.Controls.Add(Me.txtSearch)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 103)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1154, 100)
+        Me.GroupBox1.TabIndex = 100
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Pencarian"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(113, 68)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(12, 18)
+        Me.Label4.TabIndex = 70
+        Me.Label4.Text = ":"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(113, 31)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(12, 18)
+        Me.Label3.TabIndex = 69
+        Me.Label3.Text = ":"
+        '
+        'rbNama
+        '
+        Me.rbNama.AutoSize = True
+        Me.rbNama.Checked = True
+        Me.rbNama.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNama.Location = New System.Drawing.Point(210, 29)
+        Me.rbNama.Name = "rbNama"
+        Me.rbNama.Size = New System.Drawing.Size(97, 21)
+        Me.rbNama.TabIndex = 68
+        Me.rbNama.Text = "Nama User"
+        Me.rbNama.UseVisualStyleBackColor = True
+        '
+        'rbID
+        '
+        Me.rbID.AutoSize = True
+        Me.rbID.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbID.Location = New System.Drawing.Point(131, 29)
+        Me.rbID.Name = "rbID"
+        Me.rbID.Size = New System.Drawing.Size(73, 21)
+        Me.rbID.TabIndex = 67
+        Me.rbID.Text = "ID User"
+        Me.rbID.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(24, 68)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 17)
+        Me.Label6.TabIndex = 66
+        Me.Label6.Text = "Kata Kunci "
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(24, 29)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(93, 17)
+        Me.Label7.TabIndex = 57
+        Me.Label7.Text = "Berdasarkan "
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Location = New System.Drawing.Point(1038, 61)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(86, 31)
+        Me.btnSearch.TabIndex = 59
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(131, 65)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(901, 23)
+        Me.txtSearch.TabIndex = 60
+        '
+        'rbHp
+        '
+        Me.rbHp.AutoSize = True
+        Me.rbHp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbHp.Location = New System.Drawing.Point(313, 29)
+        Me.rbHp.Name = "rbHp"
+        Me.rbHp.Size = New System.Drawing.Size(126, 21)
+        Me.rbHp.TabIndex = 71
+        Me.rbHp.Text = "No. Handphone"
+        Me.rbHp.UseVisualStyleBackColor = True
+        '
         'LihatUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -264,29 +353,26 @@ Partial Class LihatUser
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.DGUser)
         Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "LihatUser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "LihatUser"
         CType(Me.DGUser, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents DGUser As DataGridView
-    Friend WithEvents btnSearch As Button
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents txtSearch As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents lblJasa As Label
@@ -302,4 +388,14 @@ Partial Class LihatUser
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblProduk As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents rbNama As RadioButton
+    Friend WithEvents rbID As RadioButton
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents rbHp As RadioButton
 End Class
