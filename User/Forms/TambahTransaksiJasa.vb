@@ -43,10 +43,6 @@
         btnEdit.Enabled = False
         btnSave.Enabled = False
         btnDelete.Enabled = False
-
-        lblUser.Text = kodeLogin
-
-        lblTanggal.Text = Format(Now, "yyyy/MM/dd hh:mm")
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -92,7 +88,7 @@
             .jmlPendapatan = lblNominal.Text
             .ketPendapatan = "Jasa"
             .tglPendapatan = Format(Now, "yyyy/MM/dd")
-            .idUser = lblUser.Text
+            .idUser = kodeLogin
         End With
 
         For i = 0 To LVDetailJasa.Items.Count - 1
@@ -165,5 +161,39 @@
             txtHarga.Text = DTR.Item("hargaJasa")
             txtQty.Focus()
         End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim hari As String()
+        Dim bulan As String()
+
+        hari = New String() {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"}
+        bulan = New String() {"", "J\a\n\u\a\r\i", "F\e\b\r\u\a\r\i", "M\a\r\e\t", "A\p\r\i\l", "M\e\i", "J\u\n\i", "J\u\l\i", "A\g\u\s\t\u\s", "S\e\p\t\e\m\b\e\r", "O\k\t\o\b\\r\e", "N\o\v\e\m\b\e\r", "D\e\s\e\m\b\e\r"}
+
+        lblTanggal.Text = hari(Now.DayOfWeek) & ", " & Format(Now, "dd " & bulan(Now.Month) & " yyyy   hh:mm")
+
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Call Bersih()
+
+        lblNominal.Text = 0
+        LVDetailJasa.Items.Clear()
+
+        cbJasa.Enabled = False
+        txtQty.Enabled = False
+        txtQty.ReadOnly = True
+        txtDisc.Enabled = False
+        txtDisc.ReadOnly = True
+
+        lblPendapatan.Text = ""
+
+        btnNew.Enabled = True
+        btnEdit.Enabled = False
+        btnAdd.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
+
+        cbJasa.Enabled = False
     End Sub
 End Class

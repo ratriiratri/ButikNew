@@ -25,7 +25,6 @@ Partial Class DataAdmin
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblTambah = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -60,7 +59,6 @@ Partial Class DataAdmin
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.lblTambah)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
@@ -87,19 +85,6 @@ Partial Class DataAdmin
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
-        '
-        'lblTambah
-        '
-        Me.lblTambah.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblTambah.AutoSize = True
-        Me.lblTambah.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.lblTambah.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTambah.Location = New System.Drawing.Point(1139, 57)
-        Me.lblTambah.Name = "lblTambah"
-        Me.lblTambah.Size = New System.Drawing.Size(34, 13)
-        Me.lblTambah.TabIndex = 2
-        Me.lblTambah.Text = "Data"
         '
         'Label9
         '
@@ -351,7 +336,6 @@ Partial Class DataAdmin
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents lblTambah As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label

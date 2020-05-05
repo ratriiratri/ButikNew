@@ -69,16 +69,15 @@ Public Class ControlUser : Implements InterfaceProses
         Dim cek As Boolean
         cek = False
         Try
-            DTA = New OleDbDataAdapter("select count(idUser) from Userr " _
-                                   & "where idUser='" & kunci & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idUser from Pendapatan where idUser='" & kunci & "'", OpenConnection)
             DTS = New DataSet()
-            DTA.Fill(DTS, "cekData")
-            If DTS.Tables("cekData").Rows(0)(0).ToString > 0 Then cek = True
-
+            DTA.Fill(DTS, "cek")
+            If DTS.Tables("cek").Rows.Count > 0 Then
+                cek = True
+            End If
         Catch ex As Exception
-            Throw New Exception(ex.Message)
-            Return cek
         End Try
+        Return cek
     End Function
 
     Public Function UpdateDataUser(Ob As Object) As OleDbCommand

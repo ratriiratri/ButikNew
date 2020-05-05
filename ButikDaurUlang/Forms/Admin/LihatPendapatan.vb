@@ -53,9 +53,6 @@
             DTGrid = KontrolPendapatan.CariDataKeterangan(kunci).ToTable
         ElseIf cbPencarian.SelectedItem = cbPencarian.Items(5) Then
             DTGrid = KontrolPendapatan.CariDataTanggal(kunci1:=dateAwal.Value, kunci2:=dateAkhir.Value).ToTable
-        Else
-            MsgBox("Data Tidak Ditemukan!")
-            RefreshGrid()
         End If
 
         If DTGrid.Rows.Count > 0 Then
@@ -63,6 +60,31 @@
             DGPendapatan.DataSource = DTGrid
             DGPendapatan.Rows(DTGrid.Rows.Count - 1).Selected = True
             DGPendapatan.CurrentCell = DGPendapatan.Item(1, baris)
+        ElseIf DTGrid.Rows.Count = 0 Then
+            MsgBox("Data Tidak Ditemukan!", MsgBoxStyle.Information, "Info")
+            Call RefreshGrid()
+        End If
+    End Sub
+
+    Private Sub tampilCari2(kunci As String, kunci1 As Date, kunci2 As Date)
+        If cbPencarian.SelectedItem = cbPencarian.Items(1) And checkBox.Checked = True Then
+            DTGrid = KontrolPendapatan.CariDataIDTanggal(kunci:=txtSearch.Text, kunci1:=dateAwal.Value, kunci2:=dateAkhir.Value).ToTable
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(2) And checkBox.Checked = True Then
+            DTGrid = KontrolPendapatan.CariDataIDUserTanggal(kunci:=txtSearch.Text, kunci1:=dateAwal.Value, kunci2:=dateAkhir.Value).ToTable
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(3) And checkBox.Checked = True Then
+            DTGrid = KontrolPendapatan.CariDataJumlahTanggal(kunci:=txtSearch.Text, kunci1:=dateAwal.Value, kunci2:=dateAkhir.Value).ToTable
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(4) And checkBox.Checked = True Then
+            DTGrid = KontrolPendapatan.CariDataKeteranganTanggal(kunci:=txtSearch.Text, kunci1:=dateAwal.Value, kunci2:=dateAkhir.Value).ToTable
+        End If
+
+        If DTGrid.Rows.Count > 0 Then
+            baris = DTGrid.Rows.Count - 1
+            DGPendapatan.DataSource = DTGrid
+            DGPendapatan.Rows(DTGrid.Rows.Count - 1).Selected = True
+            DGPendapatan.CurrentCell = DGPendapatan.Item(1, baris)
+        ElseIf DTGrid.Rows.Count = 0 Then
+            MsgBox("Data Tidak Ditemukan!", MsgBoxStyle.Information, "Info")
+            Call RefreshGrid()
         End If
     End Sub
 
@@ -73,8 +95,18 @@
         Call AturDGPendapatan()
         Call isiCbPencarian()
 
-        dateAkhir.Enabled = False
+        cbPencarian.SelectedItem = cbPencarian.Items(0)
+        txtSearch.Text = ""
+
         dateAwal.Enabled = False
+        dateAkhir.Enabled = False
+        txtSearch.Enabled = False
+        checkBox.Enabled = False
+
+        checkBox.Checked = False
+
+        dateAwal.Value = Format(Now)
+        dateAkhir.Value = Format(Now)
     End Sub
 
     Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
@@ -82,6 +114,9 @@
 
         cbPencarian.SelectedItem = cbPencarian.Items(0)
         txtSearch.Text = ""
+        txtSearch.Enabled = False
+        checkBox.Enabled = False
+        checkBox.Checked = False
 
         dateAwal.Value = Format(Now)
         dateAkhir.Value = Format(Now)
@@ -93,27 +128,33 @@
         ElseIf txtSearch.Text = "" Then
             MsgBox("Masukan Kata Kunci", MsgBoxStyle.Information, "Info")
             txtSearch.Focus()
-        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(0) Then
-            MsgBox("Pilih Kategori Pencarian!", MsgBoxStyle.Information, "Info")
-        Else
+        ElseIf cbPencarian.Enabled = True And checkBox.Checked = False Then
             Call tampilCari(txtSearch.Text)
             txtSearch.Focus()
-
-            dateAkhir.Enabled = False
-            dateAwal.Enabled = False
-
-            dateAwal.Value = Format(Now)
-            dateAkhir.Value = Format(Now)
+        ElseIf cbPencarian.Enabled = True And checkBox.Checked = True Then
+            Call tampilCari2(kunci:=txtSearch.Text, kunci1:=dateAwal.Value, kunci2:=dateAkhir.Value)
+            txtSearch.Focus()
         End If
     End Sub
 
     Private Sub cbPencarian_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPencarian.SelectedIndexChanged
-        If cbPencarian.SelectedItem = cbPencarian.Items(5) Then
+        If cbPencarian.SelectedItem = cbPencarian.Items(0) Then
             txtSearch.Enabled = False
+            checkBox.Checked = False
+            checkBox.Enabled = False
+            dateAwal.Enabled = False
+            dateAkhir.Enabled = False
+        ElseIf cbPencarian.SelectedItem = cbPencarian.Items(5) Then
+            txtSearch.Enabled = False
+            checkBox.Checked = False
+            checkBox.Enabled = False
             dateAwal.Enabled = True
             dateAkhir.Enabled = True
         Else
             txtSearch.Enabled = True
+            txtSearch.Focus()
+            checkBox.Checked = False
+            checkBox.Enabled = True
             dateAwal.Enabled = False
             dateAkhir.Enabled = False
         End If
@@ -137,5 +178,15 @@
     Private Sub lblPengeluaran_Click(sender As Object, e As EventArgs) Handles lblPengeluaran.Click
         Me.Close()
         LihatPengeluaran.Show()
+    End Sub
+
+    Private Sub checkBox_CheckStateChanged(sender As Object, e As EventArgs) Handles checkBox.CheckStateChanged
+        If checkBox.Checked = True Then
+            dateAkhir.Enabled = True
+            dateAwal.Enabled = True
+        Else
+            dateAkhir.Enabled = False
+            dateAwal.Enabled = False
+        End If
     End Sub
 End Class

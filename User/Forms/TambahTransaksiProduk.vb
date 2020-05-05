@@ -30,10 +30,6 @@
         btnEdit.Enabled = False
         btnSave.Enabled = False
         btnDelete.Enabled = False
-
-        lblUser.Text = kodeLogin
-
-        lblTanggal.Text = Format(Now, "yyyy/MM/dd hh:mm")
     End Sub
 
     Private Sub btnProduk_Click(sender As Object, e As EventArgs) Handles btnProduk.Click
@@ -43,13 +39,6 @@
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'deklarasi array string
         Dim strItem(5) As String
-        Dim update As Integer
-
-        For Each id As ListViewItem In LVDetailProduk.Items
-            If id.Text = txtId.Text Then
-                update = txtQty.Text + LVDetailProduk.Items(0).SubItems(3).Text
-            End If
-        Next
 
         If txtNama.Text = "" Then
             MsgBox("Masukan Produk Terlebih Dahulu!", MsgBoxStyle.Information, "Info")
@@ -68,19 +57,6 @@
 
         'tambahkan item add (ListViewDetailBiaya) dengan isi array
         LVDetailProduk.Items.Add(New ListViewItem(strItem))
-
-        For Each id As ListViewItem In LVDetailProduk.Items
-            If id.Text = txtId.Text Then
-                update = txtQty.Text + LVDetailProduk.Items(0).SubItems(3).Text
-
-                strItem(0) = txtId.Text
-                strItem(1) = txtNama.Text
-                strItem(2) = update
-                strItem(3) = txtHarga.Text
-                strItem(4) = txtDisc.Text
-                strItem(5) = txtQty.Text * txtHarga.Text - ((txtDisc.Text / 100) * (txtQty.Text * txtHarga.Text))
-            End If
-        Next
 
         Call HitungTotal()
         Call Bersih()
@@ -104,7 +80,7 @@
             .jmlPendapatan = lblNominal.Text
             .ketPendapatan = "Produk"
             .tglPendapatan = Format(Now, "yyyy/MM/dd")
-            .idUser = lblUser.Text
+            .idUser = kodeLogin
         End With
 
         For i = 0 To LVDetailProduk.Items.Count - 1
@@ -165,5 +141,36 @@
     Private Sub lblTambahJasa_Click(sender As Object, e As EventArgs)
         Me.Close()
         TambahTransaksiJasa.Show()
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Dim hari As String()
+        Dim bulan As String()
+
+        hari = New String() {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"}
+        bulan = New String() {"", "J\a\n\u\a\r\i", "F\e\b\r\u\a\r\i", "M\a\r\e\t", "A\p\r\i\l", "M\e\i", "J\u\n\i", "J\u\l\i", "A\g\u\s\t\u\s", "S\e\p\t\e\m\b\e\r", "O\k\t\o\b\\r\e", "N\o\v\e\m\b\e\r", "D\e\s\e\m\b\e\r"}
+
+        lblTanggal.Text = hari(Now.DayOfWeek) & ", " & Format(Now, "dd " & bulan(Now.Month) & " yyyy   hh:mm")
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Call Bersih()
+
+        lblNominal.Text = 0
+        LVDetailProduk.Items.Clear()
+
+        lblPendapatan.Text = ""
+
+        btnNew.Enabled = True
+        btnEdit.Enabled = False
+        btnAdd.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
+        btnProduk.Enabled = False
+
+        txtQty.Enabled = False
+        txtQty.ReadOnly = True
+        txtDisc.Enabled = False
+        txtDisc.ReadOnly = True
     End Sub
 End Class

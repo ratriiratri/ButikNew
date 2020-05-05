@@ -22,5 +22,295 @@ Pemilik
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:Pemilik.ButikDaurUlangDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.BiayaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailBiayaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailJasaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailJurnalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailProdukDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.JasaDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.JurnalDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.PendapatanDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.PengeluaranDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.ProdukDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.RekAkunDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.UserrDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.BiayaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailBiayaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailJasaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailJurnalRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailProdukRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.JasaRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.JurnalRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.PendapatanRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.PengeluaranRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.ProdukRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.RekAkunRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.UserrRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.BiayaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailBiayaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailJasaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailJurnalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.DetailProdukRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.JasaRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.JurnalRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.PendapatanRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.PengeluaranRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.ProdukRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.RekAkunRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSet.UserrRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.BiayaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.DetailBiayaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.DetailJasaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.DetailJurnalTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.DetailProdukTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.JasaTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.JurnalTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.PendapatanTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.PengeluaranTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.ProdukTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.RekAkunTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.UserrTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.QueriesTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:Pemilik.ButikDaurUlangDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(Pemilik.ButikDaurUlangDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:Pemilik.ButikDaurUlangDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(Pemilik.ButikDaurUlangDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:Pemilik.ButikDaurUlangDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(Pemilik.ButikDaurUlangDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:Pemilik.ButikDaurUlangDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:Pemilik.ButikDaurUlangDataSetTableAdapters.TableAdapterManager.UpdateAll(Pemilik.ButikDaurUlangDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:Pemilik.ButikDaurUlangDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
 </members>
 </doc>

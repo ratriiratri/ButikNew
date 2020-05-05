@@ -116,6 +116,7 @@
         AturTxtBox(True)
 
         btnNew.Enabled = False
+        btnEdit.Enabled = False
         btnDelete.Enabled = False
 
         txtNama.Focus()
@@ -126,13 +127,13 @@
         Dim statusReferensi As Boolean
 
         statusReferensi = KontrolBiaya.CekDataDipakai(txtId.Text)
+
         If statusReferensi Then
-            MsgBox("Data masih dipakai! Tidak bisa dihapus.", MsgBoxStyle.Exclamation, "Peringatan")
+            MsgBox("Data masih digunakan, tidak dapat dihapus!", MsgBoxStyle.Exclamation, "Peringatan")
             Exit Sub
         End If
 
-        If MsgBox("Apakah anda yakin ingin menghapus data ini?", MsgBoxStyle.Question + MsgBoxStyle.YesNo,
-        "Konfirmasi") = MsgBoxResult.Yes Then
+        If MsgBox("Apakah anda yakin ingin menghapus data ini?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Konfirmasi") = MsgBoxResult.Yes Then
             KontrolBiaya.DeleteData(txtId.Text)
         End If
 

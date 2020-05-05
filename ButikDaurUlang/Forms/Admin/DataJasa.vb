@@ -113,6 +113,7 @@
 
         btnNew.Enabled = False
         btnDelete.Enabled = False
+        btnEdit.Enabled = False
 
         txtNama.Focus()
         modeProses = 2
@@ -123,12 +124,11 @@
 
         statusReferensi = KontrolJasa.CekDataDipakai(txtId.Text)
         If statusReferensi Then
-            MsgBox("Data masih dipakai! Tidak bisa dihapus.", MsgBoxStyle.Exclamation, "Peringatan")
+            MsgBox("Data masih digunakan, tidak dapat dihapus!", MsgBoxStyle.Exclamation, "Peringatan")
             Exit Sub
         End If
 
-        If MsgBox("Apakah anda yakin ingin menghapus data ini?", MsgBoxStyle.Question + MsgBoxStyle.YesNo,
-        "Konfirmasi") = MsgBoxResult.Yes Then
+        If MsgBox("Apakah anda yakin ingin menghapus data ini?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Konfirmasi") = MsgBoxResult.Yes Then
             KontrolJasa.DeleteData(txtId.Text)
         End If
 

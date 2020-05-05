@@ -53,10 +53,46 @@ Public Class ControlBiaya : Implements InterfaceProses
     Public Function CariDataIDBiaya(kunci As String) As DataView
         Try
             DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
-                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
                                        & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
                                        & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
-                                       & "on us.idUser = pl.idUser where b.idBiaya='" & kunci & "'", OpenConnection)
+                                       & "on us.idUser = pl.idUser where b.idBiaya like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDBiayaTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where b.idBiaya like '%" & kunci & "%' and " _
+                                       & "pl.tglPengeluaran between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDPengeluaranTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where pl.idPengeluaran like '%" & kunci & "%' and " _
+                                       & "pl.tglPengeluaran between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariBiaya")
 
@@ -70,10 +106,10 @@ Public Class ControlBiaya : Implements InterfaceProses
     Public Function CariDataIDPengeluaran(kunci As String) As DataView
         Try
             DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
-                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
                                        & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
                                        & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
-                                       & "on us.idUser = pl.idUser where pl.idPengeluaran='" & kunci & "'", OpenConnection)
+                                       & "on us.idUser = pl.idUser where pl.idPengeluaran like '%" & kunci & "%'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariBiaya")
 
@@ -87,10 +123,28 @@ Public Class ControlBiaya : Implements InterfaceProses
     Public Function CariDataIDUser(kunci As String) As DataView
         Try
             DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
-                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
                                        & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
                                        & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
-                                       & "on us.idUser = pl.idUser where us.idUser='" & kunci & "'", OpenConnection)
+                                       & "on us.idUser = pl.idUser where us.idUser like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDUserTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where us.idUser like '%" & kunci & "%' and " _
+                                       & "pl.tglPengeluaran between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariBiaya")
 
@@ -104,10 +158,28 @@ Public Class ControlBiaya : Implements InterfaceProses
     Public Function CariDataNamaBiaya(kunci As String) As DataView
         Try
             DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
-                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
                                        & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
                                        & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
-                                       & "on us.idUser = pl.idUser where b.namaBiaya='" & kunci & "'", OpenConnection)
+                                       & "on us.idUser = pl.idUser where b.namaBiaya like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariBiaya")
+
+            Dim grid As New DataView(DTS.Tables("cariBiaya"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataNamaBiayaTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
+                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where b.namaBiaya like '%" & kunci & "%' and " _
+                                       & "pl.tglPengeluaran between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariBiaya")
 
@@ -121,7 +193,7 @@ Public Class ControlBiaya : Implements InterfaceProses
     Public Function CariDataTanggalPengeluaran(kunci1 As Date, kunci2 As Date) As DataView
         Try
             DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
-                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
                                        & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
                                        & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
                                        & "on us.idUser = pl.idUser where pl.tglPengeluaran between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
@@ -139,22 +211,21 @@ Public Class ControlBiaya : Implements InterfaceProses
         Dim cek As Boolean
         cek = False
         Try
-            DTA = New OleDbDataAdapter("select count(idBiaya) from DetailBiaya " _
-                                   & "where idBiaya='" & kunci & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idBiaya from DetailBiaya where idBiaya='" & kunci & "'", OpenConnection)
             DTS = New DataSet()
-            DTA.Fill(DTS, "cekData")
-            If DTS.Tables("cekData").Rows(0)(0).ToString > 0 Then cek = True
-
+            DTA.Fill(DTS, "cek")
+            If DTS.Tables("cek").Rows.Count > 0 Then
+                cek = True
+            End If
         Catch ex As Exception
-            Throw New Exception(ex.Message)
-            Return cek
         End Try
+        Return cek
     End Function
 
     Function TampilDetailBiaya() As DataView
         Try
             DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
-                                       & "pl.idPengeluaran, pl.tglPengeluaran, us.idUser from Biaya b " _
+                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
                                        & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
                                        & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
                                        & "on us.idUser = pl.idUser", OpenConnection)

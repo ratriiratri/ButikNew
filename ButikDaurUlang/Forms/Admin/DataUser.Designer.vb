@@ -23,7 +23,6 @@ Partial Class DataUser
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -47,6 +46,7 @@ Partial Class DataUser
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
@@ -61,14 +61,6 @@ Partial Class DataUser
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(19, 576)
         Me.Panel3.TabIndex = 37
-        '
-        'Panel6
-        '
-        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(19, 341)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1154, 21)
-        Me.Panel6.TabIndex = 40
         '
         'Label1
         '
@@ -127,7 +119,7 @@ Partial Class DataUser
         Me.Panel7.Controls.Add(Me.btnEdit)
         Me.Panel7.Controls.Add(Me.DGUser)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(19, 362)
+        Me.Panel7.Location = New System.Drawing.Point(19, 342)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1154, 258)
         Me.Panel7.TabIndex = 41
@@ -165,7 +157,7 @@ Partial Class DataUser
         'btnNew
         '
         Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(556, 192)
+        Me.btnNew.Location = New System.Drawing.Point(556, 174)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(86, 31)
         Me.btnNew.TabIndex = 40
@@ -190,13 +182,13 @@ Partial Class DataUser
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(19, 103)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1154, 238)
+        Me.Panel5.Size = New System.Drawing.Size(1154, 218)
         Me.Panel5.TabIndex = 39
         '
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(648, 192)
+        Me.btnSave.Location = New System.Drawing.Point(648, 174)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 31)
         Me.btnSave.TabIndex = 56
@@ -306,6 +298,14 @@ Partial Class DataUser
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 35
         '
+        'Panel6
+        '
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel6.Location = New System.Drawing.Point(19, 321)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1154, 21)
+        Me.Panel6.TabIndex = 40
+        '
         'DataUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -334,7 +334,6 @@ Partial Class DataUser
     End Sub
 
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel6 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel2 As Panel
@@ -363,4 +362,5 @@ Partial Class DataUser
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel6 As Panel
 End Class

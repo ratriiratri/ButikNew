@@ -133,6 +133,7 @@
 
         btnNew.Enabled = False
         btnDelete.Enabled = False
+        btnEdit.Enabled = False
 
         txtNama.Focus()
         modeProses = 2
@@ -152,7 +153,7 @@
             KontrolProduk.DeleteData(txtId.Text)
         End If
 
-        RefreshGrid()
+        Call RefreshGrid()
     End Sub
 
     Private Sub lblLihat_Click(sender As Object, e As EventArgs) Handles lblLihat.Click

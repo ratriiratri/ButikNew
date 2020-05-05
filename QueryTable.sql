@@ -40,6 +40,10 @@ jumlahProduk	int				not null,
 discProduk		float			not null
 )
 
+
+alter table DetailProduk alter column discProduk int not null;
+alter table DetailJasa alter column discJasa int not null;
+
 create table DetailJasa(
 idJasa			char(6)			foreign key references Jasa(idJasa),
 idPendapatan	char(6)			foreign key references Pendapatan(idPendapatan),
@@ -75,6 +79,10 @@ tglPengeluaran	datetime		not null,
 idUser			char(6)			foreign key references Userr(idUser)
 )
 
+alter table Pendapatan alter column tglPendapatan date not null;
+alter table Pengeluaran alter column tglPengeluaran date not null;
+alter table Jurnal alter column tglJurnal date not null;
+
 create table Jurnal(
 idJurnal		char(6)			primary key,
 tglJurnal		datetime		not null,
@@ -96,7 +104,14 @@ jnsSaldo		char(1)			not null,
 saldo			int				not null		
 )
 
+create table Data(
+idData			char(6),
+namaData		char(100),
+tanggalData		date,
+jumlahData		int
+)
 
+alter table data
 //INSERT
 
 insert into Userr values ('US0001','admin','0857','admin1','1234','1')
@@ -120,8 +135,25 @@ insert into DetailJasa values ('JS0001','PD0005',2,1)
 insert into Pendapatan values ('PD0005',700000,'','08 Feb 2020','US0001')
 insert into DetailBiaya values ('BY0001','PL0001',1)
 
-select * from DetailJasa order by idPendapatan desc
+INSERT INTO REKAKUN VALUES ('1101','Kas','D',0)
+INSERT INTO REKAKUN VALUES ('1102','Piutang Dagang','D',0)
+INSERT INTO REKAKUN VALUES ('1103','Persediaan Barang Dagangan','D',0)
+INSERT INTO REKAKUN VALUES ('1104','Perlengkapan','D',0)
+INSERT INTO REKAKUN VALUES ('1201','Peralatan','D',0)
+INSERT INTO REKAKUN VALUES ('1202','Akm.Peny. Peralatan','D',0)
+INSERT INTO REKAKUN VALUES ('1203','Kendaraan','D',0)
+INSERT INTO REKAKUN VALUES ('1204','Akm.Peny. Kendaraan','D',0)
+INSERT INTO REKAKUN VALUES ('2101','Hutang Dagang','K',0)
+INSERT INTO REKAKUN VALUES ('2201','Hutang Bank','K',0)
+INSERT INTO REKAKUN VALUES ('3101','Modal','K',0)
+INSERT INTO REKAKUN VALUES ('4101','Penjualan','K',0)
+INSERT INTO REKAKUN VALUES ('4102','Pot. Penjualan','K',0)
+INSERT INTO REKAKUN VALUES ('5101','Pembelian','D',0)
+INSERT INTO REKAKUN VALUES ('5102','Pot. Pembelian','D',0)
+INSERT INTO REKAKUN VALUES ('6101','Biaya Listrik','D',0)
+INSERT INTO REKAKUN VALUES ('6102','Biaya Gaji','D',0)
 
+select ref from DetailJurnal where ref='6102'
 //FUNCTION
 
 userr				US0001
@@ -142,6 +174,19 @@ begin
 	set @kdbaru = 'US' + right('0000' + cast(@urut + 1 as varchar(4)),4)
 	return @kdbaru
 end
+
+create function FCKdAkun(@kel char(2))
+returns char(4) as
+begin
+   declare @kdbaru char(4),@urut int
+   select @urut= isnull(max(right(idAkun,2)),0) from RekAkun 
+   where left(idAkun,2) = @kel
+   set @kdbaru = @kel + right('0' + cast(@urut + 1 AS varchar(2)),2)
+   return @kdbaru
+end
+
+
+select dbo.FCKdAkun(11)
 
 select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan
 from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa
@@ -165,12 +210,40 @@ where dp.jumlahProduk like 1 or p.hargaProduk like 2
 SELECT idUser, namaUSer, hpUser, usernameUser, passwordUser, case statusUser 
    WHEN '1' THEN 'Admin' 
    when '2' then 'User'
-   end as status
-   FROM Userr where statusUser != '3' and statusUser = '2'
+   end as 'Status User'
+   FROM Userr where statusUser != '3' and 'Status User' like '%Admin%'
 
-select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, pl.idPengeluaran, pl.tglPengeluaran, us.idUser
+select idPendapatan, jmlPendapatan, ketPendapatan, CONVERT(varchar, tglPendapatan,106), idUser 
+from Pendapatan where idPendapatan like '%PD0001%' and tglPendapatan between '2020-03-01' and '2020-03-01'
+
+select idPengeluaran, jmlPengeluaran, convert(varchar, tglPengeluaran,106), idUser from Pengeluaran
+
+select * from pengeluaran 
+
+select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, pl.idPengeluaran, convert (varchar, pl.tglPengeluaran,106), us.idUser
 from Biaya b join DetailBiaya db on b.idBiaya = db.idBiaya
 			 join Pengeluaran pl on pl.idPengeluaran = db.idPengeluaran
-			 join Userr us on us.idUser = pl.idUser where b.idBiaya = 'BY0001'
+			 join Userr us on us.idUser = pl.idUser 
+			 where b.idBiaya = 'BY0001' and pl.tglPengeluaran between '2020-03-01' and '2020-03-01' 
 
-select * from pengeluaran
+
+create trigger TGUbahStock on DetailProduk
+for insert 
+as declare @id char(6), @jml int
+begin transaction
+select @id = idProduk, @jml = jumlahProduk FROM inserted
+update Produk set stockProduk = stockProduk - @jml WHERE idProduk = @id
+IF @@error=0
+ COMMIT TRANSACTION
+ELSE
+ ROLLBACK TRANSACTION
+
+
+select * from Produk
+select * from Pendapatan
+select * from Userr
+
+insert into Pendapatan values('PD0012', 10000, 'produk', '2020-05-05', 'US0002')
+insert into DetailProduk values('PR0001', 'PD0012', 2, 0)
+
+

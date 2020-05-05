@@ -40,7 +40,6 @@ Partial Class TambahTransaksiJasa
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.lblTanggal = New System.Windows.Forms.Label()
         Me.lblPendapatan = New System.Windows.Forms.Label()
-        Me.lblUser = New System.Windows.Forms.Label()
         Me.txtHarga = New System.Windows.Forms.TextBox()
         Me.btnNew = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -55,13 +54,12 @@ Partial Class TambahTransaksiJasa
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,6 +163,11 @@ Partial Class TambahTransaksiJasa
         Me.ColumnHeader5.Text = "Sub Total"
         Me.ColumnHeader5.Width = 232
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
@@ -187,21 +190,11 @@ Partial Class TambahTransaksiJasa
         '
         Me.lblPendapatan.AutoSize = True
         Me.lblPendapatan.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPendapatan.Location = New System.Drawing.Point(425, 23)
+        Me.lblPendapatan.Location = New System.Drawing.Point(171, 30)
         Me.lblPendapatan.Name = "lblPendapatan"
         Me.lblPendapatan.Size = New System.Drawing.Size(60, 17)
         Me.lblPendapatan.TabIndex = 89
         Me.lblPendapatan.Text = "             "
-        '
-        'lblUser
-        '
-        Me.lblUser.AutoSize = True
-        Me.lblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUser.Location = New System.Drawing.Point(216, 23)
-        Me.lblUser.Name = "lblUser"
-        Me.lblUser.Size = New System.Drawing.Size(52, 17)
-        Me.lblUser.TabIndex = 88
-        Me.lblUser.Text = "lblUser"
         '
         'txtHarga
         '
@@ -216,7 +209,7 @@ Partial Class TambahTransaksiJasa
         'btnNew
         '
         Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(717, 464)
+        Me.btnNew.Location = New System.Drawing.Point(79, 23)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(86, 31)
         Me.btnNew.TabIndex = 83
@@ -226,16 +219,17 @@ Partial Class TambahTransaksiJasa
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(994, 464)
+        Me.btnDelete.Location = New System.Drawing.Point(901, 464)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 31)
         Me.btnDelete.TabIndex = 81
-        Me.btnDelete.Text = "Del"
+        Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.Controls.Add(Me.btnRefresh)
         Me.Panel5.Controls.Add(Me.cbJasa)
         Me.Panel5.Controls.Add(Me.Label11)
         Me.Panel5.Controls.Add(Me.Label10)
@@ -245,7 +239,6 @@ Partial Class TambahTransaksiJasa
         Me.Panel5.Controls.Add(Me.LVDetailJasa)
         Me.Panel5.Controls.Add(Me.lblTanggal)
         Me.Panel5.Controls.Add(Me.lblPendapatan)
-        Me.Panel5.Controls.Add(Me.lblUser)
         Me.Panel5.Controls.Add(Me.txtHarga)
         Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.btnDelete)
@@ -258,8 +251,6 @@ Partial Class TambahTransaksiJasa
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Controls.Add(Me.txtId)
-        Me.Panel5.Controls.Add(Me.Label3)
-        Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Controls.Add(Me.btnAdd)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(19, 103)
@@ -281,7 +272,7 @@ Partial Class TambahTransaksiJasa
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(901, 464)
+        Me.btnSave.Location = New System.Drawing.Point(717, 464)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 31)
         Me.btnSave.TabIndex = 80
@@ -369,26 +360,6 @@ Partial Class TambahTransaksiJasa
         Me.txtId.Size = New System.Drawing.Size(97, 23)
         Me.txtId.TabIndex = 66
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(313, 23)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(102, 17)
-        Me.Label3.TabIndex = 65
-        Me.Label3.Text = "ID Pendapatan"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(155, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 17)
-        Me.Label2.TabIndex = 63
-        Me.Label2.Text = "ID User"
-        '
         'btnAdd
         '
         Me.btnAdd.Enabled = False
@@ -440,6 +411,16 @@ Partial Class TambahTransaksiJasa
         Me.Panel4.Size = New System.Drawing.Size(1154, 29)
         Me.Panel4.TabIndex = 69
         '
+        'btnRefresh
+        '
+        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefresh.Location = New System.Drawing.Point(993, 464)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(86, 31)
+        Me.btnRefresh.TabIndex = 102
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
         'TambahTransaksiJasa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -480,7 +461,6 @@ Partial Class TambahTransaksiJasa
     Friend WithEvents Panel2 As Panel
     Friend WithEvents lblTanggal As Label
     Friend WithEvents lblPendapatan As Label
-    Friend WithEvents lblUser As Label
     Friend WithEvents txtHarga As TextBox
     Friend WithEvents btnNew As Button
     Friend WithEvents btnDelete As Button
@@ -494,12 +474,11 @@ Partial Class TambahTransaksiJasa
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents txtId As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents btnAdd As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents cbJasa As ComboBox
+    Friend WithEvents btnRefresh As Button
 End Class

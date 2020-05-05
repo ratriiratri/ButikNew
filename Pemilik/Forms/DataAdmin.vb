@@ -140,8 +140,10 @@
 
         txtUsername.Enabled = False
         txtPassword.Enabled = False
+
         btnNew.Enabled = False
         btnDelete.Enabled = False
+        btnEdit.Enabled = False
 
         txtNama.Focus()
         modeProses = 2
@@ -152,7 +154,7 @@
 
         statusReferensi = KontrolUser.CekDataDipakai(txtId.Text)
         If statusReferensi = False Then
-            MsgBox("Data masih dipakai! Tidak bisa dihapus.", MsgBoxStyle.Exclamation, "Peringatan")
+            MsgBox("Data masih digunakan, tidak dapat dihapus!", MsgBoxStyle.Exclamation, "Peringatan")
             Exit Sub
         End If
 

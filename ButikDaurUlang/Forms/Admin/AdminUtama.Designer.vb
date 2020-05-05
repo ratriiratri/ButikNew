@@ -40,6 +40,7 @@ Partial Class AdminUtama
         Me.btnMax = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnRekAkun = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         CType(Me.picGirl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picDuarUlang, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +68,7 @@ Partial Class AdminUtama
         Me.btnPengeluaran.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPengeluaran.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnPengeluaran.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnPengeluaran.Location = New System.Drawing.Point(0, 257)
+        Me.btnPengeluaran.Location = New System.Drawing.Point(0, 308)
         Me.btnPengeluaran.Name = "btnPengeluaran"
         Me.btnPengeluaran.Size = New System.Drawing.Size(169, 52)
         Me.btnPengeluaran.TabIndex = 7
@@ -80,7 +81,7 @@ Partial Class AdminUtama
         Me.btnUser.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUser.Location = New System.Drawing.Point(0, 53)
+        Me.btnUser.Location = New System.Drawing.Point(0, 104)
         Me.btnUser.Name = "btnUser"
         Me.btnUser.Size = New System.Drawing.Size(169, 52)
         Me.btnUser.TabIndex = 1
@@ -93,7 +94,7 @@ Partial Class AdminUtama
         Me.btnBiaya.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBiaya.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBiaya.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnBiaya.Location = New System.Drawing.Point(0, 206)
+        Me.btnBiaya.Location = New System.Drawing.Point(0, 257)
         Me.btnBiaya.Name = "btnBiaya"
         Me.btnBiaya.Size = New System.Drawing.Size(169, 52)
         Me.btnBiaya.TabIndex = 4
@@ -106,7 +107,7 @@ Partial Class AdminUtama
         Me.btnProduk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProduk.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProduk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnProduk.Location = New System.Drawing.Point(0, 104)
+        Me.btnProduk.Location = New System.Drawing.Point(0, 155)
         Me.btnProduk.Name = "btnProduk"
         Me.btnProduk.Size = New System.Drawing.Size(169, 52)
         Me.btnProduk.TabIndex = 2
@@ -117,7 +118,6 @@ Partial Class AdminUtama
         'btnDashboard
         '
         Me.btnDashboard.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDashboard.FlatAppearance.BorderSize = 0
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -132,6 +132,7 @@ Partial Class AdminUtama
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.btnRekAkun)
         Me.Panel3.Controls.Add(Me.btnLihat)
         Me.Panel3.Controls.Add(Me.btnLogOut)
         Me.Panel3.Controls.Add(Me.btnPengeluaran)
@@ -151,7 +152,7 @@ Partial Class AdminUtama
         Me.btnLihat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLihat.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLihat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLihat.Location = New System.Drawing.Point(0, 308)
+        Me.btnLihat.Location = New System.Drawing.Point(0, 359)
         Me.btnLihat.Name = "btnLihat"
         Me.btnLihat.Size = New System.Drawing.Size(169, 52)
         Me.btnLihat.TabIndex = 9
@@ -164,7 +165,7 @@ Partial Class AdminUtama
         Me.btnJasa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnJasa.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnJasa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnJasa.Location = New System.Drawing.Point(0, 155)
+        Me.btnJasa.Location = New System.Drawing.Point(0, 206)
         Me.btnJasa.Name = "btnJasa"
         Me.btnJasa.Size = New System.Drawing.Size(169, 52)
         Me.btnJasa.TabIndex = 5
@@ -273,6 +274,19 @@ Partial Class AdminUtama
         Me.Panel1.Size = New System.Drawing.Size(784, 23)
         Me.Panel1.TabIndex = 3
         '
+        'btnRekAkun
+        '
+        Me.btnRekAkun.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnRekAkun.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRekAkun.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRekAkun.Location = New System.Drawing.Point(0, 53)
+        Me.btnRekAkun.Name = "btnRekAkun"
+        Me.btnRekAkun.Size = New System.Drawing.Size(169, 52)
+        Me.btnRekAkun.TabIndex = 10
+        Me.btnRekAkun.Text = "Rek Akun"
+        Me.btnRekAkun.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRekAkun.UseVisualStyleBackColor = True
+        '
         'AdminUtama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -315,4 +329,5 @@ Partial Class AdminUtama
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblNama As Label
     Friend WithEvents btnLihat As Button
+    Friend WithEvents btnRekAkun As Button
 End Class

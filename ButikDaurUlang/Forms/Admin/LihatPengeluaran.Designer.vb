@@ -29,19 +29,6 @@ Partial Class LihatPengeluaran
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.DGPengeluaran = New System.Windows.Forms.DataGridView()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.cbPencarian = New System.Windows.Forms.ComboBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.btnSearch = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.dateAkhir = New System.Windows.Forms.DateTimePicker()
-        Me.dateAwal = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.lblTransaksiBiaya = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblPengeluaran = New System.Windows.Forms.Label()
@@ -51,6 +38,22 @@ Partial Class LihatPengeluaran
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblTransaksiProduk = New System.Windows.Forms.Label()
         Me.lblTransaksiJasa = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.DGPengeluaran = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbPencarian = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.dateAkhir = New System.Windows.Forms.DateTimePicker()
+        Me.dateAwal = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.checkBox = New System.Windows.Forms.CheckBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGPengeluaran, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -129,148 +132,6 @@ Partial Class LihatPengeluaran
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1192, 74)
         Me.Panel1.TabIndex = 74
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
-        '
-        'DGPengeluaran
-        '
-        Me.DGPengeluaran.AllowUserToOrderColumns = True
-        Me.DGPengeluaran.AllowUserToResizeColumns = False
-        Me.DGPengeluaran.AllowUserToResizeRows = False
-        Me.DGPengeluaran.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGPengeluaran.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGPengeluaran.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DGPengeluaran.Location = New System.Drawing.Point(19, 224)
-        Me.DGPengeluaran.Name = "DGPengeluaran"
-        Me.DGPengeluaran.ReadOnly = True
-        Me.DGPengeluaran.Size = New System.Drawing.Size(1154, 364)
-        Me.DGPengeluaran.TabIndex = 80
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.cbPencarian)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.btnSearch)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtSearch)
-        Me.GroupBox1.Controls.Add(Me.dateAkhir)
-        Me.GroupBox1.Controls.Add(Me.dateAwal)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 103)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1154, 100)
-        Me.GroupBox1.TabIndex = 82
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Pencarian"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(24, 68)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(88, 17)
-        Me.Label6.TabIndex = 66
-        Me.Label6.Text = "Kata Kunci : "
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 29)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 17)
-        Me.Label2.TabIndex = 57
-        Me.Label2.Text = "Berdasarkan : "
-        '
-        'cbPencarian
-        '
-        Me.cbPencarian.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbPencarian.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbPencarian.FormattingEnabled = True
-        Me.cbPencarian.Location = New System.Drawing.Point(131, 29)
-        Me.cbPencarian.Name = "cbPencarian"
-        Me.cbPencarian.Size = New System.Drawing.Size(472, 24)
-        Me.cbPencarian.TabIndex = 58
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(863, 32)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(27, 17)
-        Me.Label5.TabIndex = 65
-        Me.Label5.Text = "s.d"
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(1038, 61)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(86, 31)
-        Me.btnSearch.TabIndex = 59
-        Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(893, 15)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(107, 15)
-        Me.Label4.TabIndex = 64
-        Me.Label4.Text = "Sampai Tanggal : "
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(131, 65)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(901, 23)
-        Me.txtSearch.TabIndex = 60
-        '
-        'dateAkhir
-        '
-        Me.dateAkhir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateAkhir.Location = New System.Drawing.Point(896, 31)
-        Me.dateAkhir.Name = "dateAkhir"
-        Me.dateAkhir.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dateAkhir.Size = New System.Drawing.Size(228, 21)
-        Me.dateAkhir.TabIndex = 63
-        '
-        'dateAwal
-        '
-        Me.dateAwal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dateAwal.Location = New System.Drawing.Point(629, 31)
-        Me.dateAwal.Name = "dateAwal"
-        Me.dateAwal.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dateAwal.Size = New System.Drawing.Size(228, 21)
-        Me.dateAwal.TabIndex = 61
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(626, 15)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(84, 15)
-        Me.Label3.TabIndex = 62
-        Me.Label3.Text = "Dari Tanggal :"
         '
         'lblTransaksiBiaya
         '
@@ -381,6 +242,181 @@ Partial Class LihatPengeluaran
         Me.lblTransaksiJasa.TabIndex = 25
         Me.lblTransaksiJasa.Text = "Transaksi Jasa"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
+        '
+        'DGPengeluaran
+        '
+        Me.DGPengeluaran.AllowUserToOrderColumns = True
+        Me.DGPengeluaran.AllowUserToResizeColumns = False
+        Me.DGPengeluaran.AllowUserToResizeRows = False
+        Me.DGPengeluaran.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGPengeluaran.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGPengeluaran.Dock = System.Windows.Forms.DockStyle.Top
+        Me.DGPengeluaran.Location = New System.Drawing.Point(19, 224)
+        Me.DGPengeluaran.Name = "DGPengeluaran"
+        Me.DGPengeluaran.ReadOnly = True
+        Me.DGPengeluaran.Size = New System.Drawing.Size(1154, 364)
+        Me.DGPengeluaran.TabIndex = 80
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.checkBox)
+        Me.GroupBox1.Controls.Add(Me.cbPencarian)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.btnSearch)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.txtSearch)
+        Me.GroupBox1.Controls.Add(Me.dateAkhir)
+        Me.GroupBox1.Controls.Add(Me.dateAwal)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(19, 103)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1154, 100)
+        Me.GroupBox1.TabIndex = 82
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Pencarian"
+        '
+        'cbPencarian
+        '
+        Me.cbPencarian.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbPencarian.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbPencarian.FormattingEnabled = True
+        Me.cbPencarian.Location = New System.Drawing.Point(131, 29)
+        Me.cbPencarian.Name = "cbPencarian"
+        Me.cbPencarian.Size = New System.Drawing.Size(463, 24)
+        Me.cbPencarian.TabIndex = 58
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(863, 32)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(27, 17)
+        Me.Label5.TabIndex = 65
+        Me.Label5.Text = "s.d"
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.Location = New System.Drawing.Point(1038, 61)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(86, 31)
+        Me.btnSearch.TabIndex = 59
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(893, 15)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(107, 15)
+        Me.Label4.TabIndex = 64
+        Me.Label4.Text = "Sampai Tanggal : "
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(131, 65)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(901, 23)
+        Me.txtSearch.TabIndex = 60
+        '
+        'dateAkhir
+        '
+        Me.dateAkhir.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateAkhir.Location = New System.Drawing.Point(896, 31)
+        Me.dateAkhir.Name = "dateAkhir"
+        Me.dateAkhir.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dateAkhir.Size = New System.Drawing.Size(228, 21)
+        Me.dateAkhir.TabIndex = 63
+        '
+        'dateAwal
+        '
+        Me.dateAwal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateAwal.Location = New System.Drawing.Point(629, 31)
+        Me.dateAwal.Name = "dateAwal"
+        Me.dateAwal.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dateAwal.Size = New System.Drawing.Size(228, 21)
+        Me.dateAwal.TabIndex = 61
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(626, 15)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(84, 15)
+        Me.Label3.TabIndex = 62
+        Me.Label3.Text = "Dari Tanggal :"
+        '
+        'checkBox
+        '
+        Me.checkBox.AutoSize = True
+        Me.checkBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkBox.Location = New System.Drawing.Point(608, 35)
+        Me.checkBox.Name = "checkBox"
+        Me.checkBox.Size = New System.Drawing.Size(15, 14)
+        Me.checkBox.TabIndex = 83
+        Me.checkBox.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(113, 32)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(12, 17)
+        Me.Label11.TabIndex = 86
+        Me.Label11.Text = ":"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(113, 68)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(12, 17)
+        Me.Label9.TabIndex = 87
+        Me.Label9.Text = ":"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(24, 68)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(76, 17)
+        Me.Label6.TabIndex = 85
+        Me.Label6.Text = "Kata Kunci"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(24, 33)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(89, 17)
+        Me.Label2.TabIndex = 84
+        Me.Label2.Text = "Berdasarkan"
+        '
         'LihatPengeluaran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -418,8 +454,6 @@ Partial Class LihatPengeluaran
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DGPengeluaran As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents cbPencarian As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents btnSearch As Button
@@ -437,4 +471,9 @@ Partial Class LihatPengeluaran
     Friend WithEvents Label13 As Label
     Friend WithEvents lblTransaksiProduk As Label
     Friend WithEvents lblTransaksiJasa As Label
+    Friend WithEvents checkBox As CheckBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label2 As Label
 End Class

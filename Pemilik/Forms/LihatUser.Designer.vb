@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LihatUser
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class LihatUser
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DGUser = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -39,15 +39,15 @@ Partial Class LihatUser
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.checkAdmin = New System.Windows.Forms.CheckBox()
+        Me.checkUser = New System.Windows.Forms.CheckBox()
+        Me.cbPencarian = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.rbNama = New System.Windows.Forms.RadioButton()
-        Me.rbID = New System.Windows.Forms.RadioButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.rbHp = New System.Windows.Forms.RadioButton()
         CType(Me.DGUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -237,11 +237,11 @@ Partial Class LihatUser
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.GroupBox1.Controls.Add(Me.rbHp)
+        Me.GroupBox1.Controls.Add(Me.checkAdmin)
+        Me.GroupBox1.Controls.Add(Me.checkUser)
+        Me.GroupBox1.Controls.Add(Me.cbPencarian)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.rbNama)
-        Me.GroupBox1.Controls.Add(Me.rbID)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.btnSearch)
@@ -254,6 +254,38 @@ Partial Class LihatUser
         Me.GroupBox1.TabIndex = 100
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pencarian"
+        '
+        'checkAdmin
+        '
+        Me.checkAdmin.AutoSize = True
+        Me.checkAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkAdmin.Location = New System.Drawing.Point(703, 31)
+        Me.checkAdmin.Name = "checkAdmin"
+        Me.checkAdmin.Size = New System.Drawing.Size(66, 21)
+        Me.checkAdmin.TabIndex = 73
+        Me.checkAdmin.Text = "Admin"
+        Me.checkAdmin.UseVisualStyleBackColor = True
+        '
+        'checkUser
+        '
+        Me.checkUser.AutoSize = True
+        Me.checkUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkUser.Location = New System.Drawing.Point(638, 31)
+        Me.checkUser.Name = "checkUser"
+        Me.checkUser.Size = New System.Drawing.Size(57, 21)
+        Me.checkUser.TabIndex = 72
+        Me.checkUser.Text = "User"
+        Me.checkUser.UseVisualStyleBackColor = True
+        '
+        'cbPencarian
+        '
+        Me.cbPencarian.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbPencarian.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbPencarian.FormattingEnabled = True
+        Me.cbPencarian.Location = New System.Drawing.Point(131, 29)
+        Me.cbPencarian.Name = "cbPencarian"
+        Me.cbPencarian.Size = New System.Drawing.Size(463, 24)
+        Me.cbPencarian.TabIndex = 71
         '
         'Label4
         '
@@ -272,29 +304,6 @@ Partial Class LihatUser
         Me.Label3.Size = New System.Drawing.Size(12, 18)
         Me.Label3.TabIndex = 69
         Me.Label3.Text = ":"
-        '
-        'rbNama
-        '
-        Me.rbNama.AutoSize = True
-        Me.rbNama.Checked = True
-        Me.rbNama.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbNama.Location = New System.Drawing.Point(210, 29)
-        Me.rbNama.Name = "rbNama"
-        Me.rbNama.Size = New System.Drawing.Size(97, 21)
-        Me.rbNama.TabIndex = 68
-        Me.rbNama.Text = "Nama User"
-        Me.rbNama.UseVisualStyleBackColor = True
-        '
-        'rbID
-        '
-        Me.rbID.AutoSize = True
-        Me.rbID.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbID.Location = New System.Drawing.Point(131, 29)
-        Me.rbID.Name = "rbID"
-        Me.rbID.Size = New System.Drawing.Size(73, 21)
-        Me.rbID.TabIndex = 67
-        Me.rbID.Text = "ID User"
-        Me.rbID.UseVisualStyleBackColor = True
         '
         'Label6
         '
@@ -333,17 +342,6 @@ Partial Class LihatUser
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(901, 23)
         Me.txtSearch.TabIndex = 60
-        '
-        'rbHp
-        '
-        Me.rbHp.AutoSize = True
-        Me.rbHp.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbHp.Location = New System.Drawing.Point(313, 29)
-        Me.rbHp.Name = "rbHp"
-        Me.rbHp.Size = New System.Drawing.Size(126, 21)
-        Me.rbHp.TabIndex = 71
-        Me.rbHp.Text = "No. Handphone"
-        Me.rbHp.UseVisualStyleBackColor = True
         '
         'LihatUser
         '
@@ -391,11 +389,11 @@ Partial Class LihatUser
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents rbNama As RadioButton
-    Friend WithEvents rbID As RadioButton
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents rbHp As RadioButton
+    Friend WithEvents cbPencarian As ComboBox
+    Friend WithEvents checkAdmin As CheckBox
+    Friend WithEvents checkUser As CheckBox
 End Class

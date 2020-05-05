@@ -24,6 +24,7 @@ Partial Class TambahPengeluaran
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.btnRefresh = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtQty = New System.Windows.Forms.TextBox()
         Me.cbBiaya = New System.Windows.Forms.ComboBox()
@@ -35,7 +36,6 @@ Partial Class TambahPengeluaran
         Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.lblTanggal = New System.Windows.Forms.Label()
         Me.lblPengeluaran = New System.Windows.Forms.Label()
-        Me.lblUser = New System.Windows.Forms.Label()
         Me.txtJumlah = New System.Windows.Forms.TextBox()
         Me.btnNew = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
@@ -48,8 +48,6 @@ Partial Class TambahPengeluaran
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtId = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -66,13 +64,13 @@ Partial Class TambahPengeluaran
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.Controls.Add(Me.btnRefresh)
         Me.Panel5.Controls.Add(Me.Label7)
         Me.Panel5.Controls.Add(Me.txtQty)
         Me.Panel5.Controls.Add(Me.cbBiaya)
         Me.Panel5.Controls.Add(Me.LVDetailBiaya)
         Me.Panel5.Controls.Add(Me.lblTanggal)
         Me.Panel5.Controls.Add(Me.lblPengeluaran)
-        Me.Panel5.Controls.Add(Me.lblUser)
         Me.Panel5.Controls.Add(Me.txtJumlah)
         Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.btnDelete)
@@ -85,14 +83,22 @@ Partial Class TambahPengeluaran
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Controls.Add(Me.txtId)
-        Me.Panel5.Controls.Add(Me.Label3)
-        Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Controls.Add(Me.btnAdd)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(19, 103)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1154, 512)
         Me.Panel5.TabIndex = 60
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefresh.Location = New System.Drawing.Point(993, 462)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(86, 31)
+        Me.btnRefresh.TabIndex = 96
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -167,7 +173,7 @@ Partial Class TambahPengeluaran
         '
         Me.lblTanggal.AutoSize = True
         Me.lblTanggal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTanggal.Location = New System.Drawing.Point(943, 23)
+        Me.lblTanggal.Location = New System.Drawing.Point(898, 23)
         Me.lblTanggal.Name = "lblTanggal"
         Me.lblTanggal.Size = New System.Drawing.Size(74, 17)
         Me.lblTanggal.TabIndex = 90
@@ -177,21 +183,11 @@ Partial Class TambahPengeluaran
         '
         Me.lblPengeluaran.AutoSize = True
         Me.lblPengeluaran.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPengeluaran.Location = New System.Drawing.Point(449, 23)
+        Me.lblPengeluaran.Location = New System.Drawing.Point(171, 30)
         Me.lblPengeluaran.Name = "lblPengeluaran"
         Me.lblPengeluaran.Size = New System.Drawing.Size(60, 17)
         Me.lblPengeluaran.TabIndex = 89
         Me.lblPengeluaran.Text = "             "
-        '
-        'lblUser
-        '
-        Me.lblUser.AutoSize = True
-        Me.lblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUser.Location = New System.Drawing.Point(240, 23)
-        Me.lblUser.Name = "lblUser"
-        Me.lblUser.Size = New System.Drawing.Size(52, 17)
-        Me.lblUser.TabIndex = 88
-        Me.lblUser.Text = "lblUser"
         '
         'txtJumlah
         '
@@ -206,7 +202,7 @@ Partial Class TambahPengeluaran
         'btnNew
         '
         Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(79, 16)
+        Me.btnNew.Location = New System.Drawing.Point(79, 23)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(86, 31)
         Me.btnNew.TabIndex = 83
@@ -216,7 +212,7 @@ Partial Class TambahPengeluaran
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(994, 464)
+        Me.btnDelete.Location = New System.Drawing.Point(901, 462)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 31)
         Me.btnDelete.TabIndex = 81
@@ -226,7 +222,7 @@ Partial Class TambahPengeluaran
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(810, 464)
+        Me.btnSave.Location = New System.Drawing.Point(717, 462)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 31)
         Me.btnSave.TabIndex = 80
@@ -236,7 +232,7 @@ Partial Class TambahPengeluaran
         'btnEdit
         '
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(902, 464)
+        Me.btnEdit.Location = New System.Drawing.Point(809, 462)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(86, 31)
         Me.btnEdit.TabIndex = 79
@@ -314,26 +310,6 @@ Partial Class TambahPengeluaran
         Me.txtId.Size = New System.Drawing.Size(97, 23)
         Me.txtId.TabIndex = 66
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(337, 23)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(106, 17)
-        Me.Label3.TabIndex = 65
-        Me.Label3.Text = "ID Pengeluaran"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(179, 23)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 17)
-        Me.Label2.TabIndex = 63
-        Me.Label2.Text = "ID User"
-        '
         'btnAdd
         '
         Me.btnAdd.Enabled = False
@@ -403,6 +379,8 @@ Partial Class TambahPengeluaran
         '
         'Timer1
         '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
         '
         'TambahPengeluaran
         '
@@ -428,8 +406,6 @@ Partial Class TambahPengeluaran
     End Sub
 
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents btnAdd As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
@@ -451,7 +427,6 @@ Partial Class TambahPengeluaran
     Friend WithEvents txtJumlah As TextBox
     Friend WithEvents lblTanggal As Label
     Friend WithEvents lblPengeluaran As Label
-    Friend WithEvents lblUser As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents LVDetailBiaya As ListView
     Friend WithEvents ColumnHeader1 As ColumnHeader
@@ -462,4 +437,5 @@ Partial Class TambahPengeluaran
     Friend WithEvents txtQty As TextBox
     Friend WithEvents ColumnHeader3 As ColumnHeader
     Friend WithEvents ColumnHeader5 As ColumnHeader
+    Friend WithEvents btnRefresh As Button
 End Class

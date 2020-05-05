@@ -17,6 +17,11 @@
     Public EntitasPengeluaran As New EntityPengeluaran
     Public KontrolPengeluaran As New ControlPengeluaran
 
+    Public EntitasAkun As New EntityAkun
+    Public KontrolAkun As New ControlAkun
+
+    Public EntitasData As New EntityData
+
     Public EntitasDetailBiaya As New EntityDetailBiaya
     Public EntitasDetailJasa As New EntityDetailjasa
     Public EntitasDetailProduk As New EntityDetailProduk

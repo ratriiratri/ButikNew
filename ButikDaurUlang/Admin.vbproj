@@ -73,12 +73,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\ControlAkun.vb" />
     <Compile Include="Control\ControlBiaya.vb" />
     <Compile Include="Control\ControlJasa.vb" />
     <Compile Include="Control\ControlPendapatan.vb" />
     <Compile Include="Control\ControlPengeluaran.vb" />
     <Compile Include="Control\ControlProduk.vb" />
     <Compile Include="Control\ControlUser.vb" />
+    <Compile Include="Entity\EntityAkun.vb" />
+    <Compile Include="Entity\EntityData.vb" />
     <Compile Include="Entity\EntityDetailBiaya.vb" />
     <Compile Include="Entity\EntityBiaya.vb" />
     <Compile Include="Entity\EntityDetailJasa.vb" />
@@ -116,6 +119,12 @@
       <DependentUpon>DataProduk.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Admin\DataProduk.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\DataRekAkun.Designer.vb">
+      <DependentUpon>DataRekAkun.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\DataRekAkun.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Admin\DataUser.Designer.vb">
@@ -206,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\DataProduk.resx">
       <DependentUpon>DataProduk.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\DataRekAkun.resx">
+      <DependentUpon>DataRekAkun.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\DataUser.resx">
       <DependentUpon>DataUser.vb</DependentUpon>

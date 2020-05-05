@@ -7,7 +7,7 @@ Module ModKoneksiDB
     Public DTS As New DataSet
     Public DTT As New DataTable
     Public DTGrid As New DataTable
-    Public strKon = "Provider=SQLNCLI11;Data Source=DVFIY;Integrated Security=SSPI;Initial Catalog=ButikDaurUlang"
+    Public strKon = "Provider=SQLNCLI11;Data Source=DVFIY;Persist Security Info=True;User ID=sa;Initial Catalog=ButikDaurUlang; Password=admin"
     Public Connection As New OleDbConnection(strKon)
 
     Public Function OpenConnection() As OleDbConnection

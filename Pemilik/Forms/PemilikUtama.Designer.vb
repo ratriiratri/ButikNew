@@ -22,7 +22,7 @@ Partial Class PemilikUtama
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.panelTop = New System.Windows.Forms.Panel()
         Me.btnMin = New System.Windows.Forms.Button()
         Me.btnMax = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
@@ -32,26 +32,26 @@ Partial Class PemilikUtama
         Me.btnTransaksi = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnData = New System.Windows.Forms.Button()
-        Me.btnAdmin = New System.Windows.Forms.Button()
         Me.btnLaporan = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
+        Me.btnAdmin = New System.Windows.Forms.Button()
+        Me.btnData = New System.Windows.Forms.Button()
+        Me.panelTop.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.picDuarUlang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'panelTop
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btnMin)
-        Me.Panel1.Controls.Add(Me.btnMax)
-        Me.Panel1.Controls.Add(Me.btnClose)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(784, 23)
-        Me.Panel1.TabIndex = 9
+        Me.panelTop.BackColor = System.Drawing.Color.FromArgb(CType(CType(32, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.panelTop.Controls.Add(Me.btnMin)
+        Me.panelTop.Controls.Add(Me.btnMax)
+        Me.panelTop.Controls.Add(Me.btnClose)
+        Me.panelTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelTop.Location = New System.Drawing.Point(0, 0)
+        Me.panelTop.Name = "panelTop"
+        Me.panelTop.Size = New System.Drawing.Size(784, 23)
+        Me.panelTop.TabIndex = 9
         '
         'btnMin
         '
@@ -121,7 +121,7 @@ Partial Class PemilikUtama
         Me.btnTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnTransaksi.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTransaksi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnTransaksi.Location = New System.Drawing.Point(0, 165)
+        Me.btnTransaksi.Location = New System.Drawing.Point(0, 153)
         Me.btnTransaksi.Name = "btnTransaksi"
         Me.btnTransaksi.Size = New System.Drawing.Size(169, 52)
         Me.btnTransaksi.TabIndex = 2
@@ -135,7 +135,7 @@ Partial Class PemilikUtama
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDashboard.Location = New System.Drawing.Point(0, 12)
+        Me.btnDashboard.Location = New System.Drawing.Point(0, 0)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Size = New System.Drawing.Size(169, 52)
         Me.btnDashboard.TabIndex = 0
@@ -158,25 +158,25 @@ Partial Class PemilikUtama
         Me.Panel3.Size = New System.Drawing.Size(169, 483)
         Me.Panel3.TabIndex = 11
         '
-        'btnData
+        'btnLaporan
         '
-        Me.btnData.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnData.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnData.Location = New System.Drawing.Point(0, 114)
-        Me.btnData.Name = "btnData"
-        Me.btnData.Size = New System.Drawing.Size(169, 52)
-        Me.btnData.TabIndex = 9
-        Me.btnData.Text = "Lihat Data"
-        Me.btnData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnData.UseVisualStyleBackColor = True
+        Me.btnLaporan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLaporan.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnLaporan.Location = New System.Drawing.Point(0, 204)
+        Me.btnLaporan.Name = "btnLaporan"
+        Me.btnLaporan.Size = New System.Drawing.Size(169, 52)
+        Me.btnLaporan.TabIndex = 11
+        Me.btnLaporan.Text = "Laporan Laba Rugi"
+        Me.btnLaporan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnLaporan.UseVisualStyleBackColor = True
         '
         'btnAdmin
         '
         Me.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAdmin.Location = New System.Drawing.Point(0, 63)
+        Me.btnAdmin.Location = New System.Drawing.Point(0, 51)
         Me.btnAdmin.Name = "btnAdmin"
         Me.btnAdmin.Size = New System.Drawing.Size(169, 52)
         Me.btnAdmin.TabIndex = 10
@@ -184,18 +184,18 @@ Partial Class PemilikUtama
         Me.btnAdmin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAdmin.UseVisualStyleBackColor = True
         '
-        'btnLaporan
+        'btnData
         '
-        Me.btnLaporan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLaporan.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLaporan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnLaporan.Location = New System.Drawing.Point(0, 216)
-        Me.btnLaporan.Name = "btnLaporan"
-        Me.btnLaporan.Size = New System.Drawing.Size(169, 52)
-        Me.btnLaporan.TabIndex = 11
-        Me.btnLaporan.Text = "Laporan Laba Rugi"
-        Me.btnLaporan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnLaporan.UseVisualStyleBackColor = True
+        Me.btnData.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnData.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnData.Location = New System.Drawing.Point(0, 102)
+        Me.btnData.Name = "btnData"
+        Me.btnData.Size = New System.Drawing.Size(169, 52)
+        Me.btnData.TabIndex = 9
+        Me.btnData.Text = "Lihat Data"
+        Me.btnData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnData.UseVisualStyleBackColor = True
         '
         'PemilikUtama
         '
@@ -204,14 +204,14 @@ Partial Class PemilikUtama
         Me.ClientSize = New System.Drawing.Size(784, 595)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.panelTop)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
         Me.Name = "PemilikUtama"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "PemilikUtama"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
+        Me.panelTop.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         CType(Me.picDuarUlang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
@@ -219,7 +219,7 @@ Partial Class PemilikUtama
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents panelTop As Panel
     Friend WithEvents btnMin As Button
     Friend WithEvents btnMax As Button
     Friend WithEvents btnClose As Button

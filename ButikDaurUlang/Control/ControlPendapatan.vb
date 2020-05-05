@@ -5,7 +5,23 @@ Public Class ControlPendapatan
 
     Public Function CariDataID(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Pendapatan where idPendapatan like '%" & kunci & "%' ", OpenConnection)
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where idPendapatan like '%" & kunci & "%' ", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariPendapatan")
+
+            Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where idPendapatan like '%" & kunci & "%' and " _
+                                       & "tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPendapatan")
 
@@ -18,7 +34,23 @@ Public Class ControlPendapatan
 
     Public Function CariDataJumlah(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Pendapatan where jmlPendapatan like " & kunci & "", OpenConnection)
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where jmlPendapatan like '%" & kunci & "%' ", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariPendapatan")
+
+            Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataJumlahTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where jmlPendapatan like '%" & kunci & "%' and " _
+                                       & "tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPendapatan")
 
@@ -31,7 +63,23 @@ Public Class ControlPendapatan
 
     Public Function CariDataKeterangan(kunci As Integer) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Pendapatan where ketPendapatan like '%" & kunci & "%' ", OpenConnection)
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where ketPendapatan like '%" & kunci & "%' ", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariPendapatan")
+
+            Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataKeteranganTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert(varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where ketPendapatan like '%" & kunci & "%' and " _
+                                       & "tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPendapatan")
 
@@ -44,7 +92,8 @@ Public Class ControlPendapatan
 
     Public Function CariDataTanggal(kunci1 As Date, kunci2 As Date) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Pendapatan where tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select  idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPendapatan")
 
@@ -57,7 +106,23 @@ Public Class ControlPendapatan
 
     Public Function CariDataIDUser(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Pendapatan where idUser like '%" & kunci & "%' ", OpenConnection)
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where idUser like '%" & kunci & "%' ", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariPendapatan")
+
+            Dim grid As New DataView(DTS.Tables("cariPendapatan"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDUserTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert(varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where idUser like '%" & kunci & "%' and " _
+                                       & "tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPendapatan")
 
@@ -70,7 +135,7 @@ Public Class ControlPendapatan
 
     Public Function TampilPendapatan() As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Pendapatan", OpenConnection)
+            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser from Pendapatan", OpenConnection)
 
             Try
                 DTS = New DataSet()

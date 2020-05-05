@@ -21,9 +21,26 @@ Public Class ControlJasa
 
     Public Function CariDataIDJasa(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
                                        & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
-                                       & "join Userr us on us.idUser = pd.idUser where js.idJasa Like '%" & kunci & "%'", OpenConnection)
+                                       & "join Userr us on us.idUser = pd.idUser where js.idJasa like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDJasaTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where js.idJasa like '%" & kunci & "%' and " _
+                                       & "pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+
             DTS = New DataSet()
             DTA.Fill(DTS, "cariJasa")
 
@@ -36,9 +53,26 @@ Public Class ControlJasa
 
     Public Function CariDataIDUser(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
                                        & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
-                                       & "join Userr us on us.idUser = pd.idUser where us.idUser Like '%" & kunci & "%'", OpenConnection)
+                                       & "join Userr us on us.idUser = pd.idUser where us.idUser like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDUserTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where us.idUser like '%" & kunci & "%' and " _
+                                       & "pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+
             DTS = New DataSet()
             DTA.Fill(DTS, "cariJasa")
 
@@ -51,9 +85,26 @@ Public Class ControlJasa
 
     Public Function CariDataIDPendapatan(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
                                        & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
-                                       & "join Userr us on us.idUser = pd.idUser where pd.idPendapatan Like '%" & kunci & "%'", OpenConnection)
+                                       & "join Userr us on us.idUser = pd.idUser where pd.idPendapatan like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataIDPendapatanTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where pd.idPendapatan like '%" & kunci & "%' and " _
+                                       & "pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+
             DTS = New DataSet()
             DTA.Fill(DTS, "cariJasa")
 
@@ -66,9 +117,26 @@ Public Class ControlJasa
 
     Public Function CariDataNamaJasa(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
                                        & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
-                                       & "join Userr us on us.idUser = pd.idUser where js.namaJasa Like '%" & kunci & "%'", OpenConnection)
+                                       & "join Userr us on us.idUser = pd.idUser where js.namaJasa like '%" & kunci & "%'", OpenConnection)
+            DTS = New DataSet()
+            DTA.Fill(DTS, "cariJasa")
+
+            Dim grid As New DataView(DTS.Tables("cariJasa"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
+    Public Function CariDataNamaJasaTanggal(kunci As String, kunci1 As Date, kunci2 As Date) As DataView
+        Try
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+                                       & "join Userr us on us.idUser = pd.idUser where js.namaJasa like '%" & kunci & "%' and " _
+                                       & "pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+
             DTS = New DataSet()
             DTA.Fill(DTS, "cariJasa")
 
@@ -81,7 +149,7 @@ Public Class ControlJasa
 
     Public Function CariDataTanggalPendapatan(kunci1 As Date, kunci2 As Date) As DataView
         Try
-            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
                                        & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
                                        & "join Userr us on us.idUser = pd.idUser where pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
@@ -96,7 +164,7 @@ Public Class ControlJasa
 
     Public Function TampilDetailJasa() As DataView
         Try
-            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, pd.tglPendapatan, us.idUser, pd.idPendapatan " _
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
                                        & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
                                        & "join Userr us on us.idUser = pd.idUser", OpenConnection)
             Try

@@ -39,9 +39,6 @@
             DTGrid = KontrolProduk.CariDataID(kunci).ToTable
         ElseIf rbNama.Checked = True Then
             DTGrid = KontrolProduk.CariDataNama(kunci).ToTable
-        Else
-            MsgBox("Data Tidak Ditemukan!", MsgBoxStyle.Information, "Info")
-            RefreshGrid()
         End If
 
         If DTGrid.Rows.Count > 0 Then
@@ -49,6 +46,9 @@
             DGProduk.DataSource = DTGrid
             DGProduk.Rows(DTGrid.Rows.Count - 1).Selected = True
             DGProduk.CurrentCell = DGProduk.Item(1, baris)
+        ElseIf DTGrid.Rows.Count = 0 Then
+            MsgBox("Data Tidak Ditemukan!", MsgBoxStyle.Information, "Info")
+            RefreshGrid()
         End If
     End Sub
 
@@ -57,6 +57,8 @@
 
         Call RefreshGrid()
         Call AturDGProduk()
+
+        txtSearch.Text = ""
 
         rbID.Checked = False
         rbNama.Checked = True
@@ -79,7 +81,7 @@
 
     Private Sub btnSearch_Click_1(sender As Object, e As EventArgs) Handles btnSearch.Click
         If txtSearch.Text = "" Then
-
+            MsgBox("Masukan Kata Kunci!", MsgBoxStyle.Information, "Info")
             Call RefreshGrid()
         Else
             Call tampilCari(txtSearch.Text)

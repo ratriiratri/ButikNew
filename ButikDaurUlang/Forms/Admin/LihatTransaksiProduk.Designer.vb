@@ -53,6 +53,7 @@ Partial Class LihatTransaksiProduk
         Me.lblTransaksiProduk = New System.Windows.Forms.Label()
         Me.lblTransaksiJasa = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.checkBox = New System.Windows.Forms.CheckBox()
         CType(Me.DGDetailProduk, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -66,7 +67,7 @@ Partial Class LihatTransaksiProduk
         Me.cbPencarian.FormattingEnabled = True
         Me.cbPencarian.Location = New System.Drawing.Point(131, 29)
         Me.cbPencarian.Name = "cbPencarian"
-        Me.cbPencarian.Size = New System.Drawing.Size(472, 24)
+        Me.cbPencarian.Size = New System.Drawing.Size(463, 24)
         Me.cbPencarian.TabIndex = 58
         '
         'Label5
@@ -150,7 +151,7 @@ Partial Class LihatTransaksiProduk
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(24, 29)
+        Me.Label2.Location = New System.Drawing.Point(24, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(89, 17)
         Me.Label2.TabIndex = 57
@@ -182,6 +183,7 @@ Partial Class LihatTransaksiProduk
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.GroupBox1.Controls.Add(Me.checkBox)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -206,7 +208,7 @@ Partial Class LihatTransaksiProduk
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(110, 68)
+        Me.Label7.Location = New System.Drawing.Point(113, 68)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(12, 17)
         Me.Label7.TabIndex = 72
@@ -403,6 +405,16 @@ Partial Class LihatTransaksiProduk
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
+        'checkBox
+        '
+        Me.checkBox.AutoSize = True
+        Me.checkBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.checkBox.Location = New System.Drawing.Point(608, 35)
+        Me.checkBox.Name = "checkBox"
+        Me.checkBox.Size = New System.Drawing.Size(15, 14)
+        Me.checkBox.TabIndex = 94
+        Me.checkBox.UseVisualStyleBackColor = True
+        '
         'LihatTransaksiProduk
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -461,4 +473,5 @@ Partial Class LihatTransaksiProduk
     Friend WithEvents Label13 As Label
     Friend WithEvents lblTransaksiProduk As Label
     Friend WithEvents lblTransaksiJasa As Label
+    Friend WithEvents checkBox As CheckBox
 End Class

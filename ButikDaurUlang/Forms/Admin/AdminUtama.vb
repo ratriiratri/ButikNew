@@ -149,4 +149,8 @@
         LihatTransaksiProduk.Show()
     End Sub
 
+    Private Sub btnRekAkun_Click(sender As Object, e As EventArgs) Handles btnRekAkun.Click
+        DataRekAkun.Show()
+        Dashboard.Close()
+    End Sub
 End Class

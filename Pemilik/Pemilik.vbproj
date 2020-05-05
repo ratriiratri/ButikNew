@@ -11,8 +11,9 @@
     <AssemblyName>Pemilik</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,10 +48,18 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -72,6 +81,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButikDaurUlangDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ButikDaurUlangDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Control\ControlBiaya.vb" />
     <Compile Include="Control\ControlJasa.vb" />
     <Compile Include="Control\ControlPendapatan.vb" />
@@ -79,6 +93,12 @@
     <Compile Include="Control\ControlProduk.vb" />
     <Compile Include="Control\ControlUser.vb" />
     <Compile Include="Entity\EntityUser.vb" />
+    <Compile Include="Forms\CetakLaporan.Designer.vb">
+      <DependentUpon>CetakLaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CetakLaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\DataAdmin.Designer.vb">
       <DependentUpon>DataAdmin.vb</DependentUpon>
     </Compile>
@@ -170,6 +190,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\CetakLaporan.resx">
+      <DependentUpon>CetakLaporan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DataAdmin.resx">
       <DependentUpon>DataAdmin.vb</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +237,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ButikDaurUlangDataSet.xsc">
+      <DependentUpon>ButikDaurUlangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ButikDaurUlangDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ButikDaurUlangDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ButikDaurUlangDataSet.xss">
+      <DependentUpon>ButikDaurUlangDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -227,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

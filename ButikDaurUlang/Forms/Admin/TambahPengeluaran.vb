@@ -18,6 +18,8 @@
         txtId.Text = ""
         txtQty.Text = ""
         txtJumlah.Text = ""
+
+        cbBiaya.SelectedIndex = -1
     End Sub
 
     Sub HitungTotal()
@@ -43,22 +45,27 @@
         btnSave.Enabled = False
         btnDelete.Enabled = False
 
-        lblUser.Text = kodeLogin
-
-        lblTanggal.Text = Format(Now, "yyyy/MM/dd hh:mm")
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Dim namaHari As String()
+        Dim hari As String()
+        Dim bulan As String()
 
-        namaHari = New String() {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"}
+        hari = New String() {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"}
+        bulan = New String() {"", "J\a\n\u\a\r\i", "F\e\b\r\u\a\r\i", "M\a\r\e\t", "A\p\r\i\l", "M\e\i", "J\u\n\i", "J\u\l\i", "A\g\u\s\t\u\s", "S\e\p\t\e\m\b\e\r", "O\k\t\o\b\\r\e", "N\o\v\e\m\b\e\r", "D\e\s\e\m\b\e\r"}
 
-        lblTanggal.Text = Format(Now, namaHari(Now.DayOfWeek()) & " yyyy/MM/dd hh:mm:ss")
+        lblTanggal.Text = hari(Now.DayOfWeek) & ", " & Format(Now, "dd " & bulan(Now.Month) & " yyyy   hh:mm")
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'deklarasi array string
         Dim strItem(4) As String
+
+        If txtJumlah.Text = "" Then
+            MsgBox("Masukan Nominal Biaya Terlebih Dahulu!", MsgBoxStyle.Information, "Info")
+        ElseIf txtQty.Text = "" Then
+            txtQty.Text = 1
+        End If
 
         strItem(0) = txtId.Text
         strItem(1) = cbBiaya.Text
@@ -71,7 +78,6 @@
 
         Call HitungTotal()
         Call Bersih()
-        Call isiCbBiaya()
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -81,6 +87,7 @@
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim listDetail As New List(Of EntityDetailBiaya)()
+        Dim listDetail1 As New List(Of EntityData)()
 
         If LVDetailBiaya.Items.Count = 0 Then
             MsgBox("Masukan Biaya terlebih dulu")
@@ -92,7 +99,7 @@
             .jmlPengeluaran = lblNominal.Text
             .ketPengeluaran = "Biaya"
             .tglPengeluaran = Format(Now, "yyyy/MM/dd")
-            .idUser = lblUser.Text
+            .idUser = kodeLogin
         End With
 
         For i = 0 To LVDetailBiaya.Items.Count - 1
@@ -104,8 +111,18 @@
                 EntitasDetailBiaya.hargaBiaya = .SubItems(3).Text
             End With
             listDetail.Add(EntitasDetailBiaya)
+
+            EntitasData = New EntityData
+            With LVDetailBiaya.Items(i)
+                EntitasData.idData = .SubItems(0).Text
+                EntitasData.namaData = .SubItems(1).Text
+                EntitasData.tanggalData = Format(Now, "yyyy/MM/dd")
+                EntitasData.jumlahData = .SubItems(4).Text
+            End With
+            listDetail1.Add(EntitasData)
         Next (i)
         KontrolPengeluaran.SimpanData(EntitasPengeluaran, listDetail)
+        KontrolPengeluaran.SimpanData2(listDetail1)
         MsgBox("Data Berhasil Disimpan")
 
         Call Bersih()
@@ -126,13 +143,12 @@
         btnAdd.Enabled = False
         btnSave.Enabled = False
         btnDelete.Enabled = False
+
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
-        Call Bersih()
         Call isiCbBiaya()
-
-        txtQty.Focus()
+        Call Bersih()
 
         LVDetailBiaya.Items.Clear()
 
@@ -152,13 +168,33 @@
     End Sub
 
     Private Sub cbBiaya_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbBiaya.SelectedIndexChanged
-
         CMD = New OleDb.OleDbCommand("select * from Biaya where namaBiaya='" & cbBiaya.Text & "'", OpenConnection)
         DTR = CMD.ExecuteReader
         DTR.Read()
         If DTR.HasRows Then
             txtId.Text = DTR.Item("idBiaya")
-            txtQty.Focus()
+            txtJumlah.Focus()
         End If
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Call Bersih()
+
+        lblNominal.Text = 0
+        LVDetailBiaya.Items.Clear()
+
+        cbBiaya.Enabled = False
+        txtQty.Enabled = False
+        txtQty.ReadOnly = True
+        txtJumlah.Enabled = False
+        txtJumlah.ReadOnly = True
+
+        lblPengeluaran.Text = ""
+
+        btnNew.Enabled = True
+        btnEdit.Enabled = False
+        btnAdd.Enabled = False
+        btnSave.Enabled = False
+        btnDelete.Enabled = False
     End Sub
 End Class
