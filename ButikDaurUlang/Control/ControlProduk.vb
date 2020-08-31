@@ -6,7 +6,8 @@ Public Class ControlProduk : Implements InterfaceProses
     Public Function InsertData(Ob As Object) As OleDbCommand Implements InterfaceProses.InsertData
         Dim data As New EntityProduk
         data = Ob
-        CMD = New OleDbCommand("insert into Produk values('" & data.idProduk & "','" & data.namaProduk & "','" & data.hargaProduk & "','" & data.stockProduk & "')", OpenConnection)
+        CMD = New OleDbCommand("insert into Produk values('" & data.idProduk & "','" & data.namaProduk & "'," _
+                               & "'" & data.hargaProduk & "','" & data.stockProduk & "')", OpenConnection)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", CloseConnection)
@@ -52,11 +53,31 @@ Public Class ControlProduk : Implements InterfaceProses
         End Try
     End Function
 
+    Public Function TampilData2() As DataView
+        Try
+            DTA = New OleDbDataAdapter("select top 13 * from Produk order by idProduk desc", OpenConnection)
+
+            Try
+                DTS = New DataSet()
+                DTS.Tables("tblProduk").Clear()
+            Catch ex As Exception
+            End Try
+
+            DTA.Fill(DTS, "tblProduk")
+            Dim grid As New DataView(DTS.Tables("tblProduk"))
+            Return grid
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
+
     Public Function TampilDetailProduk() As DataView
         Try
-            DTA = New OleDbDataAdapter("select p.idProduk, p.namaProduk, dp.jumlahProduk, p.hargaProduk, dp.discProduk, dp.idPendapatan, convert(varchar, pd.tglPendapatan,106), " _
-                                       & "us.idUser from Produk p join DetailProduk dp on p.idProduk = dp.idProduk join Pendapatan pd on " _
-                                       & "pd.idPendapatan = dp.idPendapatan join Userr us on us.idUser = pd.idUser", OpenConnection)
+            DTA = New OleDbDataAdapter("select p.idProduk, p.namaProduk, dp.jumlahProduk, p.hargaProduk, " _
+                                       & "dp.discProduk, dp.idPendapatan, convert(varchar, pd.tglPendapatan,106), " _
+                                       & "us.idUser from Produk p join DetailProduk dp on p.idProduk = dp.idProduk " _
+                                       & "join Pendapatan pd on pd.idPendapatan = dp.idPendapatan join Userr us on " _
+                                       & "us.idUser = pd.idUser", OpenConnection)
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblDetailProduk").Clear()
@@ -233,10 +254,14 @@ Public Class ControlProduk : Implements InterfaceProses
 
     Public Function CariDataTanggal(kunci1 As Date, kunci2 As Date) As DataView
         Try
-            DTA = New OleDbDataAdapter("select p.idProduk, p.namaProduk, dp.jumlahProduk, p.hargaProduk, dp.discProduk, dp.idPendapatan, convert(varchar, pd.tglPendapatan,106), " _
-                                       & "us.idUser from Produk p join DetailProduk dp on p.idProduk = dp.idProduk join Pendapatan pd on " _
-                                       & "pd.idPendapatan = dp.idPendapatan join Userr us on us.idUser = pd.idUser " _
-                                       & "where pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select p.idProduk, p.namaProduk, dp.jumlahProduk, " _
+                                       & "p.hargaProduk, dp.discProduk, dp.idPendapatan, " _
+                                       & "convert(varchar, pd.tglPendapatan,106), us.idUser " _
+                                       & "from Produk p join DetailProduk dp on p.idProduk = " _
+                                       & "dp.idProduk join Pendapatan pd on pd.idPendapatan = " _
+                                       & "dp.idPendapatan join Userr us on us.idUser = pd.idUser " _
+                                       & "where pd.tglPendapatan between '" & kunci1 & "' and '" _
+                                       & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariProduk")
 
@@ -280,7 +305,8 @@ Public Class ControlProduk : Implements InterfaceProses
         cek = False
 
         Try
-            DTA = New OleDbDataAdapter("select idProduk from DetailProduk where idProduk='" & kunci & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idProduk from " _
+                & "DetailProduk where idProduk='" & kunci & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cek")
             If DTS.Tables("cek").Rows.Count > 0 Then
@@ -295,7 +321,7 @@ Public Class ControlProduk : Implements InterfaceProses
         Dim baru As String
         Dim akhir As Integer
 
-        DTA = New OleDbDataAdapter("select max(right(idProduk,4)) from Produk", OpenConnection)
+        DTA = New OleDbDataAdapter("select isnull(max(right(idProduk,4)),0) from Produk", OpenConnection)
 
         Try
             DTS = New DataSet()

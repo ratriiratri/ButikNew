@@ -115,8 +115,8 @@
             AturTxtBox(False)
 
             btnNew.Enabled = True
-            btnDelete.Enabled = True
             btnEdit.Enabled = True
+            btnDelete.Enabled = True
             btnSave.Enabled = False
 
             modeProses = 0
@@ -153,7 +153,7 @@
         Dim statusReferensi As Boolean
 
         statusReferensi = KontrolUser.CekDataDipakai(txtId.Text)
-        If statusReferensi = False Then
+        If statusReferensi Then
             MsgBox("Data masih digunakan, tidak dapat dihapus!", MsgBoxStyle.Exclamation, "Peringatan")
             Exit Sub
         End If
@@ -187,6 +187,208 @@
         ElseIf modeProses = 1 Then
             DTGrid = KontrolUser.TampilData.ToTable
             DGAdmin.Rows(baris).Selected = False
+        End If
+    End Sub
+
+    Private Sub txtNoHp_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNoHp.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
+
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasUser
+                .idUser = txtId.Text
+                .namaUser = txtNama.Text
+                .hpUser = txtNoHp.Text
+                .usernameUser = txtUsername.Text
+                .passwordUser = txtPassword.Text
+                .statusUser = "1"
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+                btnNew.Enabled = False
+            ElseIf txtNoHp.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNoHp.Focus()
+                btnNew.Enabled = False
+            ElseIf txtUsername.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtUsername.Focus()
+                btnNew.Enabled = False
+            ElseIf txtPassword.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtPassword.Focus()
+                btnNew.Enabled = False
+            Else
+                If modeProses = 1 Then
+                    KontrolUser.InsertData(EntitasUser)
+                ElseIf modeProses = 2 Then
+                    KontrolUser.UpdateData(EntitasUser)
+                End If
+
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+
+                Call RefreshGrid()
+                Call Bersih()
+                AturTxtBox(False)
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
+        End If
+    End Sub
+
+    Private Sub txtNama_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNama.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasUser
+                .idUser = txtId.Text
+                .namaUser = txtNama.Text
+                .hpUser = txtNoHp.Text
+                .usernameUser = txtUsername.Text
+                .passwordUser = txtPassword.Text
+                .statusUser = "1"
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+                btnNew.Enabled = False
+            ElseIf txtNoHp.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNoHp.Focus()
+                btnNew.Enabled = False
+            ElseIf txtUsername.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtUsername.Focus()
+                btnNew.Enabled = False
+            ElseIf txtPassword.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtPassword.Focus()
+                btnNew.Enabled = False
+            Else
+                If modeProses = 1 Then
+                    KontrolUser.InsertData(EntitasUser)
+                ElseIf modeProses = 2 Then
+                    KontrolUser.UpdateData(EntitasUser)
+                End If
+
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+
+                Call RefreshGrid()
+                Call Bersih()
+                AturTxtBox(False)
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
+        End If
+    End Sub
+
+    Private Sub txtUsername_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUsername.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasUser
+                .idUser = txtId.Text
+                .namaUser = txtNama.Text
+                .hpUser = txtNoHp.Text
+                .usernameUser = txtUsername.Text
+                .passwordUser = txtPassword.Text
+                .statusUser = "1"
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+                btnNew.Enabled = False
+            ElseIf txtNoHp.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNoHp.Focus()
+                btnNew.Enabled = False
+            ElseIf txtUsername.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtUsername.Focus()
+                btnNew.Enabled = False
+            ElseIf txtPassword.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtPassword.Focus()
+                btnNew.Enabled = False
+            Else
+                If modeProses = 1 Then
+                    KontrolUser.InsertData(EntitasUser)
+                ElseIf modeProses = 2 Then
+                    KontrolUser.UpdateData(EntitasUser)
+                End If
+
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+
+                Call RefreshGrid()
+                Call Bersih()
+                AturTxtBox(False)
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
+        End If
+    End Sub
+
+    Private Sub txtPassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPassword.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasUser
+                .idUser = txtId.Text
+                .namaUser = txtNama.Text
+                .hpUser = txtNoHp.Text
+                .usernameUser = txtUsername.Text
+                .passwordUser = txtPassword.Text
+                .statusUser = "1"
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+                btnNew.Enabled = False
+            ElseIf txtNoHp.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNoHp.Focus()
+                btnNew.Enabled = False
+            ElseIf txtUsername.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtUsername.Focus()
+                btnNew.Enabled = False
+            ElseIf txtPassword.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtPassword.Focus()
+                btnNew.Enabled = False
+            Else
+                If modeProses = 1 Then
+                    KontrolUser.InsertData(EntitasUser)
+                ElseIf modeProses = 2 Then
+                    KontrolUser.UpdateData(EntitasUser)
+                End If
+
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+
+                Call RefreshGrid()
+                Call Bersih()
+                AturTxtBox(False)
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
         End If
     End Sub
 End Class

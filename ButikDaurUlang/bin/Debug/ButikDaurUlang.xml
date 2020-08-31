@@ -22,7 +22,222 @@ ButikDaurUlang
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.Ex">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_11_Agreement_report_form_layout_paper_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_16_agreement_paperDocument_note_report_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_25_earth_recycle_green_4079663">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_31_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_aiga_cashier_134157__1_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_aiga_cashier_134157__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_aiga_cashier_48px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_aiga_cashier_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_cancel_16px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_cancel_20px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_Dollar_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_Dollar_32px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_f015_20px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_f015_20px1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_home_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_home_24px1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_home_32px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_home_48px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_home_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_ic_attach_money_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_lock_24_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_maximize_16px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_maximize_16px__2_">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_minus_16px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_money_bag_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_money_bag_24px1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_money_bag_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_money_coin_price_buy_cost_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_people_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_people_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_recycle_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_recycle_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_seo_report_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_sign_out_20px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_sign_out_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_user_20px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_user_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_user_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_write_126582">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.iconfinder_write_20px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:ButikDaurUlang.My.Resources.Resources.Logo_Butik_Daur_Ulang">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.Max">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ButikDaurUlang.My.Resources.Resources.Min">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

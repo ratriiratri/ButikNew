@@ -32,7 +32,6 @@ E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.LihatPendapatan.
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.LihatPengeluaran.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.LihatTransaksiBiaya.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.LihatTransaksiJasa.resources
-E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.vbprojAssemblyReference.cache
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\bin\Debug\AxShockwaveFlashObjects.dll
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\bin\Debug\CrystalDecisions.ReportSource.dll
@@ -52,5 +51,10 @@ E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\bin\Debug\CrystalDecisions.ReportA
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\bin\Debug\stdole.dll
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.CetakLaporan.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.vbproj.CopyComplete
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.LaporanJurnal.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.LaporanLabaRugi.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.PrintJurnal.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.PrintLabaRugi.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.Dashboard.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\Pemilik\obj\Debug\Pemilik.vbprojAssemblyReference.cache

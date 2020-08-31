@@ -208,4 +208,25 @@
             dateAwal.Enabled = False
         End If
     End Sub
+
+    Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            If cbPencarian.SelectedItem = cbPencarian.Items(6) Then
+                Call tampilCari(dateAwal.Value)
+            ElseIf txtSearch.Text = "" Then
+                MsgBox("Masukan Kata Kunci", MsgBoxStyle.Information, "Info")
+                txtSearch.Focus()
+            ElseIf cbPencarian.Enabled = True And checkBox.Checked = False Then
+                Call tampilCari(txtSearch.Text)
+                txtSearch.Focus()
+            ElseIf cbPencarian.Enabled = True And checkBox.Checked = True Then
+                Call tampilCari2(kunci:=txtSearch.Text, kunci1:=dateAwal.Value, kunci2:=dateAkhir.Value)
+                txtSearch.Focus()
+            End If
+        End If
+    End Sub
+
+    Private Sub DGDetailProduk_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGDetailProduk.CellContentClick
+
+    End Sub
 End Class

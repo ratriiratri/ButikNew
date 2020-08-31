@@ -174,4 +174,20 @@
             checkAdmin.Checked = False
         End If
     End Sub
+
+    Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            If cbPencarian.SelectedItem = cbPencarian.Items(4) Then
+                Call tampilCari2()
+            ElseIf cbPencarian.SelectedItem = cbPencarian.Items(4) And checkAdmin.Checked = False And checkUser.Checked = False Then
+                MsgBox("Pilih Status yang Ingin Dicari", MsgBoxStyle.Information, "Info")
+            ElseIf txtSearch.Text = "" Then
+                MsgBox("Masukan Kata Kunci", MsgBoxStyle.Information, "Info")
+                txtSearch.Focus()
+            Else
+                Call tampilCari(txtSearch.Text)
+                txtSearch.Focus()
+            End If
+        End If
+    End Sub
 End Class

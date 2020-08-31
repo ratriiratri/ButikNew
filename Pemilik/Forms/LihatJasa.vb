@@ -95,4 +95,16 @@
 
         txtSearch.Text = ""
     End Sub
+
+    Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            If txtSearch.Text = "" Then
+                MsgBox("Masukan Kata Kunci!", MsgBoxStyle.Information, "Info")
+                Call RefreshGrid()
+            Else
+                Call tampilCari(txtSearch.Text)
+                txtSearch.Focus()
+            End If
+        End If
+    End Sub
 End Class

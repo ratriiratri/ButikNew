@@ -22,7 +22,9 @@ Partial Class DataJasa
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Panel7 = New System.Windows.Forms.Panel()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
@@ -43,29 +45,17 @@ Partial Class DataJasa
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel7.SuspendLayout()
+        Me.Panel8 = New System.Windows.Forms.Panel()
         CType(Me.DGJasa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Panel7
-        '
-        Me.Panel7.Controls.Add(Me.btnRefresh)
-        Me.Panel7.Controls.Add(Me.btnDelete)
-        Me.Panel7.Controls.Add(Me.btnEdit)
-        Me.Panel7.Controls.Add(Me.DGJasa)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(19, 300)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1154, 313)
-        Me.Panel7.TabIndex = 62
-        '
         'btnRefresh
         '
         Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.Location = New System.Drawing.Point(781, 267)
+        Me.btnRefresh.Location = New System.Drawing.Point(791, 592)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(86, 31)
         Me.btnRefresh.TabIndex = 34
@@ -75,7 +65,7 @@ Partial Class DataJasa
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(689, 267)
+        Me.btnDelete.Location = New System.Drawing.Point(700, 592)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 31)
         Me.btnDelete.TabIndex = 33
@@ -85,7 +75,7 @@ Partial Class DataJasa
         'btnEdit
         '
         Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(597, 267)
+        Me.btnEdit.Location = New System.Drawing.Point(608, 592)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(86, 31)
         Me.btnEdit.TabIndex = 31
@@ -94,22 +84,52 @@ Partial Class DataJasa
         '
         'DGJasa
         '
-        Me.DGJasa.AllowUserToOrderColumns = True
+        Me.DGJasa.AllowDrop = True
+        Me.DGJasa.AllowUserToAddRows = False
+        Me.DGJasa.AllowUserToDeleteRows = False
         Me.DGJasa.AllowUserToResizeColumns = False
         Me.DGJasa.AllowUserToResizeRows = False
         Me.DGJasa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGJasa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGJasa.Location = New System.Drawing.Point(286, 27)
+        Me.DGJasa.BackgroundColor = System.Drawing.Color.White
+        Me.DGJasa.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGJasa.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DGJasa.ColumnHeadersHeight = 30
+        Me.DGJasa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGJasa.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DGJasa.Location = New System.Drawing.Point(296, 252)
         Me.DGJasa.Name = "DGJasa"
         Me.DGJasa.ReadOnly = True
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGJasa.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGJasa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.DGJasa.Size = New System.Drawing.Size(581, 219)
+        Me.DGJasa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGJasa.Size = New System.Drawing.Size(581, 334)
         Me.DGJasa.TabIndex = 0
         '
         'btnNew
         '
         Me.btnNew.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNew.Location = New System.Drawing.Point(570, 123)
+        Me.btnNew.Location = New System.Drawing.Point(570, 112)
         Me.btnNew.Name = "btnNew"
         Me.btnNew.Size = New System.Drawing.Size(86, 31)
         Me.btnNew.TabIndex = 35
@@ -118,7 +138,7 @@ Partial Class DataJasa
         '
         'Panel5
         '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.BackColor = System.Drawing.Color.White
         Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.btnSave)
         Me.Panel5.Controls.Add(Me.Label8)
@@ -128,15 +148,15 @@ Partial Class DataJasa
         Me.Panel5.Controls.Add(Me.Label3)
         Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(19, 103)
+        Me.Panel5.Location = New System.Drawing.Point(10, 76)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1154, 176)
+        Me.Panel5.Size = New System.Drawing.Size(1173, 155)
         Me.Panel5.TabIndex = 60
         '
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(662, 123)
+        Me.btnSave.Location = New System.Drawing.Point(662, 112)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 31)
         Me.btnSave.TabIndex = 58
@@ -147,7 +167,7 @@ Partial Class DataJasa
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(305, 98)
+        Me.Label8.Location = New System.Drawing.Point(305, 81)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(47, 17)
         Me.Label8.TabIndex = 51
@@ -156,7 +176,7 @@ Partial Class DataJasa
         'txtHarga
         '
         Me.txtHarga.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHarga.Location = New System.Drawing.Point(404, 95)
+        Me.txtHarga.Location = New System.Drawing.Point(404, 78)
         Me.txtHarga.Name = "txtHarga"
         Me.txtHarga.Size = New System.Drawing.Size(156, 23)
         Me.txtHarga.TabIndex = 46
@@ -164,7 +184,7 @@ Partial Class DataJasa
         'txtNama
         '
         Me.txtNama.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNama.Location = New System.Drawing.Point(404, 59)
+        Me.txtNama.Location = New System.Drawing.Point(404, 49)
         Me.txtNama.Name = "txtNama"
         Me.txtNama.Size = New System.Drawing.Size(344, 23)
         Me.txtNama.TabIndex = 40
@@ -183,7 +203,7 @@ Partial Class DataJasa
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(305, 62)
+        Me.Label3.Location = New System.Drawing.Point(305, 52)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 17)
         Me.Label3.TabIndex = 38
@@ -201,85 +221,98 @@ Partial Class DataJasa
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(183, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(10, 10)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1192, 74)
+        Me.Panel1.Size = New System.Drawing.Size(1173, 54)
         Me.Panel1.TabIndex = 56
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(82, 21)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(62, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 33)
+        Me.Label1.Size = New System.Drawing.Size(63, 29)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Jasa"
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.ButikDaurUlang.My.Resources.Resources.iconfinder_people_64px
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 36)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1173, 74)
+        Me.Panel3.Location = New System.Drawing.Point(1183, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(19, 576)
+        Me.Panel3.Size = New System.Drawing.Size(10, 740)
         Me.Panel3.TabIndex = 58
         '
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(19, 279)
+        Me.Panel6.Location = New System.Drawing.Point(10, 231)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1154, 21)
+        Me.Panel6.Size = New System.Drawing.Size(1173, 15)
         Me.Panel6.TabIndex = 61
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(19, 74)
+        Me.Panel4.Location = New System.Drawing.Point(10, 64)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1154, 29)
+        Me.Panel4.Size = New System.Drawing.Size(1173, 12)
         Me.Panel4.TabIndex = 59
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 74)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(19, 576)
+        Me.Panel2.Size = New System.Drawing.Size(10, 740)
         Me.Panel2.TabIndex = 57
+        '
+        'Panel8
+        '
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(10, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(1173, 10)
+        Me.Panel8.TabIndex = 35
         '
         'DataJasa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1192, 650)
-        Me.Controls.Add(Me.Panel7)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1193, 740)
+        Me.Controls.Add(Me.DGJasa)
+        Me.Controls.Add(Me.btnRefresh)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.Panel6)
+        Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "DataJasa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "DataJasaAdmin"
-        Me.Panel7.ResumeLayout(False)
         CType(Me.DGJasa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
@@ -289,8 +322,6 @@ Partial Class DataJasa
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel7 As Panel
     Friend WithEvents DGJasa As DataGridView
     Friend WithEvents Panel5 As Panel
     Friend WithEvents btnSave As Button
@@ -311,4 +342,5 @@ Partial Class DataJasa
     Friend WithEvents btnRefresh As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnEdit As Button
+    Friend WithEvents Panel8 As Panel
 End Class

@@ -2,7 +2,7 @@
     Private id As String
     Private jumlah As Integer
     Private ket As String
-    Private tanggal As DateTime
+    Private tanggal As Date
     Private user As String
 
     Public Property idPendapatan() As String
@@ -32,11 +32,11 @@
         End Set
     End Property
 
-    Public Property tglPendapatan() As DateTime
+    Public Property tglPendapatan() As Date
         Get
             Return tanggal
         End Get
-        Set(value As DateTime)
+        Set(value As Date)
             tanggal = value
         End Set
     End Property

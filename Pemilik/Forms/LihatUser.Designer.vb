@@ -24,12 +24,12 @@ Partial Class LihatUser
     Private Sub InitializeComponent()
         Me.DGUser = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblJasa = New System.Windows.Forms.Label()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblBiaya = New System.Windows.Forms.Label()
         Me.lblProduk = New System.Windows.Forms.Label()
@@ -48,6 +48,7 @@ Partial Class LihatUser
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         CType(Me.DGUser, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,44 +57,58 @@ Partial Class LihatUser
         '
         'DGUser
         '
+        Me.DGUser.AllowUserToAddRows = False
+        Me.DGUser.AllowUserToDeleteRows = False
         Me.DGUser.AllowUserToOrderColumns = True
         Me.DGUser.AllowUserToResizeColumns = False
         Me.DGUser.AllowUserToResizeRows = False
         Me.DGUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGUser.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DGUser.BackgroundColor = System.Drawing.Color.White
         Me.DGUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGUser.Dock = System.Windows.Forms.DockStyle.Top
-        Me.DGUser.Location = New System.Drawing.Point(19, 224)
+        Me.DGUser.Location = New System.Drawing.Point(10, 191)
         Me.DGUser.Name = "DGUser"
         Me.DGUser.ReadOnly = True
         Me.DGUser.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Me.DGUser.Size = New System.Drawing.Size(1154, 364)
+        Me.DGUser.Size = New System.Drawing.Size(1173, 500)
         Me.DGUser.TabIndex = 72
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(183, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.lblJasa)
         Me.Panel1.Controls.Add(Me.lblUser)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Controls.Add(Me.lblBiaya)
         Me.Panel1.Controls.Add(Me.lblProduk)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(10, 10)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1192, 74)
+        Me.Panel1.Size = New System.Drawing.Size(1173, 54)
         Me.Panel1.TabIndex = 66
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Pemilik.My.Resources.Resources.iconfinder_database_64px
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 36)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 14
+        Me.PictureBox1.TabStop = False
         '
         'Label5
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label5.Location = New System.Drawing.Point(1007, 55)
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Location = New System.Drawing.Point(998, 38)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(12, 13)
         Me.Label5.TabIndex = 12
@@ -103,9 +118,9 @@ Partial Class LihatUser
         '
         Me.lblJasa.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblJasa.AutoSize = True
-        Me.lblJasa.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lblJasa.BackColor = System.Drawing.Color.Transparent
         Me.lblJasa.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblJasa.Location = New System.Drawing.Point(1090, 55)
+        Me.lblJasa.Location = New System.Drawing.Point(1081, 38)
         Me.lblJasa.Name = "lblJasa"
         Me.lblJasa.Size = New System.Drawing.Size(29, 13)
         Me.lblJasa.TabIndex = 11
@@ -115,10 +130,10 @@ Partial Class LihatUser
         '
         Me.lblUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblUser.AutoSize = True
-        Me.lblUser.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lblUser.BackColor = System.Drawing.Color.Transparent
         Me.lblUser.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUser.Location = New System.Drawing.Point(968, 55)
+        Me.lblUser.Location = New System.Drawing.Point(959, 38)
         Me.lblUser.Name = "lblUser"
         Me.lblUser.Size = New System.Drawing.Size(33, 13)
         Me.lblUser.TabIndex = 10
@@ -128,8 +143,8 @@ Partial Class LihatUser
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label2.Location = New System.Drawing.Point(1072, 55)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(1063, 38)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(12, 13)
         Me.Label2.TabIndex = 9
@@ -138,30 +153,20 @@ Partial Class LihatUser
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(82, 21)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(62, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(146, 33)
+        Me.Label1.Size = New System.Drawing.Size(119, 29)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Data User"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
         '
         'Label13
         '
         Me.Label13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label13.Location = New System.Drawing.Point(1125, 55)
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Location = New System.Drawing.Point(1116, 38)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(12, 13)
         Me.Label13.TabIndex = 4
@@ -171,10 +176,10 @@ Partial Class LihatUser
         '
         Me.lblBiaya.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblBiaya.AutoSize = True
-        Me.lblBiaya.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lblBiaya.BackColor = System.Drawing.Color.Transparent
         Me.lblBiaya.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblBiaya.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBiaya.Location = New System.Drawing.Point(1143, 55)
+        Me.lblBiaya.Location = New System.Drawing.Point(1134, 38)
         Me.lblBiaya.Name = "lblBiaya"
         Me.lblBiaya.Size = New System.Drawing.Size(33, 13)
         Me.lblBiaya.TabIndex = 3
@@ -184,9 +189,9 @@ Partial Class LihatUser
         '
         Me.lblProduk.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblProduk.AutoSize = True
-        Me.lblProduk.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.lblProduk.BackColor = System.Drawing.Color.Transparent
         Me.lblProduk.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblProduk.Location = New System.Drawing.Point(1025, 55)
+        Me.lblProduk.Location = New System.Drawing.Point(1016, 38)
         Me.lblProduk.Name = "lblProduk"
         Me.lblProduk.Size = New System.Drawing.Size(41, 13)
         Me.lblProduk.TabIndex = 2
@@ -195,7 +200,7 @@ Partial Class LihatUser
         'btnRefresh
         '
         Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.Location = New System.Drawing.Point(1081, 594)
+        Me.btnRefresh.Location = New System.Drawing.Point(1091, 697)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(86, 31)
         Me.btnRefresh.TabIndex = 73
@@ -205,38 +210,38 @@ Partial Class LihatUser
         'Panel6
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(19, 203)
+        Me.Panel6.Location = New System.Drawing.Point(10, 176)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1154, 21)
+        Me.Panel6.Size = New System.Drawing.Size(1173, 15)
         Me.Panel6.TabIndex = 71
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(19, 74)
+        Me.Panel4.Location = New System.Drawing.Point(10, 64)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1154, 29)
+        Me.Panel4.Size = New System.Drawing.Size(1173, 12)
         Me.Panel4.TabIndex = 69
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1173, 74)
+        Me.Panel3.Location = New System.Drawing.Point(1183, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(19, 576)
+        Me.Panel3.Size = New System.Drawing.Size(10, 740)
         Me.Panel3.TabIndex = 68
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 74)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(19, 576)
+        Me.Panel2.Size = New System.Drawing.Size(10, 740)
         Me.Panel2.TabIndex = 67
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.GroupBox1.BackColor = System.Drawing.Color.White
         Me.GroupBox1.Controls.Add(Me.checkAdmin)
         Me.GroupBox1.Controls.Add(Me.checkUser)
         Me.GroupBox1.Controls.Add(Me.cbPencarian)
@@ -248,9 +253,9 @@ Partial Class LihatUser
         Me.GroupBox1.Controls.Add(Me.txtSearch)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 103)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 76)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1154, 100)
+        Me.GroupBox1.Size = New System.Drawing.Size(1173, 100)
         Me.GroupBox1.TabIndex = 100
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Pencarian"
@@ -343,19 +348,29 @@ Partial Class LihatUser
         Me.txtSearch.Size = New System.Drawing.Size(901, 23)
         Me.txtSearch.TabIndex = 60
         '
+        'Panel5
+        '
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel5.Location = New System.Drawing.Point(10, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(1173, 10)
+        Me.Panel5.TabIndex = 101
+        '
         'LihatUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1192, 650)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1193, 740)
         Me.Controls.Add(Me.btnRefresh)
         Me.Controls.Add(Me.DGUser)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "LihatUser"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
@@ -377,7 +392,6 @@ Partial Class LihatUser
     Friend WithEvents lblUser As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label13 As Label
     Friend WithEvents lblBiaya As Label
     Friend WithEvents btnRefresh As Button
@@ -396,4 +410,6 @@ Partial Class LihatUser
     Friend WithEvents cbPencarian As ComboBox
     Friend WithEvents checkAdmin As CheckBox
     Friend WithEvents checkUser As CheckBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel5 As Panel
 End Class

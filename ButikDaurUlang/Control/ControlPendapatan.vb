@@ -92,8 +92,10 @@ Public Class ControlPendapatan
 
     Public Function CariDataTanggal(kunci1 As Date, kunci2 As Date) As DataView
         Try
-            DTA = New OleDbDataAdapter("select  idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser " _
-                                       & "from Pendapatan where tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select  idPendapatan, jmlPendapatan, ketPendapatan, " _
+                                       & "convert (varchar, tglpendapatan,106), idUser " _
+                                       & "from Pendapatan where tglPendapatan between '" _
+                                       & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPendapatan")
 
@@ -135,8 +137,10 @@ Public Class ControlPendapatan
 
     Public Function TampilPendapatan() As DataView
         Try
-            DTA = New OleDbDataAdapter("select idPendapatan, jmlPendapatan, ketPendapatan, convert (varchar, tglpendapatan,106), idUser from Pendapatan", OpenConnection)
-
+            DTA = New OleDbDataAdapter("select idPendapatan, " _
+                                       & "jmlPendapatan, ketPendapatan, " _
+                                       & "convert (varchar, tglpendapatan,106), " _
+                                       & "idUser from Pendapatan", OpenConnection)
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblPendapatan").Clear()
@@ -155,8 +159,8 @@ Public Class ControlPendapatan
         Dim baru As String
         Dim akhir As Integer
 
-        DTA = New OleDbDataAdapter("select max(right(idPendapatan,4)) from Pendapatan", OpenConnection)
-
+        DTA = New OleDbDataAdapter("select isnull(max(right(idPendapatan,4)),0) " _
+                                   & "from Pendapatan", OpenConnection)
         Try
             DTS = New DataSet()
             DTA.Fill(DTS, "kdBaru")

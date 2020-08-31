@@ -19,6 +19,8 @@
         txtQty.Text = ""
         txtHarga.Text = ""
         txtDisc.Text = ""
+
+        cbJasa.SelectedIndex = -1
     End Sub
 
     Sub HitungTotal()
@@ -33,6 +35,14 @@
         lblNominal.Text = total
     End Sub
 
+    Sub hitungKembali()
+        Dim kembali As Integer
+
+        kembali = Val(txtBayar.Text) - Val(lblNominal.Text)
+
+        lblKembali.Text = kembali
+    End Sub
+
     Private Sub TambahTransaksiJasa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.MdiParent = UserUtama
 
@@ -40,7 +50,6 @@
 
         btnNew.Enabled = True
         btnAdd.Enabled = False
-        btnEdit.Enabled = False
         btnSave.Enabled = False
         btnDelete.Enabled = False
     End Sub
@@ -50,7 +59,7 @@
         Dim strItem(5) As String
 
         If txtQty.Text = "" Then
-            txtQty.Text = 1
+            MsgBox("Masukan Jumlah Jasa!", MsgBoxStyle.Information, "Info")
         ElseIf txtDisc.Text = "" Then
             txtDisc.Text = 0
         End If
@@ -66,8 +75,8 @@
         LVDetailJasa.Items.Add(New ListViewItem(strItem))
 
         Call HitungTotal()
-        Call Bersih()
         Call isiCbJasa()
+        Call Bersih()
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
@@ -79,7 +88,7 @@
         Dim listDetail As New List(Of EntityDetailJasa)()
 
         If LVDetailJasa.Items.Count = 0 Then
-            MsgBox("Masukan Jasa terlebih dulu")
+            MsgBox("Masukan Item Terlebih Dahulu", MsgBoxStyle.Information, "Info")
             Exit Sub
         End If
 
@@ -100,10 +109,14 @@
                 EntitasDetailJasa.discJasa = .SubItems(4).Text
             End With
             listDetail.Add(EntitasDetailJasa)
-        Next (i)
 
+        Next (i)
         KontrolPendapatan.SimpanData2(EntitasPendapatan, listDetail)
-        MsgBox("Data Berhasil Disimpan")
+        If MsgBox("Data Berhasil Disimpan, Apakah Anda Ingin Mencetak Nota?",
+                  MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Konfirmasi") = MsgBoxResult.Yes Then
+            PrintTransaksiJasa.crNotaJasa1.SetParameterValue("idPendapatan", lblPendapatan.Text)
+            PrintTransaksiJasa.Show()
+        End If
 
         Call Bersih()
 
@@ -115,11 +128,12 @@
         txtQty.ReadOnly = True
         txtDisc.Enabled = False
         txtDisc.ReadOnly = True
+        txtBayar.Enabled = False
+        txtBayar.ReadOnly = True
 
         lblPendapatan.Text = ""
 
         btnNew.Enabled = True
-        btnEdit.Enabled = False
         btnAdd.Enabled = False
         btnSave.Enabled = False
         btnDelete.Enabled = False
@@ -128,8 +142,8 @@
     End Sub
 
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
-        Call Bersih()
         Call isiCbJasa()
+        Call Bersih()
 
         LVDetailJasa.Items.Clear()
 
@@ -140,9 +154,10 @@
         txtQty.ReadOnly = False
         txtDisc.Enabled = True
         txtDisc.ReadOnly = False
+        txtBayar.Enabled = True
+        txtBayar.ReadOnly = False
 
         btnNew.Enabled = False
-        btnEdit.Enabled = True
         btnAdd.Enabled = True
         btnSave.Enabled = True
         btnDelete.Enabled = True
@@ -185,15 +200,79 @@
         txtQty.ReadOnly = True
         txtDisc.Enabled = False
         txtDisc.ReadOnly = True
+        txtBayar.Enabled = False
+        txtBayar.ReadOnly = True
 
         lblPendapatan.Text = ""
 
         btnNew.Enabled = True
-        btnEdit.Enabled = False
         btnAdd.Enabled = False
         btnSave.Enabled = False
         btnDelete.Enabled = False
 
         cbJasa.Enabled = False
+    End Sub
+
+    Private Sub txtQty_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtQty.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
+
+        If (e.KeyChar = Chr(13)) Then
+            'deklarasi array string
+            Dim strItem(5) As String
+
+            If txtQty.Text = "" Then
+                MsgBox("Masukan Jumlah Jasa!", MsgBoxStyle.Information, "Info")
+            Else
+                txtDisc.Text = 0
+                strItem(0) = txtId.Text
+                strItem(1) = cbJasa.Text
+                strItem(2) = txtQty.Text
+                strItem(3) = txtHarga.Text
+                strItem(4) = txtDisc.Text
+                strItem(5) = txtQty.Text * txtHarga.Text - ((txtDisc.Text / 100) * (txtQty.Text * txtHarga.Text))
+
+                'tambahkan item add (ListViewDetailBiaya) dengan isi array
+                LVDetailJasa.Items.Add(New ListViewItem(strItem))
+
+                Call HitungTotal()
+                Call isiCbJasa()
+                Call Bersih()
+            End If
+        End If
+    End Sub
+
+    Private Sub txtDisc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDisc.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
+
+        If (e.KeyChar = Chr(13)) Then
+            'deklarasi array string
+            Dim strItem(5) As String
+
+            If txtQty.Text = "" Then
+                MsgBox("Masukan Jumlah Jasa!", MsgBoxStyle.Information, "Info")
+            Else
+                strItem(0) = txtId.Text
+                strItem(1) = cbJasa.Text
+                strItem(2) = txtQty.Text
+                strItem(3) = txtHarga.Text
+                strItem(4) = txtDisc.Text
+                strItem(5) = txtQty.Text * txtHarga.Text - ((txtDisc.Text / 100) * (txtQty.Text * txtHarga.Text))
+
+                'tambahkan item add (ListViewDetailBiaya) dengan isi array
+                LVDetailJasa.Items.Add(New ListViewItem(strItem))
+
+                Call HitungTotal()
+                Call isiCbJasa()
+                Call Bersih()
+            End If
+        End If
+    End Sub
+
+    Private Sub txtBayar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtBayar.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
+    End Sub
+
+    Private Sub txtBayar_TextChanged(sender As Object, e As EventArgs) Handles txtBayar.TextChanged
+        Call hitungKembali()
     End Sub
 End Class

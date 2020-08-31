@@ -17,10 +17,11 @@
     Public EntitasPengeluaran As New EntityPengeluaran
     Public KontrolPengeluaran As New ControlPengeluaran
 
-    Public EntitasAkun As New EntityAkun
-    Public KontrolAkun As New ControlAkun
+    Public EntitasJurnal As New EntityJurnal
+    Public KontrolJurnal As New ControlJurnal
 
-    Public EntitasData As New EntityData
+    Public EntitasDetailJurnal As New EntityDetailJurnal
+    Public EntitasDetailJurnal2 As New EntityDetailJurnal2
 
     Public EntitasDetailBiaya As New EntityDetailBiaya
     Public EntitasDetailJasa As New EntityDetailjasa

@@ -22,6 +22,106 @@ Pemilik
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:Pemilik.My.Resources.Resources.Ex">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_16_agreement_paperDocument_note_report_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_87_notepad_report_card_result_presentation_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_87_notepad_report_card_result_presentation_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_database_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_database_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_home_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_home_32px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_lock_24_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_money_bag_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_money_bag_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_plus_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_plus_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_sign_out_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_user_16px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_user_20px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.iconfinder_user_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.Logo_Butik_Daur_Ulang">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.Max">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Pemilik.My.Resources.Resources.Min">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="T:Pemilik.ButikDaurUlangDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.

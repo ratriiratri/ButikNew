@@ -2,7 +2,7 @@
     Private produk As String
     Private pendapatan As String
     Private jumlah As Integer
-    Private disc As Double
+    Private disc As Integer
 
     Public Property idProduk() As String
         Get
@@ -31,11 +31,11 @@
         End Set
     End Property
 
-    Public Property discProduk As Double
+    Public Property discProduk As Integer
         Get
             Return disc
         End Get
-        Set(value As Double)
+        Set(value As Integer)
             disc = value
         End Set
     End Property

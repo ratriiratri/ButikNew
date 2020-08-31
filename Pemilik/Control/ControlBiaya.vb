@@ -160,7 +160,7 @@ Public Class ControlBiaya
 
     Public Function TampilData() As DataView
         Try
-            DTA = New OleDbDataAdapter("select * from Biaya", OpenConnection)
+            DTA = New OleDbDataAdapter("select * from Biaya where jnsSaldo != ''", OpenConnection)
 
             Try
                 DTS = New DataSet()

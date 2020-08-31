@@ -86,11 +86,14 @@
 
             MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
 
-            btnNew.Enabled = True
-
             Call RefreshGrid()
+            Call AturTxtBox(False)
             Call Bersih()
-            AturTxtBox(False)
+
+            btnNew.Enabled = True
+            btnEdit.Enabled = True
+            btnDelete.Enabled = True
+            btnSave.Enabled = False
 
             modeProses = 0
         End If
@@ -148,7 +151,7 @@
         modeProses = 0
     End Sub
 
-    Private Sub DGJasa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGJasa.CellContentClick, DGJasa.CellClick
+    Private Sub DGJasa_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGJasa.CellContentClick
         If modeProses = 0 Or modeProses = 2 Then
             DTGrid = KontrolJasa.TampilData.ToTable
             baris = e.RowIndex
@@ -162,5 +165,77 @@
 
     Private Sub txtHarga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHarga.KeyPress
         If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
+
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasJasa
+                .idJasa = txtId.Text
+                .namaJasa = txtNama.Text
+                .hargaJasa = txtHarga.Text
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+            ElseIf txtHarga.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtHarga.Focus()
+            Else
+                If modeProses = 1 Then
+                    KontrolJasa.InsertData(EntitasJasa)
+                ElseIf modeProses = 2 Then
+                    KontrolJasa.UpdateData(EntitasJasa)
+                End If
+
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+
+                Call RefreshGrid()
+                Call AturTxtBox(False)
+                Call Bersih()
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
+        End If
+    End Sub
+
+    Private Sub txtNama_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNama.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasJasa
+                .idJasa = txtId.Text
+                .namaJasa = txtNama.Text
+                .hargaJasa = txtHarga.Text
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+            ElseIf txtHarga.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtHarga.Focus()
+            Else
+                If modeProses = 1 Then
+                    KontrolJasa.InsertData(EntitasJasa)
+                ElseIf modeProses = 2 Then
+                    KontrolJasa.UpdateData(EntitasJasa)
+                End If
+
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+
+                Call RefreshGrid()
+                Call AturTxtBox(False)
+                Call Bersih()
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
+        End If
     End Sub
 End Class

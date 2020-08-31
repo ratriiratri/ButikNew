@@ -1,6 +1,7 @@
 ﻿Public Class EntityBiaya
     Private id As String
     Private nama As String
+    Private jns As String
 
     Public Property idBiaya() As String
         Get
@@ -17,6 +18,15 @@
         End Get
         Set(value As String)
             nama = value
+        End Set
+    End Property
+
+    Public Property jnsSaldo() As String
+        Get
+            Return jns
+        End Get
+        Set(value As String)
+            jns = value
         End Set
     End Property
 End Class

@@ -22,5 +22,75 @@ User
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:User.My.Resources.Resources.Ex">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_16_agreement_paperDocument_note_report_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_home_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_home_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_lock_24_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_money_bag_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_money_bag_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_recycle_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_recycle_64px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_sign_out_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.iconfinder_user_24px">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.Logo_Butik_Daur_Ulang">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.Max">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:User.My.Resources.Resources.Min">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

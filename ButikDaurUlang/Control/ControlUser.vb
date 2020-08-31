@@ -6,7 +6,9 @@ Public Class ControlUser : Implements InterfaceProses
     Public Function InsertData(Ob As Object) As OleDbCommand Implements InterfaceProses.InsertData
         Dim data As New EntityUser
         data = Ob
-        CMD = New OleDbCommand("insert into Userr values('" & data.idUser & "','" & data.namaUser & "','" & data.hpUser & "','" & data.usernameUser & "','" & data.passwordUser & "','" & data.statusUser & "')", OpenConnection)
+        CMD = New OleDbCommand("insert into Userr values('" & data.idUser & "','" & data.namaUser _
+                               & "','" & data.hpUser & "','" & data.usernameUser & "','" & data.passwordUser _
+                               & "','" & data.statusUser & "')", OpenConnection)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", CloseConnection)
@@ -35,7 +37,8 @@ Public Class ControlUser : Implements InterfaceProses
 
     Public Function TampilData() As DataView Implements InterfaceProses.TampilData
         Try
-            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, usernameUser, passwordUser from Userr where statusUser = '2'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, usernameUser, " _
+                & "passwordUser from Userr where statusUser = '2'", OpenConnection)
 
             Try
                 DTS = New DataSet()
@@ -69,7 +72,8 @@ Public Class ControlUser : Implements InterfaceProses
         Dim cek As Boolean
         cek = False
         Try
-            DTA = New OleDbDataAdapter("select idUser from Pendapatan where idUser='" & kunci & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idUser from Pendapatan " _
+                                       & "where idUser='" & kunci & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cek")
             If DTS.Tables("cek").Rows.Count > 0 Then
@@ -98,7 +102,7 @@ Public Class ControlUser : Implements InterfaceProses
         Dim baru As String
         Dim akhir As Integer
 
-        DTA = New OleDbDataAdapter("select max(right(idUser,4)) from Userr", OpenConnection)
+        DTA = New OleDbDataAdapter("select isnull(max(right(idUser,4)),0) from Userr", OpenConnection)
 
         Try
             DTS = New DataSet()

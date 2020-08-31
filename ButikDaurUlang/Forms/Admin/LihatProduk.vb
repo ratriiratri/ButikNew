@@ -2,6 +2,11 @@
 
     Dim baris As Integer
 
+    Dim copyID As String
+    Dim copyNama As String
+    Dim copyHarga As String
+    Dim copyStock As String
+
     Private Sub RefreshGrid()
         DTGrid = KontrolProduk.TampilData.ToTable
         DGProduk.DataSource = DTGrid
@@ -30,6 +35,10 @@
     Private Sub IsiBox(br As Integer)
         If br < DTGrid.Rows.Count Then
             With DGProduk.Rows(br)
+                copyID = .Cells(0).Value.ToString
+                copyNama = .Cells(1).Value.ToString
+                copyHarga = .Cells(2).Value.ToString
+                copyStock = .Cells(3).Value.ToString
             End With
         End If
     End Sub
@@ -69,7 +78,7 @@
 
     Private Sub btnSearch_Click_1(sender As Object, e As EventArgs) Handles btnSearch.Click
         If txtSearch.Text = "" Then
-
+            MsgBox("Masukan Kata Kunci!", MsgBoxStyle.Information, "Info")
             Call RefreshGrid()
         Else
             Call tampilCari(txtSearch.Text)
@@ -84,5 +93,39 @@
         rbNama.Checked = True
 
         txtSearch.Text = ""
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        baris = DGProduk.CurrentCell.RowIndex
+
+        With DataProduk
+            .txtId.Text = DGProduk.Item(0, baris).Value.ToString
+            .txtNama.Text = DGProduk.Item(1, baris).Value.ToString
+            .txtHarga.Text = DGProduk.Item(2, baris).Value.ToString
+            .txtStock.Text = DGProduk.Item(3, baris).Value.ToString
+            Me.Close()
+            DataProduk.Show()
+
+            .txtNama.Enabled = True
+            .txtHarga.Enabled = True
+            .txtStock.Enabled = True
+
+            .btnNew.Enabled = False
+            .btnSave.Enabled = True
+            .btnEdit.Enabled = False
+            .btnDelete.Enabled = False
+        End With
+    End Sub
+
+    Private Sub txtSearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSearch.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            If txtSearch.Text = "" Then
+
+                Call RefreshGrid()
+            Else
+                Call tampilCari(txtSearch.Text)
+                txtSearch.Focus()
+            End If
+        End If
     End Sub
 End Class

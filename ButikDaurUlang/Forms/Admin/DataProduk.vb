@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub RefreshGrid() 'tampil isi tabel pada DGProduk
-        DTGrid = KontrolProduk.TampilData.ToTable
+        DTGrid = KontrolProduk.TampilData2.ToTable
         DGProduk.DataSource = DTGrid
 
         If DTGrid.Rows.Count > 0 Then
@@ -68,14 +68,14 @@
         End If
     End Sub
 
-    Private Sub DGProduk_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGProduk.CellContentClick, DGProduk.CellClick
+    Private Sub DGProduk_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGProduk.CellContentClick
         If modeProses = 0 Or modeProses = 2 Then
-            DTGrid = KontrolProduk.TampilData.ToTable
+            DTGrid = KontrolProduk.TampilData2.ToTable
             baris = e.RowIndex
             DGProduk.Rows(baris).Selected = True
             IsiBox(baris)
         ElseIf modeProses = 1 Then
-            DTGrid = KontrolProduk.TampilData.ToTable
+            DTGrid = KontrolProduk.TampilData2.ToTable
             DGProduk.Rows(baris).Selected = False
         End If
     End Sub
@@ -105,12 +105,13 @@
             End If
             MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
             Call RefreshGrid()
+            Call AturTxtBox(False)
             Call Bersih()
-            AturTxtBox(False)
 
             btnNew.Enabled = True
             btnEdit.Enabled = True
             btnDelete.Enabled = True
+            btnSave.Enabled = False
 
             modeProses = 0
         End If
@@ -157,7 +158,8 @@
     End Sub
 
     Private Sub lblLihat_Click(sender As Object, e As EventArgs) Handles lblLihat.Click
-        Me.Close()
+        Call RefreshGrid()
+        Me.Hide()
         LihatProduk.Show()
     End Sub
 
@@ -176,9 +178,122 @@
 
     Private Sub txtHarga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHarga.KeyPress
         If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
+
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasProduk
+                .idProduk = txtId.Text
+                .namaProduk = txtNama.Text
+                .hargaProduk = txtHarga.Text
+                .stockProduk = txtStock.Text
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+            ElseIf txtHarga.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtHarga.Focus()
+            ElseIf txtStock.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtStock.Focus()
+            Else
+                If modeProses = 1 Then
+                    KontrolProduk.InsertData(EntitasProduk)
+                ElseIf modeProses = 2 Then
+                    KontrolProduk.UpdateData(EntitasProduk)
+                End If
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+                Call RefreshGrid()
+                Call AturTxtBox(False)
+                Call Bersih()
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
+        End If
     End Sub
 
     Private Sub txtStock_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStock.KeyPress
         If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then e.Handled = True
+
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasProduk
+                .idProduk = txtId.Text
+                .namaProduk = txtNama.Text
+                .hargaProduk = txtHarga.Text
+                .stockProduk = txtStock.Text
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+            ElseIf txtHarga.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtHarga.Focus()
+            ElseIf txtStock.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtStock.Focus()
+            Else
+                If modeProses = 1 Then
+                    KontrolProduk.InsertData(EntitasProduk)
+                ElseIf modeProses = 2 Then
+                    KontrolProduk.UpdateData(EntitasProduk)
+                End If
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+                Call RefreshGrid()
+                Call AturTxtBox(False)
+                Call Bersih()
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
+        End If
+    End Sub
+
+    Private Sub txtNama_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNama.KeyPress
+        If (e.KeyChar = Chr(13)) Then
+            With EntitasProduk
+                .idProduk = txtId.Text
+                .namaProduk = txtNama.Text
+                .hargaProduk = txtHarga.Text
+                .stockProduk = txtStock.Text
+            End With
+
+            If txtNama.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtNama.Focus()
+            ElseIf txtHarga.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtHarga.Focus()
+            ElseIf txtStock.Text = "" Then
+                MsgBox("Lengkapi Data Terlebih Dahulu!", MsgBoxStyle.Information, "Peringatan")
+                txtStock.Focus()
+            Else
+                If modeProses = 1 Then
+                    KontrolProduk.InsertData(EntitasProduk)
+                ElseIf modeProses = 2 Then
+                    KontrolProduk.UpdateData(EntitasProduk)
+                End If
+                MsgBox("Data telah tersimpan!", MsgBoxStyle.Information, "Info")
+                Call RefreshGrid()
+                Call AturTxtBox(False)
+                Call Bersih()
+
+                btnNew.Enabled = True
+                btnEdit.Enabled = True
+                btnDelete.Enabled = True
+                btnSave.Enabled = False
+
+                modeProses = 0
+            End If
+        End If
     End Sub
 End Class

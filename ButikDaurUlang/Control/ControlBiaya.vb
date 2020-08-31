@@ -3,10 +3,23 @@ Imports ButikDaurUlang
 
 Public Class ControlBiaya : Implements InterfaceProses
 
+    Public Function InsertData2(ByVal Biaya As EntityBiaya, ByVal kel As Integer) As OleDbCommand
+        CloseConnection()
+        With Biaya
+            CMD = New OleDbCommand("insert into Biaya values(dbo.FCKdBiaya('" & kel & "')'" & .idBiaya _
+                                   & "','" & .namaBiaya & "','" & .jnsSaldo & "')", OpenConnection)
+            CMD.CommandType = CommandType.Text
+            CMD.ExecuteNonQuery()
+            CMD = New OleDbCommand("", CloseConnection)
+        End With
+        Return CMD
+    End Function
+
     Public Function InsertData(Ob As Object) As OleDbCommand Implements InterfaceProses.InsertData
         Dim data As New EntityBiaya
         data = Ob
-        CMD = New OleDbCommand("insert into Biaya values('" & data.idBiaya & "','" & data.namaBiaya & "')", OpenConnection)
+        CMD = New OleDbCommand("insert into Biaya values('" & data.idBiaya & "','" & data.namaBiaya _
+            & "','" & data.jnsSaldo & "')", OpenConnection)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", CloseConnection)
@@ -16,8 +29,8 @@ Public Class ControlBiaya : Implements InterfaceProses
     Public Function UpdateData(Ob As Object) As OleDbCommand Implements InterfaceProses.UpdateData
         Dim data As New EntityBiaya
         data = Ob
-        CMD = New OleDbCommand("update Biaya set namaBiaya='" & data.namaBiaya & "' where idBiaya='" & data.idBiaya _
-                               & "'", OpenConnection)
+        CMD = New OleDbCommand("update Biaya set namaBiaya='" & data.namaBiaya & "' where idBiaya='" _
+                               & data.idBiaya & "'", OpenConnection)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", CloseConnection)
@@ -34,8 +47,8 @@ Public Class ControlBiaya : Implements InterfaceProses
 
     Public Function TampilData() As DataView Implements InterfaceProses.TampilData
         Try
-            DTA = New OleDbDataAdapter("select * from Biaya", OpenConnection)
-
+            DTA = New OleDbDataAdapter("select idBiaya, namaBiaya from Biaya where " _
+                                       & "jnsSaldo != ''", OpenConnection)
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblBiaya").Clear()
@@ -192,11 +205,15 @@ Public Class ControlBiaya : Implements InterfaceProses
 
     Public Function CariDataTanggalPengeluaran(kunci1 As Date, kunci2 As Date) As DataView
         Try
-            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
-                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
-                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
-                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
-                                       & "on us.idUser = pl.idUser where pl.tglPengeluaran between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, " _
+                                       & "db.hargaBiaya, pl.idPengeluaran, " _
+                                       & "convert(varchar, pl.tglPengeluaran,106), " _
+                                       & "us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = " _
+                                       & "db.idBiaya join Pengeluaran pl on pl.idPengeluaran " _
+                                       & "= db.idPengeluaran join Userr us " _
+                                       & "on us.idUser = pl.idUser where pl.tglPengeluaran " _
+                                       & "between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariBiaya")
 
@@ -211,7 +228,8 @@ Public Class ControlBiaya : Implements InterfaceProses
         Dim cek As Boolean
         cek = False
         Try
-            DTA = New OleDbDataAdapter("select idBiaya from DetailBiaya where idBiaya='" & kunci & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idBiaya from DetailBiaya where idBiaya='" _
+                                       & kunci & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cek")
             If DTS.Tables("cek").Rows.Count > 0 Then
@@ -224,10 +242,13 @@ Public Class ControlBiaya : Implements InterfaceProses
 
     Function TampilDetailBiaya() As DataView
         Try
-            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, db.jumlahBiaya, db.hargaBiaya, " _
-                                       & "pl.idPengeluaran, convert(varchar, pl.tglPengeluaran,106), us.idUser from Biaya b " _
-                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya join Pengeluaran " _
-                                       & "pl on pl.idPengeluaran = db.idPengeluaran join Userr us " _
+            DTA = New OleDbDataAdapter("select b.idBiaya, b.namaBiaya, " _
+                                       & "db.jumlahBiaya, db.hargaBiaya, " _
+                                       & "pl.idPengeluaran, convert(varchar, " _
+                                       & "pl.tglPengeluaran,106), us.idUser from Biaya b " _
+                                       & "join DetailBiaya db on b.idBiaya = db.idBiaya " _
+                                       & "join Pengeluaran pl on pl.idPengeluaran = " _
+                                       & "db.idPengeluaran join Userr us " _
                                        & "on us.idUser = pl.idUser", OpenConnection)
             Try
                 DTS = New DataSet()
@@ -243,17 +264,17 @@ Public Class ControlBiaya : Implements InterfaceProses
         End Try
     End Function
 
-    Function FCKdBiaya() As String
+    Function FCKdBiaya(kel As String) As String
         Dim baru As String
         Dim akhir As Integer
 
-        DTA = New OleDbDataAdapter("select max(right(idBiaya,4)) from Biaya", OpenConnection)
-
+        DTA = New OleDbDataAdapter("select isnull(max(right(idBiaya,2)),0) from Biaya " _
+                                   & "where substring(idBiaya,3,2)='" & kel & "'", OpenConnection)
         Try
             DTS = New DataSet()
             DTA.Fill(DTS, "kdBaru")
             akhir = Val(DTS.Tables("kdBaru").Rows(0).Item(0))
-            baru = "BY" & Strings.Right("0000" & akhir + 1, 4)
+            baru = "BY" + kel + Strings.Right("0" & akhir + 1, 2)
             Return baru
         Catch ex As Exception
             Throw New Exception(ex.Message)

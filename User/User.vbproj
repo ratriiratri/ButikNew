@@ -47,10 +47,21 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Guna.UI">
+      <HintPath>C:\Users\DERN 05\Downloads\Guna.UI-Framework-Lib-master\Guna.UI_WinForms\.net 2.0\Guna.UI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -82,6 +93,18 @@
     <Compile Include="Entity\EntityPendapatan.vb" />
     <Compile Include="Entity\EntityProduk.vb" />
     <Compile Include="Entity\EntityUser.vb" />
+    <Compile Include="Forms\crNotaJasa.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crNotaJasa.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\crNotaProduk.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crNotaProduk.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\Dashboard.Designer.vb">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </Compile>
@@ -104,6 +127,18 @@
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintTransaksiJasa.Designer.vb">
+      <DependentUpon>PrintTransaksiJasa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintTransaksiJasa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintTransaksiProduk.Designer.vb">
+      <DependentUpon>PrintTransaksiProduk.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintTransaksiProduk.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TambahTransaksiJasa.Designer.vb">
@@ -143,6 +178,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\crNotaJasa.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crNotaJasa.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crNotaProduk.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crNotaProduk.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard.resx">
       <DependentUpon>Dashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -154,6 +197,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintTransaksiJasa.resx">
+      <DependentUpon>PrintTransaksiJasa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintTransaksiProduk.resx">
+      <DependentUpon>PrintTransaksiProduk.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TambahTransaksiJasa.resx">
       <DependentUpon>TambahTransaksiJasa.vb</DependentUpon>
@@ -184,7 +233,49 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\iconfinder_16_agreement_paperDocument_note_report_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_home_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_money_bag_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_sign-out_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_money_bag_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_home_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_recycle_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_recycle_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Butik Daur Ulang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_user_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_lock-24_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Min.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

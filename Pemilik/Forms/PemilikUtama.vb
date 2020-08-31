@@ -54,10 +54,26 @@
     End Sub
 
     Private Sub PemilikUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        pnlOnPosition.Height = btnDashboard.Height
+        pnlOnPosition.Top = btnDashboard.Top
+        Dashboard.Show()
+        DataAdmin.Close()
+        LihatBiaya.Close()
+        LihatJasa.Close()
+        LihatPendapatan.Close()
+        LihatPengeluaran.Close()
+        LihatProduk.Close()
+        LihatTransaksiBiaya.Close()
+        LihatTransaksiJasa.Close()
+        LihatTransaksiProduk.Close()
+        LihatUser.Close()
+        LaporanJurnal.Close()
     End Sub
 
     Private Sub btnAdmin_Click(sender As Object, e As EventArgs) Handles btnAdmin.Click
+        pnlOnPosition.Height = btnAdmin.Height
+        pnlOnPosition.Top = btnAdmin.Top
+        Dashboard.Close()
         DataAdmin.Show()
         LihatBiaya.Close()
         LihatJasa.Close()
@@ -68,9 +84,13 @@
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
         LihatUser.Close()
+        LaporanJurnal.Close()
     End Sub
 
     Private Sub btnData_Click(sender As Object, e As EventArgs) Handles btnData.Click
+        pnlOnPosition.Height = btnData.Height
+        pnlOnPosition.Top = btnData.Top
+        Dashboard.Close()
         DataAdmin.Close()
         LihatBiaya.Close()
         LihatJasa.Close()
@@ -81,9 +101,13 @@
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
         LihatUser.Show()
+        LaporanJurnal.Close()
     End Sub
 
     Private Sub btnTransaksi_Click(sender As Object, e As EventArgs) Handles btnTransaksi.Click
+        pnlOnPosition.Height = btnTransaksi.Height
+        pnlOnPosition.Top = btnTransaksi.Top
+        Dashboard.Close()
         DataAdmin.Close()
         LihatBiaya.Close()
         LihatJasa.Close()
@@ -94,9 +118,13 @@
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Show()
         LihatUser.Close()
+        LaporanJurnal.Close()
     End Sub
 
     Private Sub btnLaporan_Click(sender As Object, e As EventArgs) Handles btnLaporan.Click
+        pnlOnPosition.Height = btnLaporan.Height
+        pnlOnPosition.Top = btnLaporan.Top
+        Dashboard.Close()
         DataAdmin.Close()
         LihatBiaya.Close()
         LihatJasa.Close()
@@ -107,5 +135,23 @@
         LihatTransaksiJasa.Close()
         LihatTransaksiProduk.Close()
         LihatUser.Close()
+        LaporanJurnal.Show()
+    End Sub
+
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        pnlOnPosition.Height = btnDashboard.Height
+        pnlOnPosition.Top = btnDashboard.Top
+        Dashboard.Show()
+        DataAdmin.Close()
+        LihatBiaya.Close()
+        LihatJasa.Close()
+        LihatPendapatan.Close()
+        LihatPengeluaran.Close()
+        LihatProduk.Close()
+        LihatTransaksiBiaya.Close()
+        LihatTransaksiJasa.Close()
+        LihatTransaksiProduk.Close()
+        LihatUser.Close()
+        LaporanJurnal.Close()
     End Sub
 End Class

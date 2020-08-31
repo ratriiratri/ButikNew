@@ -38,19 +38,21 @@ Partial Class Login
         '
         'Panel1
         '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel1.Controls.Add(Me.PictureBox4)
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Controls.Add(Me.btnLogin)
         Me.Panel1.Controls.Add(Me.txtPassword)
         Me.Panel1.Controls.Add(Me.txtUsername)
-        Me.Panel1.Location = New System.Drawing.Point(65, 136)
+        Me.Panel1.Location = New System.Drawing.Point(104, 169)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(421, 212)
+        Me.Panel1.Size = New System.Drawing.Size(344, 157)
         Me.Panel1.TabIndex = 8
         '
         'PictureBox4
         '
-        Me.PictureBox4.Location = New System.Drawing.Point(73, 80)
+        Me.PictureBox4.Image = Global.Pemilik.My.Resources.Resources.iconfinder_lock_24_24px
+        Me.PictureBox4.Location = New System.Drawing.Point(40, 49)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(25, 24)
         Me.PictureBox4.TabIndex = 4
@@ -58,18 +60,20 @@ Partial Class Login
         '
         'PictureBox3
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(73, 41)
+        Me.PictureBox3.Image = Global.Pemilik.My.Resources.Resources.iconfinder_user_24px
+        Me.PictureBox3.Location = New System.Drawing.Point(40, 19)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(25, 24)
+        Me.PictureBox3.Size = New System.Drawing.Size(24, 24)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 3
         Me.PictureBox3.TabStop = False
         '
         'btnLogin
         '
         Me.btnLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogin.Location = New System.Drawing.Point(87, 127)
+        Me.btnLogin.Location = New System.Drawing.Point(40, 93)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(250, 35)
+        Me.btnLogin.Size = New System.Drawing.Size(260, 35)
         Me.btnLogin.TabIndex = 2
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = True
@@ -77,7 +81,7 @@ Partial Class Login
         'txtPassword
         '
         Me.txtPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPassword.Location = New System.Drawing.Point(121, 80)
+        Me.txtPassword.Location = New System.Drawing.Point(84, 49)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(216, 24)
@@ -86,7 +90,7 @@ Partial Class Login
         'txtUsername
         '
         Me.txtUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtUsername.Location = New System.Drawing.Point(121, 41)
+        Me.txtUsername.Location = New System.Drawing.Point(84, 19)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(216, 24)
         Me.txtUsername.TabIndex = 0
@@ -94,19 +98,23 @@ Partial Class Login
         'btnClose
         '
         Me.btnClose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnClose.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.btnClose.BackColor = System.Drawing.Color.Transparent
+        Me.btnClose.BackgroundImage = Global.Pemilik.My.Resources.Resources.Ex
+        Me.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnClose.FlatAppearance.BorderSize = 0
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnClose.Location = New System.Drawing.Point(524, 2)
+        Me.btnClose.Location = New System.Drawing.Point(524, 0)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(26, 26)
+        Me.btnClose.Size = New System.Drawing.Size(27, 23)
         Me.btnClose.TabIndex = 9
         Me.btnClose.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(186, 40)
+        Me.PictureBox1.Image = Global.Pemilik.My.Resources.Resources.Logo_Butik_Daur_Ulang
+        Me.PictureBox1.Location = New System.Drawing.Point(104, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(179, 70)
+        Me.PictureBox1.Size = New System.Drawing.Size(344, 122)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
@@ -115,9 +123,10 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(551, 388)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnClose)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Login"
@@ -138,6 +147,6 @@ Partial Class Login
     Friend WithEvents btnLogin As Button
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents txtUsername As TextBox
-    Friend WithEvents btnClose As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents btnClose As Button
 End Class

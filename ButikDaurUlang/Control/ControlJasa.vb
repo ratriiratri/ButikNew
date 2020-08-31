@@ -6,7 +6,8 @@ Public Class ControlJasa : Implements InterfaceProses
     Public Function InsertData(Ob As Object) As OleDbCommand Implements InterfaceProses.InsertData
         Dim data As New EntityJasa
         data = Ob
-        CMD = New OleDbCommand("insert into Jasa values('" & data.idJasa & "','" & data.namaJasa & "','" & data.hargaJasa & "')", OpenConnection)
+        CMD = New OleDbCommand("insert into Jasa values('" & data.idJasa & "','" & data.namaJasa & "'," _
+                               & "'" & data.hargaJasa & "')", OpenConnection)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", CloseConnection)
@@ -56,7 +57,8 @@ Public Class ControlJasa : Implements InterfaceProses
         cek = False
 
         Try
-            DTA = New OleDbDataAdapter("select idJasa from DetailJasa where idJasa='" & kunci & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idJasa from DetailJasa " _
+                & "where idJasa='" & kunci & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cek")
             If DTS.Tables("cek").Rows.Count > 0 Then
@@ -197,9 +199,12 @@ Public Class ControlJasa : Implements InterfaceProses
 
     Public Function CariDataTanggalPendapatan(kunci1 As Date, kunci2 As Date) As DataView
         Try
-            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
-                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
-                                       & "join Userr us on us.idUser = pd.idUser where pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, " _
+                                       & "convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
+                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan " _
+                                       & "pd on pd.idPendapatan = dj.idPendapatan join Userr us on us.idUser = " _
+                                       & "pd.idUser where pd.tglPendapatan between '" & kunci1 & "' and '" & kunci2 _
+                                       & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariJasa")
 
@@ -212,8 +217,11 @@ Public Class ControlJasa : Implements InterfaceProses
 
     Public Function TampilDetailJasa() As DataView
         Try
-            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, js.hargaJasa, convert(varchar, pd.tglPendapatan,106), us.idUser, pd.idPendapatan " _
-                                       & "from Jasa js join DetailJasa dj on js.idJasa = dj.idJasa join Pendapatan pd on pd.idPendapatan = dj.idPendapatan " _
+            DTA = New OleDbDataAdapter("select js.idJasa, js.namaJasa, dj.jumlahJasa, " _
+                                       & "js.hargaJasa, convert(varchar, pd.tglPendapatan,106), " _
+                                       & "us.idUser, pd.idPendapatan from Jasa js join DetailJasa " _
+                                       & "dj on js.idJasa = dj.idJasa join Pendapatan pd on " _
+                                       & "pd.idPendapatan = dj.idPendapatan " _
                                        & "join Userr us on us.idUser = pd.idUser", OpenConnection)
             Try
                 DTS = New DataSet()
@@ -234,7 +242,7 @@ Public Class ControlJasa : Implements InterfaceProses
         Dim baru As String
         Dim akhir As Integer
 
-        DTA = New OleDbDataAdapter("select max(right(idJasa,4)) from Jasa", OpenConnection)
+        DTA = New OleDbDataAdapter("select isnull(max(right(idJasa,4)),0) from Jasa", OpenConnection)
 
         Try
             DTS = New DataSet()

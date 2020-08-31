@@ -88,21 +88,70 @@
     </Compile>
     <Compile Include="Control\ControlBiaya.vb" />
     <Compile Include="Control\ControlJasa.vb" />
+    <Compile Include="Control\ControlLaporan.vb" />
     <Compile Include="Control\ControlPendapatan.vb" />
     <Compile Include="Control\ControlPengeluaran.vb" />
     <Compile Include="Control\ControlProduk.vb" />
     <Compile Include="Control\ControlUser.vb" />
     <Compile Include="Entity\EntityUser.vb" />
-    <Compile Include="Forms\CetakLaporan.Designer.vb">
-      <DependentUpon>CetakLaporan.vb</DependentUpon>
+    <Compile Include="Forms\crIsi.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crIsi.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Forms\CetakLaporan.vb">
+    <Compile Include="Forms\crJurnal.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crJurnal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\crKeterangan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crKeterangan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\crMain.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crMain.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\crPendapatan.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crPendapatan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\crPengeluaran.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crPengeluaran.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Dashboard.Designer.vb">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\DataAdmin.Designer.vb">
       <DependentUpon>DataAdmin.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\DataAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LaporanJurnal.Designer.vb">
+      <DependentUpon>LaporanJurnal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LaporanJurnal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LaporanLabaRugi.Designer.vb">
+      <DependentUpon>LaporanLabaRugi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LaporanLabaRugi.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\LihatBiaya.Designer.vb">
@@ -171,6 +220,18 @@
     <Compile Include="Forms\PemilikUtama.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\PrintJurnal.Designer.vb">
+      <DependentUpon>PrintJurnal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintJurnal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintLabaRugi.Designer.vb">
+      <DependentUpon>PrintLabaRugi.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintLabaRugi.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Global\ModKoneksiDB.vb" />
     <Compile Include="Global\ModObjectFungsi.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -190,11 +251,41 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\CetakLaporan.resx">
-      <DependentUpon>CetakLaporan.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\crIsi.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crIsi.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crJurnal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crJurnal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crKeterangan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crKeterangan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crMain.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crMain.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crPendapatan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crPendapatan.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\crPengeluaran.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crPengeluaran.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dashboard.resx">
+      <DependentUpon>Dashboard.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DataAdmin.resx">
       <DependentUpon>DataAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LaporanJurnal.resx">
+      <DependentUpon>LaporanJurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LaporanLabaRugi.resx">
+      <DependentUpon>LaporanLabaRugi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LihatBiaya.resx">
       <DependentUpon>LihatBiaya.vb</DependentUpon>
@@ -229,6 +320,12 @@
     <EmbeddedResource Include="Forms\PemilikUtama.resx">
       <DependentUpon>PemilikUtama.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintJurnal.resx">
+      <DependentUpon>PrintJurnal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintLabaRugi.resx">
+      <DependentUpon>PrintLabaRugi.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -260,10 +357,67 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\iconfinder_plus_24px.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_home_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_home_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_database_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_16_agreement_paperDocument_note_report_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_87_notepad_report_card_result_presentation_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_money_bag_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_sign-out_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo Butik Daur Ulang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_plus_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_database_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_money_bag_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_87_notepad_report_card_result_presentation_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_user_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_user_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_user_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_lock-24_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Min.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

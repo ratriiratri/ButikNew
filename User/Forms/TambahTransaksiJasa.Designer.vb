@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class TambahTransaksiJasa
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class TambahTransaksiJasa
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -44,12 +44,17 @@ Partial Class TambahTransaksiJasa
         Me.btnNew = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.cbJasa = New System.Windows.Forms.ComboBox()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lblKembali = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtBayar = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.lblNominal = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.cbJasa = New System.Windows.Forms.ComboBox()
+        Me.btnSave = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -59,7 +64,7 @@ Partial Class TambahTransaksiJasa
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,9 +102,9 @@ Partial Class TambahTransaksiJasa
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1173, 74)
+        Me.Panel3.Location = New System.Drawing.Point(1183, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(19, 576)
+        Me.Panel3.Size = New System.Drawing.Size(10, 740)
         Me.Panel3.TabIndex = 68
         '
         'Label7
@@ -129,7 +134,7 @@ Partial Class TambahTransaksiJasa
         Me.LVDetailJasa.GridLines = True
         Me.LVDetailJasa.Location = New System.Drawing.Point(79, 135)
         Me.LVDetailJasa.Name = "LVDetailJasa"
-        Me.LVDetailJasa.Size = New System.Drawing.Size(1000, 262)
+        Me.LVDetailJasa.Size = New System.Drawing.Size(1000, 341)
         Me.LVDetailJasa.TabIndex = 92
         Me.LVDetailJasa.UseCompatibleStateImageBehavior = False
         Me.LVDetailJasa.View = System.Windows.Forms.View.Details
@@ -171,16 +176,16 @@ Partial Class TambahTransaksiJasa
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(0, 74)
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(19, 576)
+        Me.Panel2.Size = New System.Drawing.Size(10, 740)
         Me.Panel2.TabIndex = 67
         '
         'lblTanggal
         '
         Me.lblTanggal.AutoSize = True
         Me.lblTanggal.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTanggal.Location = New System.Drawing.Point(943, 23)
+        Me.lblTanggal.Location = New System.Drawing.Point(821, 30)
         Me.lblTanggal.Name = "lblTanggal"
         Me.lblTanggal.Size = New System.Drawing.Size(74, 17)
         Me.lblTanggal.TabIndex = 90
@@ -219,7 +224,7 @@ Partial Class TambahTransaksiJasa
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(901, 464)
+        Me.btnDelete.Location = New System.Drawing.Point(902, 588)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(86, 31)
         Me.btnDelete.TabIndex = 81
@@ -228,7 +233,15 @@ Partial Class TambahTransaksiJasa
         '
         'Panel5
         '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.Panel5.BackColor = System.Drawing.Color.White
+        Me.Panel5.Controls.Add(Me.Label12)
+        Me.Panel5.Controls.Add(Me.lblKembali)
+        Me.Panel5.Controls.Add(Me.Label3)
+        Me.Panel5.Controls.Add(Me.txtBayar)
+        Me.Panel5.Controls.Add(Me.Label2)
+        Me.Panel5.Controls.Add(Me.lblNominal)
+        Me.Panel5.Controls.Add(Me.Label9)
+        Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.btnRefresh)
         Me.Panel5.Controls.Add(Me.cbJasa)
         Me.Panel5.Controls.Add(Me.Label11)
@@ -243,20 +256,106 @@ Partial Class TambahTransaksiJasa
         Me.Panel5.Controls.Add(Me.btnNew)
         Me.Panel5.Controls.Add(Me.btnDelete)
         Me.Panel5.Controls.Add(Me.btnSave)
-        Me.Panel5.Controls.Add(Me.btnEdit)
-        Me.Panel5.Controls.Add(Me.lblNominal)
-        Me.Panel5.Controls.Add(Me.Label9)
-        Me.Panel5.Controls.Add(Me.Label8)
         Me.Panel5.Controls.Add(Me.Label6)
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Controls.Add(Me.txtId)
         Me.Panel5.Controls.Add(Me.btnAdd)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(19, 103)
+        Me.Panel5.Location = New System.Drawing.Point(10, 74)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1154, 512)
+        Me.Panel5.Size = New System.Drawing.Size(1173, 636)
         Me.Panel5.TabIndex = 70
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(701, 528)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(37, 20)
+        Me.Label12.TabIndex = 114
+        Me.Label12.Text = "Rp."
+        '
+        'lblKembali
+        '
+        Me.lblKembali.AutoSize = True
+        Me.lblKembali.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblKembali.Location = New System.Drawing.Point(977, 526)
+        Me.lblKembali.Name = "lblKembali"
+        Me.lblKembali.Size = New System.Drawing.Size(0, 25)
+        Me.lblKembali.TabIndex = 113
+        Me.lblKembali.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(898, 528)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(72, 20)
+        Me.Label3.TabIndex = 112
+        Me.Label3.Text = "Kembali"
+        '
+        'txtBayar
+        '
+        Me.txtBayar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBayar.Location = New System.Drawing.Point(738, 525)
+        Me.txtBayar.Name = "txtBayar"
+        Me.txtBayar.ReadOnly = True
+        Me.txtBayar.Size = New System.Drawing.Size(147, 26)
+        Me.txtBayar.TabIndex = 111
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(644, 528)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(55, 20)
+        Me.Label2.TabIndex = 110
+        Me.Label2.Text = "Bayar"
+        '
+        'lblNominal
+        '
+        Me.lblNominal.AutoSize = True
+        Me.lblNominal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNominal.Location = New System.Drawing.Point(733, 491)
+        Me.lblNominal.Name = "lblNominal"
+        Me.lblNominal.Size = New System.Drawing.Size(23, 25)
+        Me.lblNominal.TabIndex = 109
+        Me.lblNominal.Text = "0"
+        Me.lblNominal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(701, 493)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(37, 20)
+        Me.Label9.TabIndex = 108
+        Me.Label9.Text = "Rp."
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(642, 493)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(49, 20)
+        Me.Label8.TabIndex = 107
+        Me.Label8.Text = "Total"
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRefresh.Location = New System.Drawing.Point(994, 588)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(86, 31)
+        Me.btnRefresh.TabIndex = 102
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
         '
         'cbJasa
         '
@@ -272,53 +371,12 @@ Partial Class TambahTransaksiJasa
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(717, 464)
+        Me.btnSave.Location = New System.Drawing.Point(810, 588)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(86, 31)
         Me.btnSave.TabIndex = 80
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
-        '
-        'btnEdit
-        '
-        Me.btnEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(809, 464)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(86, 31)
-        Me.btnEdit.TabIndex = 79
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = True
-        '
-        'lblNominal
-        '
-        Me.lblNominal.AutoSize = True
-        Me.lblNominal.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNominal.Location = New System.Drawing.Point(994, 416)
-        Me.lblNominal.Name = "lblNominal"
-        Me.lblNominal.Size = New System.Drawing.Size(23, 25)
-        Me.lblNominal.TabIndex = 78
-        Me.lblNominal.Text = "0"
-        Me.lblNominal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(963, 420)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(33, 17)
-        Me.Label9.TabIndex = 77
-        Me.Label9.Text = "Rp."
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(903, 420)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(59, 17)
-        Me.Label8.TabIndex = 76
-        Me.Label8.Text = "TOTAL"
         '
         'Label6
         '
@@ -373,64 +431,65 @@ Partial Class TambahTransaksiJasa
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(183, Byte), Integer))
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(10, 10)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1192, 74)
+        Me.Panel1.Size = New System.Drawing.Size(1173, 54)
         Me.Panel1.TabIndex = 66
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(82, 21)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(62, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(213, 33)
+        Me.Label1.Size = New System.Drawing.Size(174, 29)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Transaksi Jasa"
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 6)
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.User.My.Resources.Resources.iconfinder_money_bag_64px
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(64, 64)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.Size = New System.Drawing.Size(36, 36)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel4.Location = New System.Drawing.Point(19, 74)
+        Me.Panel4.Location = New System.Drawing.Point(10, 64)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1154, 29)
+        Me.Panel4.Size = New System.Drawing.Size(1173, 10)
         Me.Panel4.TabIndex = 69
         '
-        'btnRefresh
+        'Panel6
         '
-        Me.btnRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRefresh.Location = New System.Drawing.Point(993, 464)
-        Me.btnRefresh.Name = "btnRefresh"
-        Me.btnRefresh.Size = New System.Drawing.Size(86, 31)
-        Me.btnRefresh.TabIndex = 102
-        Me.btnRefresh.Text = "Refresh"
-        Me.btnRefresh.UseVisualStyleBackColor = True
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel6.Location = New System.Drawing.Point(10, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(1173, 10)
+        Me.Panel6.TabIndex = 115
         '
         'TambahTransaksiJasa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1192, 650)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(209, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1193, 740)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
-        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "TambahTransaksiJasa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
@@ -466,10 +525,6 @@ Partial Class TambahTransaksiJasa
     Friend WithEvents btnDelete As Button
     Friend WithEvents Panel5 As Panel
     Friend WithEvents btnSave As Button
-    Friend WithEvents btnEdit As Button
-    Friend WithEvents lblNominal As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
@@ -481,4 +536,13 @@ Partial Class TambahTransaksiJasa
     Friend WithEvents Panel4 As Panel
     Friend WithEvents cbJasa As ComboBox
     Friend WithEvents btnRefresh As Button
+    Friend WithEvents Label12 As Label
+    Friend WithEvents lblKembali As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtBayar As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents lblNominal As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Panel6 As Panel
 End Class

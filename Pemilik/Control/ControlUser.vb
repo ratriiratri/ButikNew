@@ -5,7 +5,11 @@ Public Class ControlUser
     Public Function InsertData(Ob As Object) As OleDbCommand
         Dim data As New EntityUser
         data = Ob
-        CMD = New OleDbCommand("insert into Userr values('" & data.idUser & "','" & data.namaUser & "','" & data.hpUser & "','" & data.usernameUser & "','" & data.passwordUser & "','" & data.statusUser & "')", OpenConnection)
+        CMD = New OleDbCommand("insert into Userr values('" & data.idUser _
+                               & "','" & data.namaUser & "','" & data.hpUser _
+                               & "','" & data.usernameUser & "','" _
+                               & data.passwordUser & "','" & data.statusUser _
+                               & "')", OpenConnection)
         CMD.CommandType = CommandType.Text
         CMD.ExecuteNonQuery()
         CMD = New OleDbCommand("", CloseConnection)
@@ -34,8 +38,10 @@ Public Class ControlUser
 
     Public Function TampilData() As DataView
         Try
-            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, usernameUser, passwordUser from Userr where statusUser = '1'", OpenConnection)
-
+            DTA = New OleDbDataAdapter("select idUser, namaUser, " _
+                                       & "hpUser, usernameUser, " _
+                                       & "passwordUser from Userr " _
+                                       & "where statusUser = '1'", OpenConnection)
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblUser").Clear()
@@ -50,10 +56,26 @@ Public Class ControlUser
         End Try
     End Function
 
+    Public Function UpdateDataPemilik(Ob As Object) As OleDbCommand
+        Dim data As New EntityUser
+        data = Ob
+        CMD = New OleDbCommand("update Userr set namaUser='" & data.namaUser _
+                               & "', hpUser='" & data.hpUser _
+                               & "', usernameUser='" & data.usernameUser _
+                               & "', passwordUser='" & data.passwordUser _
+                               & "' where idUser='" & data.idUser & "'", OpenConnection)
+        CMD.CommandType = CommandType.Text
+        CMD.ExecuteNonQuery()
+        CMD = New OleDbCommand("", CloseConnection)
+        Return CMD
+    End Function
+
     Public Function TampilDataUser() As DataView
         Try
-            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, case statusUser when '1' then 'Admin' " _
-                                       & "when '2' then 'User' end as Status from Userr where statusUser != '3'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idUser, namaUser, " _
+                                       & "hpUser, case statusUser when '1' then 'Admin' " _
+                                       & "when '2' then 'User' end as Status from Userr " _
+                                       & "where statusUser != '3'", OpenConnection)
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblUser").Clear()
@@ -200,8 +222,10 @@ Public Class ControlUser
 
     Public Function CariDataID(kunci As String) As DataView
         Try
-            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, case statusUser when '1' then 'Admin' " _
-                                       & "when '2' then 'User' end as Status from Userr where statusUser != '3' " _
+            DTA = New OleDbDataAdapter("select idUser, namaUser, hpUser, " _
+                                       & "case statusUser when '1' then 'Admin' " _
+                                       & "when '2' then 'User' end as Status from " _
+                                       & "Userr where statusUser != '3' " _
                                        & "and idUser like '%" & kunci & "%'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariUser")
@@ -249,7 +273,8 @@ Public Class ControlUser
         Dim cek As Boolean
         cek = False
         Try
-            DTA = New OleDbDataAdapter("select idUser from Pengeluaran where idUser='" & kunci & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idUser from " _
+                                       & "Pengeluaran where idUser='" & kunci & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cek")
             If DTS.Tables("cek").Rows.Count > 0 Then
@@ -264,7 +289,7 @@ Public Class ControlUser
         Dim baru As String
         Dim akhir As Integer
 
-        DTA = New OleDbDataAdapter("select max(right(idUser,4)) from Userr", OpenConnection)
+        DTA = New OleDbDataAdapter("select isnull(max(right(idUser,4)),0) from Userr", OpenConnection)
 
         Try
             DTS = New DataSet()

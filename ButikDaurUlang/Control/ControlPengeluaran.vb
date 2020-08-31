@@ -65,8 +65,10 @@ Public Class ControlPengeluaran
 
     Public Function CariDataTanggal(kunci1 As Date, kunci2 As Date) As DataView
         Try
-            DTA = New OleDbDataAdapter("select idPengeluaran, jmlPengeluaran, convert(varchar, tglPengeluaran,106), idUser " _
-                                       & "from Pengeluaran where tglPengeluaran between '" & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
+            DTA = New OleDbDataAdapter("select idPengeluaran, jmlPengeluaran, " _
+                                       & "convert(varchar, tglPengeluaran,106), idUser " _
+                                       & "from Pengeluaran where tglPengeluaran between '" _
+                                       & kunci1 & "' and '" & kunci2 & "'", OpenConnection)
             DTS = New DataSet()
             DTA.Fill(DTS, "cariPengeluaran")
 
@@ -108,7 +110,9 @@ Public Class ControlPengeluaran
 
     Public Function TampilPengeluaran() As DataView
         Try
-            DTA = New OleDbDataAdapter("select idPengeluaran, jmlPengeluaran, convert(varchar, tglPengeluaran,106), idUser from Pengeluaran", OpenConnection)
+            DTA = New OleDbDataAdapter("select idPengeluaran, jmlPengeluaran, " _
+                                       & "convert(varchar, tglPengeluaran,106), " _
+                                       & "idUser from Pengeluaran", OpenConnection)
             Try
                 DTS = New DataSet()
                 DTS.Tables("tblPengeluaran").Clear()
@@ -123,13 +127,16 @@ Public Class ControlPengeluaran
         End Try
     End Function
 
-    Public Function SimpanData(ByVal _pengeluaran As EntityPengeluaran, ByVal _listBiaya As List(Of EntityDetailBiaya)) As String
+    Public Function SimpanData(ByVal _pengeluaran As EntityPengeluaran,
+                               ByVal _listBiaya As List(Of EntityDetailBiaya)) As String
         Dim idb As String
         idb = ""
         CloseConnection()
 
         With _pengeluaran
-            Sql = "insert into Pengeluaran values ('" & .idPengeluaran & "','" & .jmlPengeluaran & "','" & .ketPengeluaran & "','" & .tglPengeluaran & "','" & .idUser & "')"
+            Sql = "insert into Pengeluaran values ('" & .idPengeluaran & "'," _
+                & .jmlPengeluaran & ",'" & .ketPengeluaran & "','" _
+                & .tglPengeluaran & "','" & .idUser & "')"
             CMD = New OleDbCommand(Sql, OpenConnection)
             CMD.CommandType = CommandType.Text
             CMD.ExecuteNonQuery()
@@ -140,25 +147,9 @@ Public Class ControlPengeluaran
 
         For i = 0 To _listBiaya.Count - 1
             With _listBiaya(i)
-                Sql = "insert into DetailBiaya values ('" & .idBiaya & "','" & .idPengeluaran & "','" & .jumlahBiaya & "','" & .hargaBiaya & "')"
-                CMD = New OleDbCommand(Sql, OpenConnection)
-                CMD.CommandType = CommandType.Text
-                CMD.ExecuteNonQuery()
-                CMD = New OleDbCommand("", CloseConnection)
-            End With
-        Next
-
-        Return idb
-    End Function
-
-    Public Function SimpanData2(ByVal _item As List(Of EntityData)) As String
-        Dim idb As String
-        idb = ""
-        CloseConnection()
-
-        For i = 0 To _item.Count - 1
-            With _item(i)
-                Sql = "insert into Data values  ('" & .idData & "','" & .namaData & "','" & .tanggalData & "','" & .jumlahData & "')"
+                Sql = "insert into DetailBiaya values ('" & .idBiaya & "','" _
+                    & .idPengeluaran & "'," & .jumlahBiaya & "," _
+                    & .hargaBiaya & ")"
                 CMD = New OleDbCommand(Sql, OpenConnection)
                 CMD.CommandType = CommandType.Text
                 CMD.ExecuteNonQuery()
@@ -172,8 +163,8 @@ Public Class ControlPengeluaran
         Dim baru As String
         Dim akhir As Integer
 
-        DTA = New OleDbDataAdapter("select max(right(idPengeluaran,4)) from Pengeluaran", OpenConnection)
-
+        DTA = New OleDbDataAdapter("select isnull(max(right(idPengeluaran,4)),0)" _
+                                   & " from Pengeluaran", OpenConnection)
         Try
             DTS = New DataSet()
             DTA.Fill(DTS, "kdBaru")

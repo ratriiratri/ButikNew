@@ -23,7 +23,6 @@ E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\ButikDaurUla
 E:\#Kuliah\#SKRIPSI\Program\ButikDaurUlang\ButikDaurUlang\obj\Debug\Admin.vbprojAssemblyReference.cache
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.AdminUtama.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.Dashboard.resources
-E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataBiaya.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataJasa.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataProduk.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataUser.resources
@@ -31,7 +30,6 @@ E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.Li
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatPendapatan.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatProduk.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.Login.resources
-E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.TambahPengeluaran.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.Resources.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\Admin.vbproj.GenerateResource.cache
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\Admin.vbproj.CoreCompileInputs.cache
@@ -45,5 +43,10 @@ E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\bin\Debug\ButikDaurUlang.xm
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatTransaksiJasa.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatTransaksiProduk.resources
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.LihatTransaksiBiaya.resources
-E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataRekAkun.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.DataBiaya2.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.TambahPengeluaran2.resources
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\bin\Debug\ButikDaurUlang.exe.manifest
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\bin\Debug\ButikDaurUlang.application
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.exe.manifest
+E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\ButikDaurUlang.application
 E:\#Kuliah\#SKRIPSI\Program\MasterFIX\ButikDaurUlang\obj\Debug\Admin.vbprojAssemblyReference.cache
